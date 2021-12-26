@@ -1,0 +1,392 @@
+{
+  // 使用 IntelliSense 了解相关属性。 
+  // 悬停以查看现有属性的描述。
+  // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Launch Current File",
+      "request": "launch",
+      "mainClass": "${file}"
+    },
+    {
+      "type": "java",
+      "name": "Launch MergeSort",
+      "request": "launch",
+      "mainClass": "MergeSort",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num102",
+      "request": "launch",
+      "mainClass": "Num102",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num103",
+      "request": "launch",
+      "mainClass": "Num103",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num121",
+      "request": "launch",
+      "mainClass": "Num121",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num122",
+      "request": "launch",
+      "mainClass": "Num122",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num123",
+      "request": "launch",
+      "mainClass": "Num123",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num14",
+      "request": "launch",
+      "mainClass": "Num14",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num141",
+      "request": "launch",
+      "mainClass": "Num141",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num142",
+      "request": "launch",
+      "mainClass": "Num142",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num143",
+      "request": "launch",
+      "mainClass": "Num143",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num144",
+      "request": "launch",
+      "mainClass": "Num144",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num145",
+      "request": "launch",
+      "mainClass": "Num145",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num146",
+      "request": "launch",
+      "mainClass": "Num146",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num148",
+      "request": "launch",
+      "mainClass": "Num148",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num15",
+      "request": "launch",
+      "mainClass": "Num15",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num155",
+      "request": "launch",
+      "mainClass": "Num155",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num16",
+      "request": "launch",
+      "mainClass": "Num16",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num160",
+      "request": "launch",
+      "mainClass": "Num160",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num19",
+      "request": "launch",
+      "mainClass": "Num19",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num199",
+      "request": "launch",
+      "mainClass": "Num199",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num2",
+      "request": "launch",
+      "mainClass": "Num2",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num20",
+      "request": "launch",
+      "mainClass": "Num20",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num200",
+      "request": "launch",
+      "mainClass": "Num200",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num206",
+      "request": "launch",
+      "mainClass": "Num206",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num21",
+      "request": "launch",
+      "mainClass": "Num21",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num215",
+      "request": "launch",
+      "mainClass": "Num215",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num22",
+      "request": "launch",
+      "mainClass": "Num22",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num23",
+      "request": "launch",
+      "mainClass": "Num23",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num25",
+      "request": "launch",
+      "mainClass": "Num25",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num26",
+      "request": "launch",
+      "mainClass": "Num26",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num3",
+      "request": "launch",
+      "mainClass": "Num3",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num300",
+      "request": "launch",
+      "mainClass": "Num300",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num31",
+      "request": "launch",
+      "mainClass": "Num31",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num33",
+      "request": "launch",
+      "mainClass": "Num33",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num378",
+      "request": "launch",
+      "mainClass": "Num378",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num415",
+      "request": "launch",
+      "mainClass": "Num415",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num46",
+      "request": "launch",
+      "mainClass": "Num46",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num54",
+      "request": "launch",
+      "mainClass": "Num54",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num56",
+      "request": "launch",
+      "mainClass": "Num56",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num69",
+      "request": "launch",
+      "mainClass": "Num69",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num695",
+      "request": "launch",
+      "mainClass": "Num695",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num704",
+      "request": "launch",
+      "mainClass": "Num704",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num78",
+      "request": "launch",
+      "mainClass": "Num78",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num8",
+      "request": "launch",
+      "mainClass": "Num8",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num827",
+      "request": "launch",
+      "mainClass": "Num827",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num92",
+      "request": "launch",
+      "mainClass": "Num92",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num93",
+      "request": "launch",
+      "mainClass": "Num93",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num94",
+      "request": "launch",
+      "mainClass": "Num94",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Num98",
+      "request": "launch",
+      "mainClass": "Num98",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Offer_Num22",
+      "request": "launch",
+      "mainClass": "Offer_Num22",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Offer_Num55",
+      "request": "launch",
+      "mainClass": "Offer_Num55",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Person",
+      "request": "launch",
+      "mainClass": "Person",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Test",
+      "request": "launch",
+      "mainClass": "Test",
+      "projectName": "Leetcode_b669f3ac"
+    },
+    {
+      "type": "java",
+      "name": "Launch Test1",
+      "request": "launch",
+      "mainClass": "Test1",
+      "projectName": "Leetcode_b669f3ac"
+    }
+  ]
+}
