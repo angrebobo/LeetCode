@@ -1,9 +1,8 @@
 import java.util.concurrent.*;
 
 /**
- * @author linsanity
  * @date 2021-07-07 17:21
- * @desc
+ * @desc 线程池的拒绝策略
  */
 class MyTask implements Runnable {
     private String id;

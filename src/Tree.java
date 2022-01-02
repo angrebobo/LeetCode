@@ -2,7 +2,7 @@ import java.util.Stack;
 
 /**
  * @author: HuangSiBo
- * @Description:
+ * @Description: 树的遍历方法
  * @Data: Created in 9:30 2021/9/26
  */
 public class Tree {

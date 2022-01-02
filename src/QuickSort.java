@@ -1,6 +1,6 @@
 /**
  * @author: HuangSiBo
- * @Description:
+ * @Description: 快速排序
  * @Data: Created in 16:34 2021/9/27
  */
 public class QuickSort {
