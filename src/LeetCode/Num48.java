@@ -8,7 +8,25 @@ package LeetCode;
 public class Num48 {
 
     static class Solution {
-        public void rotate(int[][] matrix) {
+        //解法1，暴力解，时间复杂度和空间复杂度都是0(n*2)
+        /*public void rotate(int[][] matrix) {
+            int n = matrix.length;
+            int[][] repulication = new int[n][n];
+
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    repulication[j][n-i-1] = matrix[i][j];
+                }
+            }
+
+            for (int i = 0; i < n; i++) {
+                for (int j = 0; j < n; j++) {
+                    matrix[i][j] = repulication[i][j];
+                }
+            }
+        }*/
+
+        public void rotate(int[][] matrix){
 
         }
     }
@@ -25,7 +43,6 @@ public class Num48 {
 
         Solution solution = new Solution();
         solution.rotate(nums);
-
 
         System.out.println("\n" + "----翻转后的数组----");
         for(int[] num : nums){
