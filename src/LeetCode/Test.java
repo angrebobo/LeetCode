@@ -1,9 +1,5 @@
 package LeetCode;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
 /**
  * @Description TODO
  * @Author didi
@@ -12,10 +8,31 @@ import java.util.List;
 public class Test {
 
     public static void main(String[] args) {
-        List<Integer> list = new ArrayList<>();
-        list.add(6);
-        list.add(3);
-        list.sort((o1,o2) -> o1-o2);
-        System.out.println(list);
+        String tagId = "31231231231231232";
+        if(substringBefore(tagId, "_").length() >= 10){
+            System.out.println("true");
+        }
+        else
+            System.out.println("false");
+    }
+
+    public static String substringBefore(final String str, final String separator) {
+        if (isEmpty(str) || separator == null) {
+            return str;
+        }
+        if (separator.isEmpty()) {
+            return "";
+        }
+        final int pos = str.indexOf(separator);
+        if (pos == -1) {
+            return str;
+        }
+        return str.substring(0, pos);
+    }
+
+    public static boolean isEmpty(final CharSequence cs) {
+        return cs == null || cs.length() == 0;
     }
 }
+
+
