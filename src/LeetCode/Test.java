@@ -1,5 +1,8 @@
 package LeetCode;
 
+
+import java.util.Arrays;
+
 /**
  * @Description TODO
  * @Author didi
@@ -8,12 +11,17 @@ package LeetCode;
 public class Test {
 
     public static void main(String[] args) {
-        String tagId = "31231231231231232";
-        if(substringBefore(tagId, "_").length() >= 10){
-            System.out.println("true");
-        }
-        else
-            System.out.println("false");
+//        String tagId = "31231231231231232";
+//        if(substringBefore(tagId, "_").length() >= 10){
+//            System.out.println("true");
+//        }
+//        else
+//            System.out.println("false");
+        String s = "dasd";
+        char[] chars = s.toCharArray();
+        Arrays.sort(chars);
+        System.out.println(String.valueOf(chars));
+        //StringBuffer buffer = new StringBuffer(String.valueOf(chars));
     }
 
     public static String substringBefore(final String str, final String separator) {
