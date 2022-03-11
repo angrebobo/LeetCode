@@ -5,7 +5,7 @@ import java.util.Arrays;
 
 /**
  * @Description TODO
- * @Author didi
+ * @Author HuangSiBo
  * @Date 2022/2/13 18:25
  **/
 public class Test {
@@ -17,11 +17,14 @@ public class Test {
 //        }
 //        else
 //            System.out.println("false");
-        String s = "dasd";
-        char[] chars = s.toCharArray();
-        Arrays.sort(chars);
-        System.out.println(String.valueOf(chars));
+//        String s = "dasd";
+//        char[] chars = s.toCharArray();
+//        Arrays.sort(chars);
+//        System.out.println(String.valueOf(chars));
         //StringBuffer buffer = new StringBuffer(String.valueOf(chars));
+
+        String s = "abcdefgh";
+        System.out.println( s.substring(0,8) );
     }
 
     public static String substringBefore(final String str, final String separator) {
