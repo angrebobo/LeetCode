@@ -78,8 +78,6 @@ public class Num199 {
         return ans;
     }
 
-
-
     public static void main(String[] args) {
         TreeNode n1 = new TreeNode(1);
         TreeNode n2 = new TreeNode(2);
@@ -90,6 +88,5 @@ public class Num199 {
         n1.right = n3;
         n2.right = n5;
         n3.right = n4;
-        System.out.println(rightSideView(n1));
     }
 }

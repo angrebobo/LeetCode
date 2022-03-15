@@ -23,7 +23,7 @@ public class Num105 {
         }
     }
 
-    static class Solution {
+    /*static class Solution {
         private Map<Integer, Integer> indexMap;
 
         public TreeNode myBuildTree(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right) {
@@ -52,18 +52,54 @@ public class Num105 {
         public TreeNode buildTree(int[] preorder, int[] inorder) {
             int n = preorder.length;
             // 构造哈希映射，帮助我们快速定位根节点
-            indexMap = new HashMap<Integer, Integer>();
+            indexMap = new HashMap<>();
             for (int i = 0; i < n; i++) {
                 indexMap.put(inorder[i], i);
             }
             return myBuildTree(preorder, inorder, 0, n - 1, 0, n - 1);
         }
+    }*/
+
+    //2022.03.15日写
+    static class Solution {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        public TreeNode build(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right){
+            if(preorder_left > preorder_right)
+                return null;
+
+            //构造根节点
+            int root = preorder[preorder_left];
+            TreeNode node = new TreeNode(root);
+
+            //定位当前根节点在中序排列中的位置
+            int inorder_root = map.get(root);
+            int sizeOfLeftTree = inorder_root - inorder_left;
+
+            node.left = build(preorder, inorder, preorder_left+1, preorder_left+sizeOfLeftTree, inorder_left, inorder_root-1);
+
+            node.right = build(preorder, inorder, preorder_left+sizeOfLeftTree+1, preorder_right, inorder_root+1, inorder_right);
+
+            return node;
+        }
+
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            int n = preorder.length;
+            //记录中序遍历中节点的位置
+            for (int i = 0; i < n; i++) {
+                map.put(inorder[i], i);
+            }
+            return build(preorder, inorder, 0, n-1, 0, n-1);
+        }
     }
+
+
     public static void main(String[] args) {
         int[] preorder = new int[]{3,9,20,15,7};
         int[] inorder = new int[]{9,3,15,20,7};
 
         Solution solution = new Solution();
-        solution.buildTree(preorder, inorder);
+        TreeNode node = solution.buildTree(preorder, inorder);
+
     }
 }
