@@ -1,3 +1,5 @@
+import java.awt.font.NumericShaper;
+
 /**
  * @author: HuangSiBo
  * @Description: 几种排序算法
@@ -138,15 +140,45 @@ public class Sort {
         nums[k] = temp;
     }
 
+    public static void mergeSort(int[] nums, int left, int right){
+        if(left < right){
+            int mid = left + (right-left)/2;
+            mergeSort(nums, left, mid);
+            mergeSort(nums, mid+1, right);
+            merge(nums, left, mid, mid+1, right);
+        }
+    }
+
+    public static void merge(int[] nums, int left1, int right1, int left2, int right2){
+        int[] temp = new int[nums.length];
+        int i = left1;
+        int j = left2;
+        int index = 0;
+        while (i<=right1 && j<=right2){
+            if(nums[i] < nums[j])
+                temp[index++] = nums[i++];
+            else
+                temp[index++] = nums[j++];
+        }
+        while (i<=right1) temp[index++] = nums[i++];
+        while (j<=right2) temp[index++] = nums[j++];
+
+        for (int k = 0; k < index; k++) {
+            nums[left1 + k] = temp[k];
+        }
+    }
+
+
 
     public static void main(String[] args) {
-        int[] example = new int[]{53,17,78,9,45,65,87,32};
+        int[] example = new int[]{53,17,78,9,45,65,87,32,32,87};
 //        int[] nums = insertSort(example);
 //        int[] nums = insertSort(example, example.length);
 //        int[] nums = quickSort(example);
-        heapSort(example);
-        /*for(int i : nums){
+//        heapSort(example);
+        mergeSort(example, 0, example.length-1);
+        for(int i : example){
             System.out.print(i + " ");
-        }*/
+        }
     }
 }

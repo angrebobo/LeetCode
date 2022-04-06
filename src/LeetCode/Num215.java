@@ -115,7 +115,7 @@ public class Num215 {
     }
 
     public static int qucikSort(int[] nums, int left, int right){
-        //使序列变得无序
+        //随机选择pivot，增强算法的鲁棒性 00
         int randomStart = (int) (left + Math.random()*(right-left));
         int temp = nums[left];
         nums[left] = nums[randomStart];
@@ -128,7 +128,7 @@ public class Num215 {
                 right--;
             }
             nums[left] = nums[right];
-            while (left < right && nums[left] < pivot){
+            while (left < right && nums[left] <= pivot){
                 left++;
             }
             nums[right] = nums[left];
