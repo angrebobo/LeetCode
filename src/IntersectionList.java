@@ -7,8 +7,10 @@
  */
 public class IntersectionList {
 
-    //定义链表节点
-    class ListNode {
+    /**
+     * 定义链表节点
+     */
+    static class ListNode {
         int val;
         ListNode next;
         ListNode(int x) {
@@ -19,10 +21,9 @@ public class IntersectionList {
 
     /**
      * @Description 返回链表环的第一个入口节点，若链表无环则返回null
-     * @param
-     * @return
+     *
      */
-    public ListNode isIntersection(ListNode head){
+    public ListNode detectCycle(ListNode head){
         ListNode slow = head;
         ListNode quick = head;
         while (quick!=null && quick.next!=null){
@@ -46,8 +47,189 @@ public class IntersectionList {
         }
     }
 
+    /**
+     * 两个无环单链表求相交节点
+     * @param head1
+     * @param head2
+     * @return
+     */
+    public ListNode noLoop(ListNode head1, ListNode head2){
+        ListNode p = head1;
+        ListNode q = head2;
+
+        while (p != q){
+            if(p != null)
+                p = p.next;
+            else
+                p = head2;
+
+            if(q != null)
+                q = q.next;
+            else
+                q = head1;
+        }
+        return p;
+    }
+
+    /**
+     * 两个有环单链表求相交节点
+     * @param head1
+     * @param loop1
+     * @param head2
+     * @param loop2
+     * @return
+     */
+    public ListNode bothLoop(ListNode head1, ListNode loop1, ListNode head2, ListNode loop2){
+        //链表相交，交点在环外
+        if(loop1 == loop2){
+            ListNode loop1Next = loop1.next;
+            ListNode loop2Next = loop2.next;
+            loop1.next = null;
+            loop2.next = null;
+
+            ListNode intersection = noLoop(head1, head2);
+
+            //还原链表结构
+            loop1.next = loop1Next;
+            loop2.next = loop2Next;
+
+            return intersection;
+        }
+        //两种情况：1、链表相交，交点在环内 2、两个有环链表不相交
+        else {
+            int count = 0;
+            boolean flag = false;
+            ListNode p = head1;
+
+            while (count <= 2){
+                if(p == loop1)
+                    count++;
+                if(p == loop2){
+                    flag = true;
+                    break;
+                }
+                p = p.next;
+            }
+
+            return !flag ? null : loop1;
+        }
+    }
+
+    /**
+     * 返回链表相交的第一个节点
+     * @param head1
+     * @param head2
+     * @return
+     */
+    public ListNode getIntersectionNode(ListNode head1, ListNode head2){
+        //获取两个链表的入环节点
+        ListNode loop1 = detectCycle(head1);
+        ListNode loop2 = detectCycle(head2);
+
+        //两个链表都无环
+        if(loop1==null && loop2==null){
+            return noLoop(head1, head2);
+        }
+        //两个链表都有环
+        else if(loop1!=null && loop2!=null){
+            return bothLoop(head1, loop1, head2, loop2);
+        }
+        //一个链表有环，一个链表无环，不可能相交
+        else {
+            return null;
+        }
+    }
+
 
     public static void main(String[] args) {
+        IntersectionList intersectionList = new IntersectionList();
+        ListNode res;
+
+        //两个无环单链表，相交
+        /*ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+        ListNode n5 = new ListNode(5);
+        n1.next = n2;n2.next = n3;n3.next = n4;n4.next = n5;
+        ListNode n6 = new ListNode(6);
+        n6.next = n3;
+        //n1,n6都是无环单链表,相交与n3节点
+        if( intersectionList.getIntersectionNode(n1, n6)!=null )
+            System.out.println( intersectionList.getIntersectionNode(n1, n6).val );
+        else
+            System.out.println("null");*/
+
+        //两个无环单链表，不相交
+        /*ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        n1.next = n2;
+        ListNode n6 = new ListNode(6);
+        ListNode n7 = new ListNode(6);
+        n6.next = n7;
+        //n1,n6都是无环单链表,不相交
+        if( intersectionList.getIntersectionNode(n1, n6)!=null )
+            System.out.println( intersectionList.getIntersectionNode(n1, n6).val );
+        else
+            System.out.println("null");*/
+
+        //一个有环单链表，一个无环单链表
+        /*ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+        n1.next = n2;n2.next = n3;n3.next = n4;n4.next = n2;
+        ListNode n5 = new ListNode(5);
+        ListNode n6 = new ListNode(6);
+        n5.next = n6;
+        //n1有环，n5无环
+        if( intersectionList.getIntersectionNode(n1, n5)!=null )
+            System.out.println( intersectionList.getIntersectionNode(n1, n6).val );
+        else
+            System.out.println("null");*/
+
+        //两个有环单链表，不相交
+        /*ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+        n1.next = n2;n2.next = n3;n3.next = n4;n4.next = n2;
+        ListNode n5 = new ListNode(5);
+        ListNode n6 = new ListNode(6);
+        n5.next = n6;n6.next = n5;
+        //n1有环，n5有环，不相交
+        if( (res=intersectionList.getIntersectionNode(n1, n5)) != null )
+            System.out.println( res.val );
+        else
+            System.out.println("null");*/
+
+        //两个有环单链表，相交，交点在环外
+        /*ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+        n1.next = n2;n2.next = n3;n3.next = n4;n4.next = n3;
+        ListNode n5 = new ListNode(5);
+        n5.next = n2;
+        //n1有环，n5有环，交点在环外为n2
+        if( (res=intersectionList.getIntersectionNode(n1, n5)) != null )
+            System.out.println( res.val );
+        else
+            System.out.println("null");*/
+
+        //两个有环单链表，相交，交点在环内
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
+        n1.next = n2;n2.next = n3;n3.next = n4;n4.next = n3;
+        ListNode n5 = new ListNode(5);
+        n5.next = n4;
+        //n1有环，n5有环，交点在环内为n4
+        if( (res=intersectionList.getIntersectionNode(n1, n5)) != null )
+            System.out.println( res.val );
+        else
+            System.out.println("null");
 
     }
 }

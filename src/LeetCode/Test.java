@@ -11,33 +11,10 @@ import java.nio.IntBuffer;
 public class Test {
 
     public static void main(String[] args) {
-        IntBuffer intBuffer = IntBuffer.allocate(20);
-
-        System.out.println("-------------after allocate----------------");
-        System.out.println("position: " + intBuffer.position());
-        System.out.println("limit: " + intBuffer.limit());
-        System.out.println("capacity: " + intBuffer.capacity());
-
-
-        for (int i = 0; i < 5; i++) {
-            intBuffer.put(i);
+        StackTraceElement stack[] = Thread.currentThread().getStackTrace();
+        for(StackTraceElement stackTraceElement : stack){
+            System.out.println(stackTraceElement);
         }
-        System.out.println("-------------after put----------------");
-        System.out.println("position: " + intBuffer.position());
-        System.out.println("limit: " + intBuffer.limit());
-        System.out.println("capacity: " + intBuffer.capacity());
-
-        intBuffer.flip();
-        System.out.println("-------------after flip----------------");
-        System.out.println("position: " + intBuffer.position());
-        System.out.println("limit: " + intBuffer.limit());
-        System.out.println("capacity: " + intBuffer.capacity());
-
-        intBuffer.clear();
-        System.out.println("-------------after clear----------------");
-        System.out.println("position: " + intBuffer.position());
-        System.out.println("limit: " + intBuffer.limit());
-        System.out.println("capacity: " + intBuffer.capacity());
     }
 }
 
