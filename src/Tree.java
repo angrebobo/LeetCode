@@ -1,3 +1,4 @@
+import java.net.HttpRetryException;
 import java.util.Stack;
 
 /**
@@ -43,21 +44,25 @@ public class Tree {
         }
     }
 
+    /**
+     * @Description 先序遍历的非递归实现。用栈。压入栈的顶，将弹出节点的右节点压入，再讲弹出节点的左节点压入
+     * @param
+     * @return
+     */
     public static void PreOrder(TreeNode root){
-         Stack<TreeNode> stack = new Stack<>();
-         TreeNode p = root;
+        if(root != null){
+            Stack<TreeNode> stack = new Stack<>();
+            stack.push(root);
 
-         while (p!=null || !stack.isEmpty()){
-             if(p != null){
-                 System.out.println(p.val);
-                 stack.push(p);
-                 p = p.left;
-             }
-             else {
-                 p = stack.pop();
-                 p = p.right;
-             }
-         }
+            while (!stack.isEmpty()){
+                root = stack.pop();
+                System.out.println(root.val);
+                if(root.right != null)
+                    stack.push(root.right);
+                if(root.left != null)
+                    stack.push(root.left);
+            }
+        }
     }
 
     public static void main(String[] args) {
