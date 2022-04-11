@@ -1,4 +1,5 @@
 import java.net.HttpRetryException;
+import java.util.List;
 import java.util.Stack;
 
 /**
@@ -23,24 +24,19 @@ public class Tree {
     }
 
     /**
-     * @Description 中序遍历的非递归实现
-     * @param
-     * @return
+     * 递归遍历树。先理解树的递归序，每个节点都有3次回到它自己的机会
+     * @param root
      */
-    public static void InOrder(TreeNode root){
-        Stack<TreeNode> stack = new Stack<>();
-        TreeNode p = root;
-
-        while (p!=null || !stack.isEmpty()){
-            if(p != null){
-                stack.push(p);
-                p = p.left;
-            }
-            else {
-                p =  stack.pop();
-                System.out.println(p.val);
-                p = p.right;
-            }
+    public static void recursion(TreeNode root){
+        if(root != null){
+//            先序在这里打印
+//            System.out.println(root.val);
+            recursion(root.left);
+//            中序在这里打印
+//            System.out.println(root.val);
+            recursion(root.right);
+//            后序在这里打印
+//            System.out.println(root.val);
         }
     }
 
@@ -65,6 +61,30 @@ public class Tree {
         }
     }
 
+
+    /**
+     * @Description 中序遍历的非递归实现
+     * @param
+     * @return
+     */
+    public static void InOrder(TreeNode root){
+        Stack<TreeNode> stack = new Stack<>();
+        TreeNode p = root;
+        while (p!=null || !stack.isEmpty()){
+            if(p != null){
+                stack.push(p);
+                p = p.left;
+            }
+            else {
+                p = stack.pop();
+                System.out.println(p.val);
+                p = p.right;
+            }
+        }
+    }
+
+
+
     public static void main(String[] args) {
         TreeNode n1 = new TreeNode(1);
         TreeNode n2 = new TreeNode(2);
@@ -73,7 +93,7 @@ public class Tree {
         TreeNode n5 = new TreeNode(5);
         n1.left = n2;n1.right = n3;
         n3.left = n4;n3.right = n5;
-//        InOrder(n1);
+        InOrder(n1);
         PreOrder(n1);
     }
 }
