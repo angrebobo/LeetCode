@@ -23,7 +23,7 @@ public class Num105 {
         }
     }
 
-    /*static class Solution {
+    static class Solution {
         private Map<Integer, Integer> indexMap;
 
         public TreeNode myBuildTree(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right) {
@@ -58,10 +58,12 @@ public class Num105 {
             }
             return myBuildTree(preorder, inorder, 0, n - 1, 0, n - 1);
         }
-    }*/
+    }
 
-    //2022.03.15日写
-    static class Solution {
+    /**
+     *  2022.03.15日写
+     */
+    /*static class Solution {
         HashMap<Integer, Integer> map = new HashMap<>();
 
         public TreeNode build(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right){
@@ -91,7 +93,7 @@ public class Num105 {
             }
             return build(preorder, inorder, 0, n-1, 0, n-1);
         }
-    }
+    }*/
 
 
     public static void main(String[] args) {
@@ -100,6 +102,5 @@ public class Num105 {
 
         Solution solution = new Solution();
         TreeNode node = solution.buildTree(preorder, inorder);
-
     }
 }
