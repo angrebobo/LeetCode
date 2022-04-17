@@ -1,3 +1,5 @@
+package 精选题目;
+
 /**
  * @author: HuangSiBo
  * @Description: 给定两个可能有环也可能无环的单链表，头结点head1和head2。请实现一个函数，如果

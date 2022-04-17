@@ -1,7 +1,10 @@
 import java.util.*;
 import java.util.Scanner;
 
-    public class Test {
+/**
+ * 测试类
+ */
+public class Test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (sc.hasNext()){
