@@ -1,5 +1,8 @@
 package LeetCode;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * @author: HuangSiBo
  * @Description:
@@ -21,9 +24,18 @@ public class Num235 {
     }
 
     class Solution {
-       /* public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
-        }*/
+        }
+
+        public List<TreeNode> findPath(TreeNode root, TreeNode node){
+            TreeNode p = root;
+            List<TreeNode> path = new LinkedList<>();
+            path.add(p);
+            while (p != node){
+
+            }
+        }
     }
 
     public static void main(String[] args) {
