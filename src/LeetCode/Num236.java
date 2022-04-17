@@ -50,7 +50,7 @@ public class Num236 {
             boolean isFin = false;
             // 去root的左孩子节点查找
             if(root.left != null)
-                isFin = dfs(stack, root.left, p);
+                isFin = dfs(stack, root.left,  p);
             // root的左孩子节点没找到，再去右孩子节点查找
             if(!isFin && root.right!=null)
                 isFin = dfs(stack, root.right, p);
