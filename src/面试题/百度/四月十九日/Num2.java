@@ -1,9 +1,13 @@
-/**
- * 测试类
- */
+package 面试题.百度.四月十九日;
 
 import java.util.Scanner;
-public class Test {
+
+/**
+ * @author: HuangSiBo
+ * @Description:
+ * @Data: Created in 21:21 2022/4/19
+ */
+public class Num2 {
     static int max = Integer.MIN_VALUE;
     static int pos;
     static int len;
@@ -60,5 +64,4 @@ public class Test {
         dfs(money, K-1, 0);
         System.out.println(max);
     }
-
 }
