@@ -5,6 +5,22 @@ import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
 
+/**
+ * 小王做试卷，试卷总分100分
+ * 题型是10个选择题，每题2分；10题多选题，每题4分。5题大题，每题8分。
+ * 必须按顺序做题。如果小王做错的题累积达到3题，立刻结束考试并计算成绩。
+ * 现在给出小王的成绩，计算小王的答题情况次数。
+ *
+ * 输入：94分
+ * 输出：100
+ *
+ * 94分，表示做错一题选择题，一题多选题。10*10=100
+ *
+ *
+ * 1,1,2,0,0,4,5
+ * /1/2
+ * 4,5,0
+ */
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
