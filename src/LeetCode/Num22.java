@@ -1,49 +1,87 @@
 package LeetCode;
 
+import java.util.LinkedList;
+import java.util.List;
+
 /**
  * @author: HuangSiBo
  * @Description:
  * @Data: Created in 23:53 2021/5/17
  */
 public class Num22 {
-     static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
+    static class Solution {
 
-    public static ListNode getKthFromEnd(ListNode head, int k) {
-         if(head == null || k <= 0) return null;
-         ListNode p = head;
-         for (int i = 1; i < k; i++){
-             // p==null说明k大于链表长
-             if(p == null)
-                 return null;
-             p = p.next;
-         }
+        public List<String> generateParenthesis(int n) {
+            List<String> list = new LinkedList<>();
+            if(n == 0)
+                return list;
+            //方法1
+            //dfs("", n, n, list);
+
+            //方法2
+            dfs("", 0, 0, list, n);
+
+            return list;
+        }
+
+        //方法1，减法
+        /*public void dfs(String curStr, int left, int right, List<String> list){
+            if(left==0 && right==0){
+                list.add(curStr);
+            }
+            if(left > right)
+                return;
+
+            if(left > 0)
+                dfs(curStr+"(", left-1, right, list);
+            if(right > 0)
+                dfs(curStr+")", left, right-1, list);
+        }*/
 
 
-         ListNode q = head;
-         while (p.next != null){
-             p = p.next;
-             q = q.next;
-         }
-         return q;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        public void dfs(String curStr, int left, int right, List<String> list, int n){
+            if(left==n && right==n)
+                list.add(curStr);
+
+            if(right > left)
+                return;
+
+            if(left < n)
+                dfs(curStr+"(", left+1, right, list, n);
+            if(right < n)
+                dfs(curStr+")", left, right+1, list, n);
+        }
     }
 
     public static void main(String[] args) {
-        ListNode node1 = new ListNode(1);
-        ListNode node2 = new ListNode(2);
-        ListNode node3 = new ListNode(3);
-        ListNode node4 = new ListNode(4);
-        ListNode node5 = new ListNode(5);
-        node1.next = node2;
-        node2.next = node3;
-        node3.next = node4;
-        node4.next = node5;
-
-        int k = 2;
-
-        System.out.println(getKthFromEnd(node1, k).val);
+        int n = 3;
+        Solution solution = new Solution();
+        System.out.println(solution.generateParenthesis(n));
     }
 }
