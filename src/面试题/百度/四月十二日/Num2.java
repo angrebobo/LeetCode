@@ -1,8 +1,5 @@
 package 面试题.百度.四月十二日;
 
-import javax.print.DocFlavor;
-import java.util.Scanner;
-
 /**
  * @author: HuangSiBo
  * @Description:
@@ -15,19 +12,15 @@ public class Num2 {
     static int len;
     static int ans = Integer.MAX_VALUE;
     public static void dfs(int[] A, int[] B, int index, int count){
-        if(index != 0 ){
-            if(index > len)
-                return;
-            if(index==len){
+        if(index == len){
+            if(isIncrease(A, index))
                 ans = Math.min(ans, count);
-                return;
-            }
-            if(A[index] <= A[index-1] && B[index] <= A[index-1])
-                return;
+            return;
         }
+        if(!isIncrease(A, index))
+            return;
 
-        if(A[index] > A[index-1])
-            dfs(A, B, index+1, count);
+        dfs(A, B, index+1, count);
 
         int temp = A[index];
         A[index] = B[index];
@@ -35,21 +28,18 @@ public class Num2 {
         A[index] = temp;
     }
 
-    public static void main(String[] args) {
-        /*Scanner sc = new Scanner(System.in);
 
-        int n = sc.nextInt();
-        len = n;
-        int[] A = new int[n];
-        int[] B = new int[n];
-        for (int i = 0; i < n; i++) {
-            A[i] = sc.nextInt();
+    public static boolean isIncrease(int[] A, int limit){
+        for (int i = limit-1; i > 0; i--) {
+            if(A[i] <= A[i-1])
+                return false;
         }
-        for (int i = 0; i < n; i++) {
-            B[i] = sc.nextInt();
-        }*/
-        int[] A = new int[]{1, 2, 1};
-        int[] B = new int[]{0, 3, 4};
+        return true;
+    }
+
+    public static void main(String[] args) {
+        int[] A = new int[]{6, 5, 8};
+        int[] B = new int[]{0, 7, 4};
         len = A.length;
         dfs(A, B, 0, 0);
         System.out.println(ans);
