@@ -50,7 +50,7 @@ public class Num297 {
     public static void main(String[] args) {
         TreeNode n1 = new TreeNode(1);
         TreeNode n2 = new TreeNode(2);
-        TreeNode n3 = new TreeNode(2);
+        TreeNode n3 = new TreeNode(3);
         TreeNode n4 = new TreeNode(4);
         TreeNode n5 = new TreeNode(5);
         n1.left=n2;n1.right=n3;
@@ -58,7 +58,6 @@ public class Num297 {
 
         Codec codec = new Codec();
         System.out.println(codec.serialize(n1));
-        TreeNode temp = codec.deserialize( codec.serialize(n1) );
-
+       //TreeNode temp = codec.deserialize( codec.serialize(n1) );
     }
 }
