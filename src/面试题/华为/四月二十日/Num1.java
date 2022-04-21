@@ -1,13 +1,9 @@
 package 面试题.华为.四月二十日;
 
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
- * 这题不知道正确答案
- *
  * 小王做试卷，试卷总分100分
  * 题型是10个选择题，每题2分；10题多选题，每题4分。5题大题，每题8分。
  * 必须按顺序做题。如果小王做错的题累积达到3题，立刻结束考试并计算成绩。
@@ -21,60 +17,33 @@ import java.util.Set;
  *
  **/
 public class Num1 {
+    private static int sum = 0;
+    private static int N;
+    public static int[] scores = {2,2,2,2,2,2,2,2,2,2,4,4,4,4,4,4,4,4,4,4,8,8,8,8,8};
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        Set<String> set = new HashSet<>();
-        dfs(100-n, 0, 0, 0, set);
-        int ans = 0;
-        for (String s : set){
-            int count1 = s.charAt(0) - '0';
-            int count2 = s.charAt(1) - '0';
-            int count3 = s.charAt(2) - '0';
-            int temp = 1;
-            if(count1!=0)
-                temp *= num(10) / (num(count1) * num(10-count1));
-            if(count2!=0)
-                temp *= num(10) / (num(count2) * num(10-count2));
-            if(count3!=0)
-                temp *= num(5) / (num(count3) * num(5-count3));
-            ans += temp;
-        }
-        System.out.println(ans);
+        Scanner scanner = new Scanner(System.in);
+        N=scanner.nextInt();
+        backTracking(0, 0, 0);
+        System.out.println(sum);
     }
 
-    public static int num(int n){
-        int sum;
-        if(n == 1 || n==0)
-            return 1;
-        else{
-            sum = n * num(n-1);
-            return sum;
-        }
-    }
-
-
-    public static void dfs(int n ,int count1, int count2, int count3, Set<String> set){
-        if(n < 0)
-            return;
-        if(count1 >= 3)
-            return;
-        if(count1 + count2 >= 3)
-            return;
-        if(count1 + count2 + count3 >= 3)
-            return;
-        if(count2>3 || count3>3)
-            return;
-
-        if(n == 0){
-            String s = "" + count1+count2+count3;
-            set.add(s);
+    public static void backTracking(int index, int score, int err){
+        //错误数达到3题或者已经做到最后一题，应结束程序并计算成绩
+        if(err == 3 || index == 25){
+            if(score == N)
+                sum++;
             return;
         }
+        if(score == N){
+            sum++;
+            return;
+        }
+        //当前分数已经高于N，接下来的题做对做错都会比N高，所以直接return
+        if(score > N)
+            return;
 
+        backTracking(index+1, score+scores[index], err);
 
-        dfs(n-2, count1+1, count2, count3, set);
-        dfs(n-4, count1, count2+1, count3, set);
-        dfs(n-8, count1, count2, count3+1, set);
+        backTracking(index+1, score, err+1);
     }
 }
