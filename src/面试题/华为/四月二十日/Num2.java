@@ -38,7 +38,7 @@ import java.util.Scanner;
  *
  * @Data: Created in 20:02 2022/4/20
  */
-public class Main1 {
+public class Num2 {
 
     static class TreeNode{
         int val;

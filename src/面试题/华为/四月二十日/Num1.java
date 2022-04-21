@@ -20,7 +20,7 @@ import java.util.Set;
  *
  *
  **/
-public class Main {
+public class Num1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
