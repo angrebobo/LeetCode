@@ -19,7 +19,7 @@ public class BloomFilter {
     private int getHash(String message, int n){
         try {
             MessageDigest md5 = MessageDigest.getInstance("md5");
-            message  = message +String.valueOf(n);
+            message  = message + n;
             byte[] bytes = message.getBytes();
             md5.update(bytes);
             BigInteger bi = new BigInteger(md5.digest());
