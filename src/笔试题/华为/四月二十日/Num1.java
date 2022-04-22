@@ -1,4 +1,4 @@
-package 面试题.华为.四月二十日;
+package 笔试题.华为.四月二十日;
 
 
 import java.util.Scanner;

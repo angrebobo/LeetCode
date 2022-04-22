@@ -1,4 +1,4 @@
-package 面试题.百度.四月十二日;
+package 笔试题.百度.四月十二日;
 
 /**
  * @author: HuangSiBo

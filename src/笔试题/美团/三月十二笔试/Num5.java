@@ -1,9 +1,4 @@
-package 面试题.美团.三月十二笔试;
-
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+package 笔试题.美团.三月十二笔试;
 
 /**
  * @author: HuangSiBo

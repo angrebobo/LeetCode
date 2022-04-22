@@ -1,4 +1,4 @@
-package 面试题.百度.四月十九日;
+package 笔试题.百度.四月十九日;
 
 import java.util.Scanner;
 

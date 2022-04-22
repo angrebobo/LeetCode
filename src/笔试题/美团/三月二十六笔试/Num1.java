@@ -1,4 +1,4 @@
-package 面试题.美团.三月二十六笔试;
+package 笔试题.美团.三月二十六笔试;
 
 /**
  * @author: HuangSiBo

@@ -1,4 +1,4 @@
-package 面试题.美团.四月十六日笔试;
+package 笔试题.美团.四月十六日笔试;
 
 
 import java.util.LinkedList;
