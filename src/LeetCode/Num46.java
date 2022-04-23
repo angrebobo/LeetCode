@@ -36,13 +36,9 @@ public class Num46 {
             if(!used[i]){
                 path.add(nums[i]);
                 used[i] = true;
-                System.out.println("现在在第" + depth + "层,i = " + i);
-                System.out.println("path=" + path);
                 dfs(nums, depth+1, len, used, path, res);
                 used[i] = false;
                 path.remove(path.size() - 1);
-                System.out.println("现在在第" + depth + "层,i = " + i);
-                System.out.println("path=" + path);
             }
         }
     }
