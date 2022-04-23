@@ -1,11 +1,9 @@
-import java.awt.font.NumericShaper;
-
 /**
  * @author: HuangSiBo
  * @Description: 几种排序算法
  * @Data: Created in 19:31 2021/9/25
  */
-public class Sort {
+public class 排序算法 {
 
     /**
      * @Description 插入排序，时间复杂度为O(n2)

@@ -10,7 +10,7 @@ import java.util.logging.Logger;
  * @param
  * @return
  */
-public class BloomFilter {
+public class BloomFilter布隆过滤器 {
     public static final int NUM_SLOTS = 1024*1024*8;
     public static final int NUM_HASH = 8;
     private BigInteger bitmap = new BigInteger("0");
@@ -26,7 +26,7 @@ public class BloomFilter {
 
             return Math.abs(bi.intValue()) % NUM_SLOTS;
         } catch (NoSuchAlgorithmException ex) {
-            Logger.getLogger(BloomFilter.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(BloomFilter布隆过滤器.class.getName()).log(Level.SEVERE, null, ex);
         }
         return -1;
     }
@@ -57,7 +57,7 @@ public class BloomFilter {
 
     //测试代码
     public static void main(String[] args) {
-        BloomFilter bloomFilter = new BloomFilter();
+        BloomFilter布隆过滤器 bloomFilter = new BloomFilter布隆过滤器();
         ArrayList<String> contents = new ArrayList<>();
         contents.add("fdsfsdffsdf");
         contents.add("fsdfs655hgh;;");

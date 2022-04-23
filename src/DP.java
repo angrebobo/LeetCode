@@ -75,15 +75,6 @@ public class DP {
         return max;
     }
 
-    /**
-     * @Description 最长公共子序列
-     * @param
-     * @return
-     */
-    public static void DP4(){
-
-    }
-
 
     public static void main(String[] args) {
 //        System.out.println(DP1());

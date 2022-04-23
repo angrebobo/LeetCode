@@ -5,7 +5,7 @@ import java.util.Stack;
  * @Description: 树的遍历方法
  * @Data: Created in 9:30 2021/9/26
  */
-public class Tree {
+public class 树的递归遍历及非递归遍历 {
 
     static class TreeNode{
         int val;

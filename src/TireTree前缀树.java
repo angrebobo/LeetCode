@@ -3,7 +3,7 @@
  * @Description: 前缀树
  * @Data: Created in 15:52 2022/4/17
  */
-public class TireTree {
+public class TireTree前缀树 {
 
     public class TireNode{
         int pass;
@@ -22,7 +22,7 @@ public class TireTree {
 
     private TireNode root;
 
-    public TireTree() {
+    public TireTree前缀树() {
         root = new TireNode();
     }
 
@@ -119,7 +119,7 @@ public class TireTree {
 
     public static void main(String[] args) {
         String[] s = new String[]{"abc", "abd", "abe", "abe"};
-        TireTree tireTree = new TireTree();
+        TireTree前缀树 tireTree = new TireTree前缀树();
         for (int i = 0; i < s.length; i++) {
             tireTree.insert(s[i]);
         }
