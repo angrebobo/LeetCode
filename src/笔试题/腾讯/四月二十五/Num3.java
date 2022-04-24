@@ -38,25 +38,27 @@ public class Num3 {
             }
         }
 
-        int min = Integer.MAX_VALUE;
+        //答题的时候，这里是int，只过了60%的案例，改成long就能过100%
+        Long min = Long.MAX_VALUE;
         for (int pos = 0; pos <= n; pos++) {
+            int w;
+            int v;
             if(pos == 0){
-                int w = 0;
-                int v = defendPreSum[n-1];
-                min = Math.min(min, Math.abs(w-v));
+                w = 0;
+                v = defendPreSum[n-1];
             }
             else if(pos == n){
-                int w = attackPreSum[n-1];
-                int v = 0;
-                min = Math.min(min, Math.abs(w-v));
+                w = attackPreSum[n-1];
+                v = 0;
             }
             else {
-                int w = attackPreSum[pos-1];
-                int v = defendPreSum[n-1] - defendPreSum[pos];
-                min = Math.min(min, Math.abs(w-v));
+                w = attackPreSum[pos-1];
+                v = defendPreSum[n-1] - defendPreSum[pos];
             }
+
+            min = Math.min(min, Math.abs(w-v));
         }
 
-        System.out.println(min);
+        System.out.println( min );
     }
 }
