@@ -12,7 +12,7 @@ public class 排序算法 {
      */
     public static int[] insertSort(int[] nums){
         int len = nums.length;
-        int temp = 0;
+        int temp;
         int j;
 
         for (int i = 1; i < len; i++) {
@@ -174,7 +174,8 @@ public class 排序算法 {
 //        int[] nums = insertSort(example, example.length);
 //        int[] nums = quickSort(example);
 //        heapSort(example);
-        mergeSort(example, 0, example.length-1);
+//        mergeSort(example, 0, example.length-1);
+        insertSort(example);
         for(int i : example){
             System.out.print(i + " ");
         }
