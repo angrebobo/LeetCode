@@ -1,10 +1,12 @@
+package 笔试题.腾讯.四月二十五;
+
 import java.util.*;
 /**
  * @author: HuangSiBo
  * @Description:
  * @Data: Created in 20:17 2022/4/24
  */
-public class Main1 {
+public class Num2 {
 
     static public class Solution {
         /**

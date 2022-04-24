@@ -1,3 +1,5 @@
+package 笔试题.腾讯.四月二十五;
+
 import java.util.Scanner;
 
 /**
@@ -5,7 +7,7 @@ import java.util.Scanner;
  * @Description:
  * @Data: Created in 21:09 2022/4/24
  */
-public class Main2 {
+public class Num3 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
