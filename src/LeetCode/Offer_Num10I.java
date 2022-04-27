@@ -5,7 +5,7 @@ package LeetCode;
  * @Description:
  * @Data: Created in 18:28 2022/4/27
  */
-public class Offer_Num10 {
+public class Offer_Num10I {
     class Solution {
         public int fib(int n) {
             if(n==0) return 0;
