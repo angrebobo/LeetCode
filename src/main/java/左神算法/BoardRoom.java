@@ -10,7 +10,7 @@ import java.util.Arrays;
  * 你来安排宣讲的日程，要求会议室进行的宣讲的场次最多，返回这个最多的宣讲场次。
  * @Data: Created in 15:33 2022/4/22
  */
-public class boardRoom {
+public class BoardRoom {
     static class Program{
         int start;
         int end;

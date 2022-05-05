@@ -7,7 +7,7 @@ package 左神算法;
  * 给定一个只有数字字符组成的字符串str，返回有多少种转化结果
  * @Data: Created in 15:55 2022/5/5
  */
-public class convertToLetterString {
+public class ConvertToLetterString {
     public static int convert(String s){
         if(s==null || s.length()==0)
             return 0 ;

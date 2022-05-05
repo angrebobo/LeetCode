@@ -6,10 +6,10 @@ import java.util.List;
 /**
  * @author: HuangSiBo
  * @Description: 给定N个整数（可能有负数），从中选择K个数，使得这K个数之和恰好等于一个给定的整数target:
- * 如果有多种方案，选择它们中元素平方和最大的一个。数据保证这样的方案唯一。
+ *  * 如果有多种方案，选择它们中元素平方和最大的一个。数据保证这样的方案唯一。
  * @Data: Created in 22:01 2022/3/12
  */
-public class DFS {
+public class ChooseKNums {
     static int[] N = new int[]{2,3,3,4};
     static int K = 2;
     static int target = 6;
