@@ -36,10 +36,11 @@ public class Bag {
         }
         for (int i = 1; i < len; i++) {
             for (int j = 1; j <= capacity; j++) {
-                //第i件物品，就两种状态，放或者不放
-                if(j >= weights[i]){
+                if(j >= weights[i])
+                    //第i件物品，就两种状态，放或者不放
                     dp[i][j] = Math.max(dp[i-1][j] , dp[i-1][j-weights[i]]+values[i]);
-                }
+                else
+                    dp[i][j] = dp[i-1][j];
             }
         }
 
