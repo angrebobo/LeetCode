@@ -29,18 +29,18 @@ public class convertToLetterString {
         // i没有到终止位置 && i位置不是0字符
 
         // i位置是1字符，i+1位置无论是什么字符都不会超过26，都可以转换
-        if(str[index]=='1') {
+        if(str[index] == '1') {
             int res=convertToString(str, index+1);// i位置自己单独转换，后续有多少种方法
-            if(index+1<str.length) {
+            if(index+1 < str.length) {
                 res+=convertToString(str, index+2);// i和i+1位置一起转换，后续有多少种方法
             }
             return res;
         }
         // i位置是2字符，如果i+1位置的字符是0~6，i和i+1就可以一起转换，然后i+2位置接着递归
         // 否则只能i位置自己转换，然后i+1位置接着递归
-        if(str[index]=='2') {
+        if(str[index] == '2') {
             int res=convertToString(str, index+1);
-            if(index+1<str.length && (str[index+1]>='0' && str[index+1]<='6')) {
+            if(index+1 < str.length && (str[index+1]>='0' && str[index+1]<='6')) {
                 res+=convertToString(str, index+2);
             }
             return res;
@@ -49,7 +49,7 @@ public class convertToLetterString {
     }
 
     public static void main(String[] args) {
-        String s = "111";
-        System.out.println(convert(s));
+        String s = "666666";
+        System.out.println( convert(s) );
     }
 }
