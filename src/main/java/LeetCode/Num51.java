@@ -27,14 +27,14 @@ public class Num51 {
                 if( isValue(i, j, record) ){
                     record[i] = j;
 
-                    path.add(process(i, j, n));
+                    path.add(process(j, n));
                     backTrace(i+1, record, n, res, path);
                     path.remove(path.size()-1);
                 }
             }
         }
 
-        public String process(int i, int j, int n){
+        public String process(int j, int n){
             StringBuffer buffer = new StringBuffer();
             for (int k = 0; k < n; k++) {
                 if(k == j)
@@ -46,6 +46,9 @@ public class Num51 {
             return buffer.toString();
         }
 
+        /**
+         * 检测在第i行第j列放置皇后，是否会和已放置的皇后同列同斜线
+         */
         public boolean isValue(int i, int j, int[] record){
             for (int k = 0; k < i; k++) {
                 if(j == record[k] || Math.abs(k-i)==Math.abs(record[k]-j))

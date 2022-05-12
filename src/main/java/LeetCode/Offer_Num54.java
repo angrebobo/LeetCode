@@ -7,7 +7,7 @@ import java.util.Stack;
  * @Description:
  * @Data: Created in 23:06 2022/4/26
  */
-public class OfferNum54 {
+public class Offer_Num54 {
     static class TreeNode {
         int val;
         TreeNode left;
