@@ -1,5 +1,7 @@
 package 左神算法;
 
+import com.sun.javafx.robot.FXRobotImage;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -27,11 +29,22 @@ public class 机器人走路 {
 //        path.add(M);
 //        dfsPath(N, M, K, P, path);
 
-        long startTime=System.currentTimeMillis();
-        dfsCount(N, M, K, P);
-        System.out.println("dfsCount ans: " + count);
-        long endTime=System.currentTimeMillis();
-        System.out.println("dfsCount花费的时间： " + (endTime-startTime) + "ms");
+//        long startTime=System.currentTimeMillis();
+//        dfsCount(N, M, K, P);
+//        System.out.println("dfsCount ans: " + count);
+//        long endTime=System.currentTimeMillis();
+//        System.out.println("dfsCount花费的时间： " + (endTime-startTime) + "ms");
+
+        cache = new int[N+1][K+1];
+        for (int i = 0; i < N+1; i++) {
+            for (int j = 0; j < K+1; j++) {
+                cache[i][j] = -1;
+            }
+        }
+        long startTime2=System.currentTimeMillis();
+        System.out.println("dfsCache ans: " + dfsCache(N, M, K, P));
+        long endTime2=System.currentTimeMillis();
+        System.out.println("dfsCache花费的时间： " + (endTime2-startTime2) + "ms");
 
         long startTime1=System.currentTimeMillis();
         System.out.println("dfsCount1 ans: " + dfsCount1(N, M, K, P));
@@ -100,16 +113,35 @@ public class 机器人走路 {
      * 设计一个缓存，避免递归过程中大量的重复计算
      * 计算机器人能到达终点的路径
      */
+    static int[][] cache;
     public static int dfsCache(int N, int M, int K, int P){
-        return 0;
+        if(cache[M][K] != -1)
+            return cache[M][K];
+
+        if(K == 0){
+            cache[M][K] = (M==P ? 1 : 0);
+            return cache[M][K];
+        }
+
+        if(M == 1){
+            cache[M][K] = dfsCount1(N, 2, K-1, P);
+            return cache[M][K];
+        }
+        if(M == N){
+            cache[M][K] = dfsCount1(N, N-1, K-1, P);
+            return cache[M][K];
+        }
+
+        cache[M][K] = dfsCount1(N, M-1, K-1, P) + dfsCount1(N, M+1, K-1, P);
+        return cache[M][K];
     }
 
 
     public static void main(String[] args) {
-        int N = 30;
-        int M = 10;
-        int P = 29;
-        int K = 23;
+        int N = 20;
+        int M = 2;
+        int P = 19;
+        int K = 33;
         walk(N, M, K, P);
 
 //        System.out.println( list.toString() );
