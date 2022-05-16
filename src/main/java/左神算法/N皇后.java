@@ -29,7 +29,7 @@ public class N皇后 {
         return res;
     }
 
-    public static boolean isValid(int i, int j, int[] record){
+    public static boolean  isValid(int i, int j, int[] record){
         for (int k = 0; k < i; k++) {
             //判断是否在同一列或者在同一斜线上
             if(j == record[k] || Math.abs(record[k]-j)==Math.abs(i-k))
