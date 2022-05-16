@@ -1,7 +1,5 @@
 package 左神算法;
 
-import com.sun.javafx.robot.FXRobotImage;
-
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,6 +23,7 @@ public class 机器人走路 {
         if(N < 2 || P < 1 || P > N)
             return;
 
+//        打印机器人走过的路径
 //        List<Integer> path = new LinkedList<>();
 //        path.add(M);
 //        dfsPath(N, M, K, P, path);
@@ -35,6 +34,14 @@ public class 机器人走路 {
 //        long endTime=System.currentTimeMillis();
 //        System.out.println("dfsCount花费的时间： " + (endTime-startTime) + "ms");
 
+        //暴力递归
+        long startTime1=System.currentTimeMillis();
+        System.out.println("dfsCount1 ans: " + dfsCount1(N, M, K, P));
+        long endTime1=System.currentTimeMillis();
+        System.out.println("dfsCount1花费的时间： " + (endTime1-startTime1) + "ms");
+
+
+        //记忆化搜索
         cache = new int[N+1][K+1];
         for (int i = 0; i < N+1; i++) {
             for (int j = 0; j < K+1; j++) {
@@ -46,10 +53,11 @@ public class 机器人走路 {
         long endTime2=System.currentTimeMillis();
         System.out.println("dfsCache花费的时间： " + (endTime2-startTime2) + "ms");
 
-        long startTime1=System.currentTimeMillis();
-        System.out.println("dfsCount1 ans: " + dfsCount1(N, M, K, P));
-        long endTime1=System.currentTimeMillis();
-        System.out.println("dfsCount1花费的时间： " + (endTime1-startTime1) + "ms");
+        //动态规划
+        long startTime3=System.currentTimeMillis();
+        System.out.println("dp ans: " + dp(N, M, K, P));
+        long endTime3=System.currentTimeMillis();
+        System.out.println("dp花费的时间： " + (endTime3-startTime3) + "ms");
     }
 
     /**
@@ -110,11 +118,12 @@ public class 机器人走路 {
     }
 
     /**
+     * 记忆化搜索
      * 设计一个缓存，避免递归过程中大量的重复计算
      * 计算机器人能到达终点的路径
      */
     static int[][] cache;
-    public static int dfsCache(int N, int M, int K, int P){
+    public static int dfsCache(int N, int M , int K, int P){
         if(cache[M][K] != -1)
             return cache[M][K];
 
@@ -136,12 +145,42 @@ public class 机器人走路 {
         return cache[M][K];
     }
 
+    /**
+     *
+     * 根据记忆化搜索推导出dp
+     */
+    public static int dp(int N, int M , int K, int P){
+        int[][] dp = new int[N+1][K+1];
+        for (int i = 0; i < K+1; i++) {
+            dp[0][i] = 0;
+        }
+        for (int i = 0; i < N+1; i++) {
+            if(i == P)
+                dp[i][0] = 1;
+            else
+                dp[i][0] = 0;
+        }
+
+        for (int col = 1; col < K+1; col++) {
+            for (int row = 1; row < N+1; row++) {
+                if(row == 1)
+                    dp[row][col] = dp[row+1][col-1];
+                else if(row == N)
+                    dp[row][col] = dp[row-1][col-1];
+                else
+                    dp[row][col] = dp[row-1][col-1] + dp[row+1][col-1];
+            }
+        }
+
+        return dp[M][K];
+    }
+
 
     public static void main(String[] args) {
         int N = 20;
         int M = 2;
         int P = 19;
-        int K = 33;
+        int K = 34;
         walk(N, M, K, P);
 
 //        System.out.println( list.toString() );
