@@ -40,7 +40,7 @@ public class ConvertToLetterString {
         // 否则只能i位置自己转换，然后i+1位置接着递归
         if(str[index] == '2') {
             int res=convertToString(str, index+1);
-            if(index+1 < str.length && (str[index+1]>='0' && str[index+1]<='6')) {
+            if(index+1 < str.length && (str[index+1]>='0' && str[index+1]<'6')) {
                 res+=convertToString(str, index+2);
             }
             return res;
@@ -49,7 +49,7 @@ public class ConvertToLetterString {
     }
 
     public static void main(String[] args) {
-        String s = "666666";
+        String s = "506";
         System.out.println( convert(s) );
     }
 }

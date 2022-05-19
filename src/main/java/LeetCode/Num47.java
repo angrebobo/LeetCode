@@ -85,11 +85,6 @@ public class Num47 {
         Solution solution = new Solution();
         List<List<Integer>> ans = solution.permuteUnique(nums);
 
-        for(List<Integer> list : ans){
-            for(Integer integer : list){
-                System.out.print(integer + " ");
-            }
-            System.out.println();
-        }
+        System.out.println(ans.toString());
     }
 }

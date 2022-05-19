@@ -31,8 +31,8 @@ public class Bag {
         int len = weights.length;
         //dp[i][j]的含义是从0-i的物品里任意取，装进容量为j的背包里，产生的最大的价格总和
         int[][] dp = new int[len][capacity+1];
-        for (int i = weights[0]; i <= capacity; i++) {
-            dp[0][i] = values[0];
+        for (int j = weights[0]; j <= capacity; j++) {
+            dp[0][j] = values[0];
         }
         for (int i = 1; i < len; i++) {
             for (int j = 1; j <= capacity; j++) {
