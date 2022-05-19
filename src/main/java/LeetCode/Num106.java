@@ -44,7 +44,7 @@ public class Num106 {
             int root_val = postorder[postorder_right];
             TreeNode root = new TreeNode(root_val);
 
-            //根节点在中序遍历种的位置
+            //根节点在中序遍历中的位置
             int position = map.get(root_val);
             int leftTreeLength = position - inorder_left;
 
