@@ -62,7 +62,7 @@ public class Num46 {
     }
 
     public static void main(String[] args) {
-        int[] nums = new int[]{5, 4, 6, 2};
+        int[] nums = new int[]{1,2,3,4};
         List<List<Integer>> ans = permute(nums);
         System.out.println(ans);
     }
