@@ -12,7 +12,6 @@ public class Num226 {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
         TreeNode(int val) { this.val = val; }
         public TreeNode(int val, TreeNode left, TreeNode right) {
             this.val = val;
@@ -31,11 +30,12 @@ public class Num226 {
             if(root == null)
                 return;
 
-            reverse(root.left);
-            reverse(root.right);
             TreeNode temp = root.left;
             root.left = root.right;
             root.right = temp;
+
+            reverse(root.left);
+            reverse(root.right);
         }
     }
 
