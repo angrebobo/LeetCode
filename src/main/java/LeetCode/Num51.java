@@ -6,6 +6,7 @@ import java.util.List;
 /**
  * @author: HuangSiBo
  * @Description:
+ * N皇后，典型回溯题
  * @Data: Created in 20:17 2022/5/11
  */
 public class Num51 {
@@ -30,6 +31,7 @@ public class Num51 {
 
                     path.add( process(j, n) );
                     backTrace(i+1, record, n, res, path);
+                    //record[i]的状态不用改,下一次循环会覆盖掉
                     path.remove(path.size()-1);
                 }
             }
