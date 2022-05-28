@@ -1,5 +1,6 @@
 package LeetCode;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -11,7 +12,9 @@ import java.util.Map;
 public class Num169 {
 
     static class Solution {
-        public int majorityElement(int[] nums) {
+
+        //方法1，哈希表
+        /*public int majorityElement(int[] nums) {
             int n = nums.length;
             if(n == 1) return nums[0];
             Map<Integer,Integer> map = new HashMap<>();
@@ -29,7 +32,33 @@ public class Num169 {
                 }
             }
             return -1;
+        }*/
+
+        //排序，下标n/2的位置一定是众数
+        /*public int majorityElement(int[] nums){
+            Arrays.sort(nums);
+            return nums[nums.length/2];
+        }*/
+
+        public int majorityElement(int[] nums){
+            int candidate = nums[0];
+            int count = 1;
+            int len = nums.length;
+
+            for (int i = 1; i < len; i++) {
+                if(candidate == nums[i]){
+                    count++;
+                }
+                else {
+                    if(--count == 0){
+                        candidate = nums[i];
+                        count = 1;
+                    }
+                }
+            }
+            return candidate;
         }
+
     }
 
     public static void main(String[] args) {
