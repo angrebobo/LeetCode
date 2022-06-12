@@ -1,0 +1,48 @@
+package LeetCode;
+
+/**
+ * @author: HuangSiBo
+ * @Description:
+ * 题解：https://leetcode.cn/problems/trapping-rain-water/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-w-8/
+ * @Data: Created in 20:42 2022/6/12
+ */
+public class Num42 {
+    static class Solution {
+        //按列法
+        //求出左边最高的列leftMax，右边最高的列rightMax，两者中取小的值temp
+        //根据木桶效应，如果temp比当前列值大，则能积累雨水，数量为temp-当前列
+        //时间复杂度为O(n^2),遍历数组n，每个列求左右最大值n
+        /*public int trap(int[] height) {
+            int count = 0;
+            int len = height.length;
+            int leftMax, rightMax;
+            for (int i = 1; i < len-1; i++) {
+                leftMax = 0;
+                rightMax = 0;
+                for (int left = 0; left < i; left++) {
+                    leftMax = Math.max(leftMax, height[left]);
+                }
+                for (int right = i+1; right < len; right++) {
+                    rightMax = Math.max(rightMax, height[right]);
+                }
+                int temp = Math.min(leftMax, rightMax);
+                if(temp > height[i])
+                    count += temp-height[i];
+            }
+
+            return count;
+        }*/
+
+        //
+        public int trap(int[] height){
+
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int[] height = new int[]{0,1,0,2,1,0,1,3,2,1,2,1};
+        Solution solution = new Solution();
+        System.out.println(solution.trap(height));
+    }
+}
