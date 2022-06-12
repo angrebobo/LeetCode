@@ -33,9 +33,28 @@ public class Num42 {
             return count;
         }*/
 
-        //
+        //求当前列左右列的最大值，用动态规划
+        //时间复杂度O(n)
         public int trap(int[] height){
+            int count = 0;
+            int len = height.length;
+            int[] leftMax = new int[len];
+            int[] rightMax = new int[len];
+            leftMax[0] = 0;
+            for (int i = 1; i < len; i++) {
+                leftMax[i] = Math.max(leftMax[i-1], height[i-1]);
+            }
+            rightMax[len-1] = 0;
+            for (int i = len-2; i >= 0; i--) {
+                rightMax[i] = Math.max(rightMax[i+1], height[i+1]);
+            }
+            for (int i = 1; i < len-1; i++) {
+                int temp = Math.min(leftMax[i], rightMax[i]);
+                if(temp > height[i])
+                    count += temp-height[i];
+            }
 
+            return count;
         }
 
     }
