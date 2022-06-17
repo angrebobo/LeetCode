@@ -63,7 +63,7 @@ public class Num101 {
         TreeNode n7 = new TreeNode(4);
         n1.left=n2;n1.right=n3;
         n2.left=n4;n2.right=n6;
-        //n3.left=n7;
+        n3.left=n7;
         n3.right=n5;
         System.out.println(isSymmetric(n1));
     }
