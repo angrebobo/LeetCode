@@ -14,25 +14,58 @@ public class Num450 {
     }
 
     static class Solution {
-        public TreeNode deleteNode(TreeNode root, int key) {
-            if (root == null) return null;
+        /*public TreeNode deleteNode(TreeNode root, int key) {
+            if(root == null) return root;
 
-            if (key > root.val)
-                root.right = deleteNode(root.right, key); // 去右子树删除
-            else if(key < root.val)
-                root.left = deleteNode(root.left, key);  // 去左子树删除
-            else  {  // 当前节点就是要删除的节点
-                if (root.left == null)   return root.right;      // 情况1，欲删除节点无左子
-                else if (root.right == null)  return root.left;  // 情况2，欲删除节点无右子
-                else {  // 情况3，欲删除节点左右子都有
-                    TreeNode node = root.right;
-                    while (node.left != null)      // 寻找欲删除节点右子树的最左节点
-                        node = node.left;
-
-                    node.left = root.left;     // 将欲删除节点的左子树成为其右子树的最左节点的左子树
-                    root = root.right;         // 欲删除节点的右子顶替其位置，节点被删除
+            TreeNode p = root;
+            while (true){
+                if(key < p.val)
+                    p = p.left;
+                else if(key > p.val)
+                    p = p.right;
+                else {
+                    break;
                 }
             }
+
+            if(p.left == null) return p.right;
+            else if(p.right == null) return p.left;
+            else {
+                TreeNode pre = p;
+                TreeNode node = p.left;
+                while (node.left != null){
+                    pre = pre.left;
+                    node = node.left;
+                }
+                p.val = node.val;
+                pre.left = null;
+                return root;
+            }
+        }*/
+
+        //要删除节点为p，把p的左子树放到p的右子树最左边节点的左子树上
+        public TreeNode deleteNode(TreeNode root, int key){
+            if(root == null) return null;
+
+            if(key < root.val)
+                root.left = deleteNode(root.left, key);
+            else if(key > root.val)
+                root.right = deleteNode(root.right, key);
+            else {
+                if(root.left == null)
+                    return root.right;
+                else if(root.right == null)
+                    return root.left;
+                else {
+                    TreeNode node = root.right;
+                    while (node.left != null)
+                        node = node.left;
+
+                    node.left = root.left;
+                    root = root.right;
+                }
+            }
+
             return root;
         }
     }
