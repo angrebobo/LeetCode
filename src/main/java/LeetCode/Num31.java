@@ -1,87 +1,66 @@
 package LeetCode;
 
+import java.util.Arrays;
+
 /**
  * @author: HuangSiBo
  * @Description:
+ * 题解： https://leetcode.cn/problems/next-permutation/solution/xia-yi-ge-pai-lie-suan-fa-xiang-jie-si-lu-tui-dao-/
+ * 这一题看题解理解
  * @Data: Created in 17:09 2021/5/28
  */
 public class Num31 {
-    public static void nextPermutation(int[] nums) {
-        int len = nums.length;
-        boolean flag = false;
-        for (int i = len-1; i >= 1; i--) {
-            if(nums[i] > nums[i-1]){
-                int temp = nums[i-1];
-                nums[i-1] = nums[i];
-                nums[i] = temp;
-                flag = true;
-                break;
-            }
-        }
-        if(!flag){
-            int l = 0;
-            int r = len-1;
-            while (l<r){
-                int temp = nums[l];
-                nums[l] = nums[r];
-                nums[r] = temp;
-                l++;
-                r--;
-            }
-        }
-    }
-
-    /**
-     * @Description 2021.10.06写
-     * @param
-     * @return
-     */
     static class Solution {
         public void nextPermutation(int[] nums) {
             int len = nums.length;
-            int i;
-            int k;
+            if(len == 1)
+                System.out.println(nums[0]);
 
-            for (i = len-1; i >= 1; i--) {
-                if(nums[i-1] < nums[i])
-                    break;
-            }
-
-            if(i == 1){
-
-            }
-
-            for (k = len-1; k > i-1; k--) {
-                if(nums[i-1] < nums[k]){
+            int i = 0,j = 0;
+            for (int k = len-1; k >= 1; k--) {
+                if(nums[k-1] < nums[k]){
+                    i = k-1;
+                    j = k;
                     break;
                 }
             }
 
-            int temp = nums[i-1];
-            nums[i-1] = nums[k];
-            nums[k] = temp;
+            //i，j无变化说明整个数组是有序的
+            if(i == 0 && j == 0){
+                for (int k = 0; k < len/2; k++) {
+                    int temp = nums[len-1-k];
+                    nums[len-1-k] = nums[k];
+                    nums[k] = temp;
+                }
+                for (int k = 0; k < len; k++) {
+                    System.out.print(nums[k]);
+                }
+            }
+            //nums存在更大的字典序
+            else {
+                int m = 0;
+                for (int k = len-1; k >= j; k--) {
+                    if(nums[k] > nums[i]){
+                        m = k;
+                        break;
+                    }
+                }
 
-            int count = 0;
-            for (int j = i; j < len; j++) {
-                if(count >= (len-i)/2)
-                    break;
+                int temp = nums[m];
+                nums[m] = nums[i];
+                nums[i] = temp;
 
-                int temp1 = nums[j];
-                nums[j] = nums[len-1-count];
-                nums[len-1-count] = temp1;
-
-                count++;
+                Arrays.sort(nums, i + 1, len);
+                for (int k = 0; k < len; k++) {
+                    System.out.print(nums[k]);
+                }
             }
         }
     }
 
     public static void main(String[] args) {
-        int[] nums = {3,2,1};
-        // nextPermutation(nums);
+        int[] nums = new int[]{1,3,2};
         Solution solution = new Solution();
-        solution.nextPermutation( nums );
-        for (int i = 0; i < nums.length; i++) {
-            System.out.println(nums[i]);
-        }
+        solution.nextPermutation(nums);
     }
 }
