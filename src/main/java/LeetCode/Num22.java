@@ -39,36 +39,19 @@ public class Num22 {
         }*/
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        /**
+         *
+         * @param curStr 当前字符串
+         * @param left 左括号的个数
+         * @param right 右括号的个数
+         * @param list 存结果
+         * @param n
+         */
         public void dfs(String curStr, int left, int right, List<String> list, int n){
             if(left==n && right==n)
                 list.add(curStr);
 
+            //当右括号个数大于左括号个数，结束
             if(right > left)
                 return;
 
