@@ -1,8 +1,6 @@
 package LeetCode;
 
-import java.util.ArrayDeque;
-import java.util.ArrayList;
-import java.util.Deque;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,79 +10,76 @@ import java.util.List;
  */
 public class Num93 {
 
-    public static List<String> restoreIpAddresses(String s) {
-        int len = s.length();
-        List<String> res = new ArrayList<>();
-        // 如果长度不够，不搜索
-        if (len < 4 || len > 12) {
+    static class Solution {
+        public List<String> restoreIpAddresses(String s) {
+            List<String> res = new LinkedList<>();
+            int len = s.length();
+            //ip地址最短长度为4，最长长度为12
+            if(len < 4 || len > 12)
+                return res;
+
+            List<String> ip = new LinkedList<>();
+            dfs(0, 0, ip, len, res, s);
             return res;
         }
 
-        Deque<String> path = new ArrayDeque<>(4);
-        int splitTimes = 0;
-        dfs(s, len, splitTimes, 0, path, res);
-        return res;
-    }
+        /**
+         *
+         * @param splitTimes 当前分段次数
+         * @param begin 从下标begin处开始分段
+         * @param ip
+         * @param len
+         * @param res
+         * @param s
+         */
+        public void dfs(int splitTimes, int begin, List<String> ip, int len, List<String> res, String s){
+            //当分段次数达到4次并且
+            if(splitTimes==4 && begin==len)
+                res.add( String.join(".", ip) );
 
-    /**
-     * 判断 s 的子区间 [left, right] 是否能够成为一个 ip 段
-     * 判断的同时顺便把类型转了
-     *
-     * @param s
-     * @param left
-     * @param right
-     * @return
-     */
-    private static int judgeIfIpSegment(String s, int left, int right) {
-        int len = right - left + 1;
+            //当剩余长度过短或者过长，停止分段
+            if(len-begin < 4-splitTimes || len-begin > 3*(4-splitTimes))
+                return;
 
-        // 大于 1 位的时候，不能以 0 开头
-        if (len > 1 && s.charAt(left) == '0') {
-            return -1;
-        }
+            for (int i = 0; i < 3; i++) {
+                if(begin + i >= len)
+                    break;
 
-        // 转成 int 类型
-        int res = 0;
-        for (int i = left; i <= right; i++) {
-            res = res * 10 + s.charAt(i) - '0';
-        }
-
-        if (res > 255) {
-            return -1;
-        }
-        return res;
-    }
-
-    private static void dfs(String s, int len, int split, int begin, Deque<String> path, List<String> res) {
-        if (begin == len) {
-            if (split == 4) {
-                res.add(String.join(".", path));
+                int isValid = isValidIpAddress(s, begin, begin+i);
+                if(isValid != -1){
+                    ip.add(isValid + "");
+                    dfs(splitTimes+1, begin+i+1, ip, len, res, s);
+                    ip.remove(ip.size()-1);
+                }
             }
-            return;
         }
 
-        // 看到剩下的不够了，就退出（剪枝），len - begin 表示剩余的还未分割的字符串的位数
-        if (len - begin < (4 - split) || len - begin > 3 * (4 - split)) {
-            return;
-        }
+        /**
+         * 判断s的[begin，end]分段是否是一个合法分段
+         * @param s
+         * @param begin
+         * @param end
+         * @return
+         */
+        public int isValidIpAddress(String s, int begin, int end){
+            int len = end - begin + 1;
+            //不能以0开头
+            if(len > 1 && s.charAt(begin)=='0')
+                return -1;
 
-        for (int i = 0; i < 3; i++) {
-            if (begin + i >= len) {
-                break;
-            }
+            String temp = s.substring(begin, end+1);
+            int res = Integer.parseInt(temp);
+            //不能大于255
+            if(res > 255)
+                return -1;
 
-            int ipSegment = judgeIfIpSegment(s, begin, begin + i);
-            if (ipSegment != -1) {
-                // 在判断是 ip 段的情况下，才去做截取
-                path.addLast(ipSegment + "");
-                dfs(s, len, split + 1, begin + i + 1, path, res);
-                path.removeLast();
-            }
+            return res;
         }
     }
 
     public static void main(String[] args) {
         String s = "25525511135";
-        System.out.println(restoreIpAddresses(s));
+        Solution solution = new Solution();
+        System.out.println(solution.restoreIpAddresses(s));
     }
 }
