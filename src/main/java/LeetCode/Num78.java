@@ -14,7 +14,6 @@ public class Num78 {
         List<List<Integer>> res = new ArrayList<>();
         backtrack(0, nums, res, new ArrayList<>());
         return res;
-
     }
 
     private static void backtrack(int i, int[] nums, List<List<Integer>> res, ArrayList<Integer> tmp) {
