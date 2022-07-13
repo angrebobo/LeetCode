@@ -9,7 +9,7 @@ import java.util.concurrent.Executors;
 /**
  * @author: HuangSiBo
  * @Description:
- * 运动员准备好后，
+ * 运动员准备好后，等裁判吹口哨，才能开跑
  * @Data: Created in 22:07 2022/7/13
  */
 public class CyclicBarrierTest5 {
@@ -58,6 +58,5 @@ public class CyclicBarrierTest5 {
         service.execute(runner3);
 
         service.shutdown();
-
     }
 }
