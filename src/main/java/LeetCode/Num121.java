@@ -39,20 +39,7 @@ public class Num121 {
 //    }
 
 
-    //解法3，动态规划
-//    public static int maxProfit(int[] prices){
-//        int len = prices.length;
-//        int[][] dp = new int[len][2];
-//
-//        dp[0][0] = 0;
-//        dp[0][1] = -prices[0];
-//
-//        for (int i = 1; i < len; i++) {
-//            dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
-//            dp[i][1] = Math.max(dp[i-1][1], -prices[i]);
-//        }
-//        return dp[len-1][0];
-//    }
+
 
     //解法4，用栈
 //    public static int maxProfit(int[] prices){
@@ -89,7 +76,7 @@ public class Num121 {
      * @return
      */
     static class Solution {
-        public int maxProfit(int[] prices) {
+        /*public int maxProfit(int[] prices) {
             int min = prices[0];
             int res = 0;
             int len = prices.length;
@@ -101,6 +88,23 @@ public class Num121 {
                     res = prices[i]-min;
             }
             return res;
+        }*/
+
+        //解法3，动态规划
+        public static int maxProfit(int[] prices){
+            int len = prices.length;
+            // dp[i][0] 下标为 i 这天结束的时候，不持股，手上拥有的现金
+            // dp[i][1] 下标为 i 这天结束的时候，持股，手上拥有的现金
+            int[][] dp = new int[len][2];
+
+            dp[0][0] = 0;
+            dp[0][1] = -prices[0];
+
+            for (int i = 1; i < len; i++) {
+                dp[i][0] = Math.max(dp[i-1][0], dp[i-1][1] + prices[i]);
+                dp[i][1] = Math.max(dp[i-1][1], -prices[i]);
+            }
+            return dp[len-1][0];
         }
     }
 
