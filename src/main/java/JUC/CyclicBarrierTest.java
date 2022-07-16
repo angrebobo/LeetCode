@@ -19,7 +19,6 @@ public class CyclicBarrierTest {
             c.await();
         } catch (Exception e) {
         }
-
         System.out.println(2);
     }
 }
