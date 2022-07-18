@@ -37,23 +37,25 @@ public class Num440 {
         // 前提知识1：字典序，一个数增加1，和一个数*10，前者的字典序更大
         // 前提知识2：十叉树
         public int findKthNumber(int n, int k) {
+            // 前缀
             int prefix=1;
-            int cur=1;
-            while(cur < k){
+            // 前缀的字典序排第几
+            int order=1;
+            while(order < k){
                 int count = get_count(prefix, n);
                 // 以prefix开头的数字串太多
                 // 更新成prefix*10，即在十叉树中往下了一层
                 // prefix更新成prefix*10后，其字典序增加了1
-                if(cur+count > k){
+                if(order+count > k){
                     prefix *= 10;
-                    cur++;
+                    order++;
                 }
                 // 以prefix开头的数字串不够
                 // prefix加1
                 // 其字典序增加cnt
-                else if(cur+count <= k){
+                else if(order+count <= k){
                     prefix++;
-                    cur += count;
+                    order += count;
                 }
             }
             return prefix;
@@ -80,8 +82,8 @@ public class Num440 {
     }
 
     public static void main(String[] args) {
-        int n = 2042;
-        int k = 45;
+        int n = 4566;
+        int k = 1600;
         Solution solution = new Solution();
         System.out.println(solution.findKthNumber(n, k));
 //        System.out.println(solution.get_count(1, 12));
