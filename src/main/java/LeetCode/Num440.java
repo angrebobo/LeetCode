@@ -38,22 +38,22 @@ public class Num440 {
         // 前提知识2：十叉树
         public int findKthNumber(int n, int k) {
             int prefix=1;
-            int p=1;
-            while(p<k){
-                int cnt=get_count(prefix,n);
+            int cur=1;
+            while(cur < k){
+                int count = get_count(prefix, n);
                 // 以prefix开头的数字串太多
                 // 更新成prefix*10，即在十叉树中往下了一层
                 // prefix更新成prefix*10后，其字典序增加了1
-                if(p+cnt > k){
+                if(cur+count > k){
                     prefix *= 10;
-                    p++;
+                    cur++;
                 }
                 // 以prefix开头的数字串不够
                 // prefix加1
                 // 其字典序增加cnt
-                else if(p+cnt <= k){
+                else if(cur+count <= k){
                     prefix++;
-                    p += cnt;
+                    cur += count;
                 }
             }
             return prefix;
@@ -67,11 +67,15 @@ public class Num440 {
          * 四位数的情况，结果是4500~Math.min(4566，4599)
          */
         public int get_count(int prefix,int n){
-            int cnt=0;
-            for(int a=prefix,b=prefix+1; a<=n; a*=10,b*=10){
-                cnt += Math.min(n+1,b) - a;
+            int count=0;
+            long cur=prefix, next=prefix+1;
+            while (cur <= n){
+                // 十叉树中一层的数量
+                count += Math.min(n+1, next) - cur;
+                cur *= 10;
+                next *= 10;
             }
-            return cnt;
+            return count;
         }
     }
 
