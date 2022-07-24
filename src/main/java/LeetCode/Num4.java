@@ -1,13 +1,16 @@
+/*
 package LeetCode;
 
 import javax.swing.table.TableRowSorter;
 import java.lang.reflect.WildcardType;
 
+*/
 /**
  * @author: HuangSiBo
  * @Description:
  * @Data: Created in 22:59 2022/7/21
- */
+ *//*
+
 public class Num4 {
     static class Solution {
         public double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -54,3 +57,4 @@ public class Num4 {
         System.out.println(solution.findMedianSortedArrays(nums1, nums2));
     }
 }
+*/
