@@ -11,7 +11,7 @@ import java.util.*;
 public class Num402 {
     static class Solution {
         //单调栈
-        public String removeKdigits(String num, int k) {
+        /*public String removeKdigits(String num, int k) {
             Deque<Character> deque = new LinkedList<>();
             for(Character c : num.toCharArray()){
                 // 维持一个递增的单调栈，去掉高位大的数字
@@ -36,6 +36,37 @@ public class Num402 {
             }
 
             return buffer.length() == 0 ? "0" : buffer.toString();
+        }*/
+
+        // 2020.07.24写
+        public String removeKdigits(String num, int k) {
+            // 维持一个单调递增的栈
+            // 遍历num，如果当前字符比前一个字符小，就把前一个字符去除，整个num就会变小
+            Deque<Character> deque = new ArrayDeque<>();
+            for(Character c : num.toCharArray()){
+                while (k>0 && !deque.isEmpty() && c < deque.peekLast()){
+                    deque.removeLast();
+                    k--;
+                }
+
+                // 如果c不是0，可以加入栈
+                // 如果c是0，但栈不为空，可以加入
+                // 如果c是0且栈为空，前导0，
+                if(c!='0' || !deque.isEmpty())
+                    deque.addLast(c);
+            }
+
+            while (k>0 && !deque.isEmpty()){
+                deque.removeLast();
+                k--;
+            }
+
+            StringBuilder builder = new StringBuilder();
+            int len = deque.size();
+            for (int i = 0; i < len; i++) {
+                builder.append(deque.removeFirst());
+            }
+            return builder.toString();
         }
     }
 
