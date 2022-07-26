@@ -1,12 +1,18 @@
 /**
  * @author: HuangSiBo
  * @Description: 几种排序算法
+ * 口诀：
+ * 不稳定的排序算法:快（快排）些（希尔）选（选择）一堆（堆排）
+ * 插入排序：直接插入排序，折半插入排序
+ * 交换排序：冒泡，快排
+ * 选择排序：简单选择排序，堆排
+ * 其他：归并排序
  * @Data: Created in 19:31 2021/9/25
  */
 public class 排序算法 {
 
     /**
-     * @Description 插入排序，时间复杂度为O(n2)
+     * @Description 直接插入排序，时间复杂度为O(n^2)
      * @param
      * @return
      */
@@ -16,9 +22,12 @@ public class 排序算法 {
         int j;
 
         for (int i = 1; i < len; i++) {
+            // nums[0]~nums[i-1]是有序的
+            // 当nums[i] 小于 nums[i-1], 需要插入
             if(nums[i] < nums[i-1]){
                 temp = nums[i];
-                for ( j = i-1; nums[j] > temp ; j--) {
+                //找到位置j，nums[i] 插入到位置j后，nums[0]~nums[i]是有序的
+                for ( j = i-1; j >= 0 && nums[j] > temp; j--) {
                     nums[j+1] = nums[j];
                 }
                 nums[j+1] = temp;
@@ -29,11 +38,11 @@ public class 排序算法 {
     }
 
     /**
-     * @Description 折半插入
+     * @Description 折半插入,时间复杂度为O(n * log2^n)
      * @param
      * @return
      */
-    public static int[] insertSort(int[] nums, int n){
+    public static int[] divisionInsertSort(int[] nums){
         int len = nums.length;
         int left, mid, right;
         int temp, j;
@@ -42,21 +51,24 @@ public class 排序算法 {
             temp = nums[i];
             left = 0;
             right = i-1;
-            while (left <= right){
-                mid = left + (right-left)/2;
-                if(nums[mid] < nums[i]) left = mid+1;
-                else right = mid-1;
+            if(temp < nums[i-1]){
+                // 二分查找，最后left的位置就是插入的位置
+                while (left <= right){
+                    mid = left + (right-left)/2;
+                    if(nums[mid] < nums[i]) left = mid+1;
+                    else right = mid-1;
+                }
+                for (j = i-1; j >= left ; j--) {
+                    nums[j+1] = nums[j];
+                }
+                nums[left] = temp;
             }
-            for (j = i-1; j > right ; j--) {
-                nums[j+1] = nums[j];
-            }
-            nums[j+1] = temp;
         }
         return nums;
     }
 
     /**
-     * @Description 快排
+     * @Description 快排,时间复杂度为O(n * log2^n),不稳定排序
      * @param
      * @return
      */
@@ -167,15 +179,13 @@ public class 排序算法 {
     }
 
 
-
     public static void main(String[] args) {
         int[] example = new int[]{53,17,78,9,45,65,87,32,32,87};
-//        int[] nums = insertSort(example);
-//        int[] nums = insertSort(example, example.length);
-//        int[] nums = quickSort(example);
+        quickSort(example);
 //        heapSort(example);
 //        mergeSort(example, 0, example.length-1);
-        insertSort(example);
+//        insertSort(example);
+//        divisionInsertSort(example);
         for(int i : example){
             System.out.print(i + " ");
         }

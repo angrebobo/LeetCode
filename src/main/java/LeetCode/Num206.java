@@ -6,7 +6,6 @@ package LeetCode;
  * @Data: Created in 23:16 2021/4/13
  */
 public class Num206 {
-
     static class ListNode {
       int val;
       ListNode next;
@@ -57,7 +56,7 @@ public class Num206 {
     }
 
     /**
-     * 第二次练习时的解法
+     * 第二次练习时的解法，头插法
      * @param args
      */
     /*static class Solution {

@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1f479b49-6672-426d-b6f4-a7a3b5e52311" name="默认变更列表" comment="86" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1rHZEKhacZkl4EdL1WwPDJxcqsE" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="false" />
+    <property name="Repository.Attach.Annotations" value="false" />
+    <property name="Repository.Attach.JavaDocs" value="false" />
+    <property name="Repository.Attach.Sources" value="false" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../copy_RedPacket" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.33663365" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.splitter.proportion" value="0.20682523" />
+  </component>
+  <component name="RunManager" selected="应用程序.Num86">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Main" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Num124" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Num124" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Num652" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Num652" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Num86" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Num86" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LeetCode.Test" />
+      <module name="Leetcode" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="LeetCode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="应用程序.Num124" />
+      <item itemvalue="应用程序.Test" />
+      <item itemvalue="应用程序.Main" />
+      <item itemvalue="应用程序.Num652" />
+      <item itemvalue="应用程序.Num86" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="应用程序.Num86" />
+        <item itemvalue="应用程序.Test" />
+        <item itemvalue="应用程序.Num652" />
+        <item itemvalue="应用程序.Main" />
+        <item itemvalue="应用程序.Num124" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="1f479b49-6672-426d-b6f4-a7a3b5e52311" name="默认变更列表" comment="" />
+      <created>1618634869546</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1618634869546</updated>
+      <workItem from="1618634876384" duration="19435000" />
+      <workItem from="1618885867773" duration="1345000" />
+      <workItem from="1618887837669" duration="13626000" />
+      <workItem from="1618923249858" duration="3846000" />
+      <workItem from="1619146947878" duration="3785000" />
+      <workItem from="1619405423753" duration="12543000" />
+      <workItem from="1619529730113" duration="3145000" />
+      <workItem from="1619535873424" duration="622000" />
+      <workItem from="1619573567414" duration="2765000" />
+      <workItem from="1619588045624" duration="32000" />
+      <workItem from="1619767968408" duration="1564000" />
+      <workItem from="1620807104320" duration="6539000" />
+      <workItem from="1620959784953" duration="41000" />
+      <workItem from="1621087389141" duration="5555000" />
+      <workItem from="1621266628512" duration="2199000" />
+      <workItem from="1621413071599" duration="22000" />
+      <workItem from="1621693137158" duration="19000" />
+      <workItem from="1621770452866" duration="964000" />
+      <workItem from="1621829293411" duration="5684000" />
+      <workItem from="1622621444667" duration="4976000" />
+      <workItem from="1622703622405" duration="6259000" />
+      <workItem from="1622877042882" duration="1149000" />
+      <workItem from="1622948461500" duration="9397000" />
+      <workItem from="1623038795499" duration="18554000" />
+      <workItem from="1623206080577" duration="44000" />
+      <workItem from="1623206219276" duration="7260000" />
+      <workItem from="1623413135066" duration="14999000" />
+      <workItem from="1623583667906" duration="372000" />
+      <workItem from="1624081767151" duration="10318000" />
+      <workItem from="1624093523014" duration="1530000" />
+      <workItem from="1624173386784" duration="318000" />
+      <workItem from="1624174853568" duration="4982000" />
+      <workItem from="1624190855206" duration="1021000" />
+      <workItem from="1626520776208" duration="6111000" />
+      <workItem from="1626623602691" duration="3585000" />
+      <workItem from="1627135416515" duration="1437000" />
+      <workItem from="1627309245165" duration="3000" />
+      <workItem from="1627714874665" duration="5316000" />
+      <workItem from="1627734369531" duration="72000" />
+      <workItem from="1627793893127" duration="3205000" />
+      <workItem from="1628336316527" duration="7578000" />
+      <workItem from="1628424866517" duration="23000" />
+      <workItem from="1629098572803" duration="3637000" />
+      <workItem from="1630067602167" duration="6788000" />
+      <workItem from="1630211375247" duration="180000" />
+      <workItem from="1630234762894" duration="5349000" />
+      <workItem from="1630241248414" duration="168000" />
+      <workItem from="1630241524607" duration="33000" />
+      <workItem from="1630322048237" duration="5197000" />
+      <workItem from="1630378275309" duration="6541000" />
+      <workItem from="1630461641396" duration="5502000" />
+      <workItem from="1630635452434" duration="5930000" />
+      <workItem from="1631088899548" duration="5509000" />
+      <workItem from="1631691571807" duration="4793000" />
+      <workItem from="1631767975591" duration="857000" />
+      <workItem from="1631769159896" duration="68000" />
+      <workItem from="1631769237541" duration="43000" />
+      <workItem from="1631773518646" duration="98000" />
+      <workItem from="1631773628686" duration="4687000" />
+      <workItem from="1631849787546" duration="7003000" />
+      <workItem from="1631868388193" duration="60000" />
+      <workItem from="1631923831921" duration="1383000" />
+      <workItem from="1631971494439" duration="3169000" />
+      <workItem from="1631977964247" duration="3451000" />
+      <workItem from="1632063507735" duration="42000" />
+      <workItem from="1632207740345" duration="4377000" />
+      <workItem from="1632567656309" duration="15871000" />
+      <workItem from="1632745486172" duration="1869000" />
+      <workItem from="1632921529141" duration="4340000" />
+      <workItem from="1633409082367" duration="1054000" />
+      <workItem from="1633410512326" duration="321000" />
+      <workItem from="1633411042715" duration="1941000" />
+      <workItem from="1633589656383" duration="229000" />
+      <workItem from="1633747930872" duration="2089000" />
+      <workItem from="1633753672899" duration="1043000" />
+      <workItem from="1633781761638" duration="176000" />
+      <workItem from="1634391902068" duration="4403000" />
+      <workItem from="1647093423637" duration="3282000" />
+      <workItem from="1647137097315" duration="5796000" />
+      <workItem from="1647148215240" duration="5429000" />
+      <workItem from="1647318357142" duration="6259000" />
+      <workItem from="1647412555356" duration="3732000" />
+      <workItem from="1647485212871" duration="1315000" />
+      <workItem from="1647486816333" duration="1224000" />
+      <workItem from="1647611469385" duration="40000" />
+      <workItem from="1648055768042" duration="361000" />
+      <workItem from="1648342576847" duration="4013000" />
+      <workItem from="1648787316890" duration="719000" />
+      <workItem from="1648911984813" duration="4061000" />
+      <workItem from="1649083012711" duration="1106000" />
+      <workItem from="1649172444929" duration="5156000" />
+      <workItem from="1649233300476" duration="195000" />
+    </task>
+    <task id="LOCAL-00001" summary="DFS">
+      <created>1647096710612</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1647096710612</updated>
+    </task>
+    <task id="LOCAL-00002" summary="无">
+      <created>1647138230124</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1647138230124</updated>
+    </task>
+    <task id="LOCAL-00003" summary="第 284 场力扣周赛">
+      <created>1647147558314</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1647147558314</updated>
+    </task>
+    <task id="LOCAL-00004" summary="105">
+      <created>1647341726836</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1647341726836</updated>
+    </task>
+    <task id="LOCAL-00005" summary="124">
+      <created>1647416754124</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1647416754124</updated>
+    </task>
+    <task id="LOCAL-00006" summary="547">
+      <created>1647501593478</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1647501593478</updated>
+    </task>
+    <task id="LOCAL-00007" summary="652">
+      <created>1649084046929</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1649084046929</updated>
+    </task>
+    <task id="LOCAL-00008" summary="86">
+      <created>1649233450200</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1649233450200</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="DFS" />
+    <MESSAGE value="无" />
+    <MESSAGE value="第 284 场力扣周赛" />
+    <MESSAGE value="105" />
+    <MESSAGE value="124" />
+    <MESSAGE value="547" />
+    <MESSAGE value="652" />
+    <MESSAGE value="86" />
+    <option name="LAST_COMMIT_MESSAGE" value="86" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num827.java</url>
+          <line>12</line>
+          <properties class="Num827">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num827.java</url>
+          <line>32</line>
+          <properties class="Num827">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num54.java</url>
+          <line>77</line>
+          <properties class="Num54">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num21.java</url>
+          <line>14</line>
+          <properties class="Num21">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num21.java</url>
+          <line>41</line>
+          <properties class="Num21">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num23.java</url>
+          <line>44</line>
+          <properties class="Num23">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num143.java</url>
+          <line>18</line>
+          <properties class="Num143">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num144.java</url>
+          <line>23</line>
+          <properties class="Num144">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num144.java</url>
+          <line>29</line>
+          <properties class="Num144">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Offer_Num55.java</url>
+          <line>15</line>
+          <properties class="Offer_Num55">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num300.java</url>
+          <line>8</line>
+          <properties class="Num300">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num56.java</url>
+          <line>9</line>
+          <properties class="Num56">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num110.java</url>
+          <line>27</line>
+          <properties class="Num110.Solution">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num101.java</url>
+          <line>23</line>
+          <properties class="Num101">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num112.java</url>
+          <line>30</line>
+          <properties class="Num112.Solution">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num112.java</url>
+          <line>41</line>
+          <properties class="Num112.Solution">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num437.java</url>
+          <line>39</line>
+          <properties class="Num437.Solution">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="73" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num3.java</url>
+          <line>74</line>
+          <properties class="Num3.Solution">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num215.java</url>
+          <line>76</line>
+          <properties class="Num215.Solution">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Sort.java</url>
+          <line>67</line>
+          <properties class="Sort" method="quickSortMethod">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Sort.java</url>
+          <line>125</line>
+          <properties class="Sort" method="HeadAdjust">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Sort.java</url>
+          <line>100</line>
+          <properties class="Sort" method="heapSort">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Tree.java</url>
+          <line>28</line>
+          <properties class="Tree" method="InOrder">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="84" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Tree.java</url>
+          <line>45</line>
+          <properties class="Tree" method="PreOrder">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="85" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num206.java</url>
+          <line>44</line>
+          <properties class="Num206">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Test/Test1.java</url>
+          <line>9</line>
+          <properties class="Test.Test1">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Num105.java</url>
+          <line>26</line>
+          <properties class="Num105.Solution">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LeetCode/Num200.java</url>
+          <line>69</line>
+          <properties class="LeetCode.Num200.Solution" method="numIslands">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LeetCode/Num200.java</url>
+          <line>101</line>
+          <properties class="LeetCode.Num200.Solution" method="BFS">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LeetCode/Num200.java</url>
+          <line>93</line>
+          <properties class="LeetCode.Num200.Solution" method="judge">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/LeetCode/Num86.java</url>
+          <line>63</line>
+          <properties class="LeetCode.Num86.Solution" method="partition">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Leetcode$Sort.ic" NAME="Sort 覆盖结果" MODIFIED="1632570582909" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>
