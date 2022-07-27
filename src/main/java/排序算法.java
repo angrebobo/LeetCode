@@ -129,9 +129,8 @@ public class 排序算法 {
     // 建造一个最大堆
     public static void buildMaxHeap(int[] nums){
         int len = nums.length;
-        for (int i = (len-1)/2; i >= 0 ; i--) {
+        for (int i = (len-1)/2; i >= 0 ; i--)
             HeadAdjust(nums, i, len);
-        }
     }
 
     // 将k为根的树进行调节
