@@ -1,7 +1,6 @@
 package LeetCode;
 
 import java.util.Arrays;
-import java.util.PriorityQueue;
 
 /**
  * @author: HuangSiBo
@@ -33,7 +32,8 @@ public class Offer_Num40 {
             nums[index2] = temp;
         }*/
 
-        public int[] getLeastNumbers(int[] arr, int k){
+        // 堆排，用优先队列
+        /*public int[] getLeastNumbers(int[] arr, int k){
             PriorityQueue<Integer> queue = new PriorityQueue<>();
             for (int i = 0; i < arr.length; i++) {
                 queue.add(arr[i]);
@@ -44,11 +44,43 @@ public class Offer_Num40 {
             }
 
             return res;
+        }*/
+
+        // 快排
+        public int[] getLeastNumbers(int[] arr, int k){
+            if(arr.length == 0 || k == 0)
+                return new int[0];
+            if(k > arr.length)
+                return arr;
+
+            return quickSortMethod(arr, k-1, 0, arr.length-1);
+        }
+
+        public int[] quickSortMethod(int[] arr, int k,int left, int right){
+            int i = left;
+            int j = right;
+            int pivot = arr[left];
+
+            while(i < j){
+                while(i<j && arr[j]>=pivot)
+                    j--;
+                if(i<j)
+                    arr[i++] = arr[j];
+                while(i<j && arr[i]<=pivot)
+                    i++;
+                if(i<j)
+                    arr[j--] = arr[i];
+            }
+
+            arr[i] = pivot;
+            if(i < k) return quickSortMethod(arr, k, i+1, right);
+            if(i > k) return quickSortMethod(arr, k, left, i-1);
+            return Arrays.copyOfRange(arr, 0, i+1);
         }
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.getLeastNumbers(new int[]{0, 0, 1, 2, 4, 2, 2, 3, 1, 4}, 8)));
+        System.out.println(Arrays.toString(solution.getLeastNumbers(new int[]{3,2,1}, 2)));
     }
 }
