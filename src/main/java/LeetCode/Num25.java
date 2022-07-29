@@ -102,12 +102,71 @@ public class Num25 {
     }*/
 
 
+    static class Solution {
+        public ListNode reverseKGroup(ListNode head, int k) {
+            if(k == 1)
+                return head;
+            ListNode dummy = new ListNode();
+            dummy.next = head;
+
+            ListNode pre = dummy;
+            ListNode end = head;
+
+            while(true){
+                for(int i = 1; i <= k-1 && end != null; i++){
+                    end = end.next;
+                }
+                if(end == null)
+                    break;
+
+                ListNode end_next = end.next;
+                ListNode start = pre.next;
+
+                reverse(pre, end);
+
+                pre = start;
+                pre.next = end_next;
+                end = end_next;
+            }
+
+            return dummy.next;
+        }
+
+        // 翻转链表
+        public void reverse(ListNode pre, ListNode end){
+            ListNode start = pre.next;
+            ListNode p = start.next;
+            ListNode end_next = end.next;
+            ListNode temp;
+
+            while (p != end_next){
+                temp = p.next;
+
+                p.next = pre.next;
+                pre.next = p;
+                p = temp;
+            }
+        }
+    }
+
+
     public static void main(String[] args) {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
+        ListNode l3 = new ListNode(3);
+        ListNode l4 = new ListNode(4);
         l1.next = l2;
+        l2.next = l3;
+        l3.next = l4;
 
-        ListNode ans = reverseKGroup(l1, 2);
-        System.out.println(ans);
+//        ListNode ans = reverseKGroup(l1, 2);
+//        System.out.println(ans);
+        Solution solution = new Solution();
+        ListNode res = solution.reverseKGroup(l1, 2);
+        while (res != null){
+            System.out.println(res.val);
+            res = res.next;
+        }
+
     }
 }
