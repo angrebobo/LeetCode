@@ -8,7 +8,7 @@ import java.util.*;
  */
 public class Num15 {
 
-    public static List<List<Integer>> threeSum(int[] nums) {
+    /*public static List<List<Integer>> threeSum(int[] nums) {
         int len = nums.length;
 
         //排序
@@ -49,14 +49,55 @@ public class Num15 {
                     L++;
             }
         }
-
         return ans;
+    }*/
+
+    // 2022.07.31写
+    static class Solution {
+        public List<List<Integer>> threeSum(int[] nums) {
+            Arrays.sort(nums);
+
+            List<List<Integer>> ans = new ArrayList<>();
+            List<Integer> path = new ArrayList<>();
+
+            for(int i = 0;i<nums.length-1;i++){
+                if(nums[i] > 0)
+                    break;
+                if(i >= 1 && nums[i] == nums[i-1])
+                    continue;
+
+                int left = i+1;
+                int right = nums.length-1;
+                while(left < right){
+                    int temp = nums[i] + nums[left] + nums[right];
+                    if(temp == 0){
+                        path.add(nums[i]);
+                        path.add(nums[left]);
+                        path.add(nums[right]);
+                        ans.add(new ArrayList<>(path));
+                        path.clear();
+
+                        while(left<right && nums[left]==nums[left+1]) left++;
+                        while(left<right && nums[right]==nums[right-1]) right--;
+                        left++;
+                        right--;
+                    }
+                    else if(temp > 0)
+                        right--;
+                    else left++;
+                }
+            }
+            return ans;
+        }
     }
 
     public static void main(String[] args) {
-        int[] nums = {-2,0,0,2,2};
+        int[] nums = {1,-1,-1,0};
 
-        List<List<Integer>> ans = threeSum(nums);
-        System.out.println(ans);
+//        List<List<Integer>> ans = threeSum(nums);
+//        System.out.println(ans);
+
+        Solution solution = new Solution();
+        System.out.println(solution.threeSum(nums).toString());
     }
 }

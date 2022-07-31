@@ -1,5 +1,7 @@
 package LeetCode;
 
+import java.util.ArrayList;
+
 /**
  * @author: HuangSiBo
  * @Description:
@@ -7,6 +9,6 @@ package LeetCode;
  */
 public class A_Test {
     public static void main(String[] args) {
-        System.out.println();
+        ArrayList<Integer> list = new ArrayList<>();
     }
 }
