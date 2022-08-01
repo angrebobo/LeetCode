@@ -1,6 +1,5 @@
 package LeetCode;
 
-import java.sql.Struct;
 import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Queue;
@@ -75,9 +74,10 @@ public class Num200 {
             visited = new boolean[m][n];
             // Arrays.fill 只能填充一维数组，多维数组还得用循环
             for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    visited[i][j] = false;
-                }
+//                for (int j = 0; j < n; j++) {
+//                    visited[i][j] = false;
+//                }
+                Arrays.fill(visited[i], false);
             }
             int ans = 0;
             for (int i = 0; i < m; i++) {
