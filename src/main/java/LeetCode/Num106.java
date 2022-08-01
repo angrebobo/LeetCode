@@ -1,8 +1,6 @@
 package LeetCode;
 
 import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.Queue;
 
 /**
  * @author: HuangSiBo
@@ -42,32 +40,10 @@ public class Num106 {
         }
     }
 
-    //层序遍历打印树
-    public static void levelOrder(TreeNode root) {
-        if(root == null)
-            return;
-
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-
-        while (!queue.isEmpty()){
-            int n = queue.size();
-            for (int i = 0; i < n; i++) {
-                TreeNode temp = queue.poll();
-                System.out.print(temp.val + " ");
-                if(temp.left != null)
-                    queue.add(temp.left);
-                if(temp.right != null)
-                    queue.add(temp.right);
-            }
-            System.out.println();
-        }
-    }
-
     public static void main(String[] args) {
         int[] inorder = new int[]{9,3,15,20,7};
         int[] postorder = new int[]{9,15,7,20,3};
         Solution solution = new Solution();
-        levelOrder( solution.buildTree(inorder, postorder) );
+        Utils.show( solution.buildTree(inorder, postorder) );
     }
 }
