@@ -1,7 +1,6 @@
 package LeetCode;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * @author: HuangSiBo
@@ -10,20 +9,7 @@ import java.util.Map;
  */
 public class Num105 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
-    static class Solution {
+    /*static class Solution {
         private Map<Integer, Integer> indexMap;
 
         public TreeNode myBuildTree(int[] preorder, int[] inorder, int preorder_left, int preorder_right, int inorder_left, int inorder_right) {
@@ -58,7 +44,7 @@ public class Num105 {
             }
             return myBuildTree(preorder, inorder, 0, n - 1, 0, n - 1);
         }
-    }
+    }*/
 
     /**
      *  2022.03.15日写
@@ -95,6 +81,38 @@ public class Num105 {
         }
     }*/
 
+        // 2020.08.01写
+    static class Solution {
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            // map保存节点在中序遍历里的索引位置
+            HashMap<Integer, Integer> map = new HashMap<>();
+            for(int i = 0; i < preorder.length; i++){
+                for(int j = 0; j < inorder.length; j++){
+                    if(preorder[i] == inorder[j])
+                        map.put(preorder[i], j);
+                }
+            }
+
+            return build(preorder, inorder, 0, preorder.length-1, 0, inorder.length-1, map);
+        }
+
+        public TreeNode build(int[] preorder, int[] inorder, int pre_left, int pre_right, int in_left, int in_right, HashMap<Integer, Integer> map){
+            if(pre_left > pre_right)
+                return null;
+
+            // preorder[pre_left] 就是root节点
+            TreeNode root = new TreeNode(preorder[pre_left]);
+            int index = map.get(preorder[pre_left]);
+            int len1 = index - in_left;
+            // int len2 = in_right - index;
+
+            root.left = build(preorder, inorder, pre_left+1, pre_left+len1, in_left, index-1, map);
+            root.right = build(preorder, inorder, pre_left+len1+1, pre_right, index+1, in_right, map);
+
+            return root;
+        }
+    }
+
 
     public static void main(String[] args) {
         int[] preorder = new int[]{3,9,20,15,7};
@@ -102,5 +120,6 @@ public class Num105 {
 
         Solution solution = new Solution();
         TreeNode node = solution.buildTree(preorder, inorder);
+        Utils.show(node);
     }
 }
