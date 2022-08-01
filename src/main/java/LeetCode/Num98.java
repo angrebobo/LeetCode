@@ -7,15 +7,6 @@ package LeetCode;
  */
 public class Num98 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-    }
-
-
-
     static class Solution {
         Long preValue = Long.MIN_VALUE;
 

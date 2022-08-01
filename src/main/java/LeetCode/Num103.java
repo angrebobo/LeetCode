@@ -52,21 +52,6 @@ public class Num103 {
         return  null;
     }*/
 
-
-
-    public static class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(){};
-        TreeNode(int val) { this.val = val;}
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     /**
      * @Description 2021.09.21写
      * @param

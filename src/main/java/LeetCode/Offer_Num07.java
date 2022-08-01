@@ -10,14 +10,6 @@ import java.util.Queue;
  * @Data: Created in 20:22 2022/5/19
  */
 public class Offer_Num07 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        public TreeNode(int val) {
-            this.val = val;
-        }
-    }
 
     static class Solution {
         HashMap<Integer, Integer> map;

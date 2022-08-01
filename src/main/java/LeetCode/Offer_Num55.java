@@ -7,13 +7,6 @@ package LeetCode;
  */
 
 public class Offer_Num55 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-    }
 
     public static int maxDepth(TreeNode root) {
         if(root == null) return 0;

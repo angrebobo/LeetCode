@@ -12,19 +12,6 @@ import java.util.Queue;
 
 public class Num102 {
 
-     class TreeNode {
-         int val;
-         TreeNode left;
-         TreeNode right;
-         TreeNode() {}
-         TreeNode(int val) { this.val = val; }
-         TreeNode(int val, TreeNode left, TreeNode right) {
-             this.val = val;
-             this.left = left;
-             this.right = right;
-         }
-     }
-
      //层序遍历，注意和bfs的区别
     public List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> ans = new LinkedList<>();

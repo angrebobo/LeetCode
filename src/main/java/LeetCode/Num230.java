@@ -6,12 +6,6 @@ package LeetCode;
  * @Data: Created in 14:50 2022/5/23
  */
 public class Num230 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-    }
 
     static class Solution {
         static int res;

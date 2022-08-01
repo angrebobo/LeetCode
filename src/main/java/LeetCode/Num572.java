@@ -8,13 +8,6 @@ package LeetCode;
 
 public class Num572 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-    }
-
     static class Solution {
         //遍历root，如果有节点的值和subRoot的值相同，那么用isEqual函数判断一下
         public boolean isSubtree(TreeNode root, TreeNode subRoot) {

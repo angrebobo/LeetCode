@@ -8,19 +8,6 @@ package LeetCode;
  */
 public class Num124 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     static class Solution {
         //定义全局最大值
         static int max = Integer.MIN_VALUE;

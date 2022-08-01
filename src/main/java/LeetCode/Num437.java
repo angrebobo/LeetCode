@@ -10,19 +10,6 @@ import java.util.HashMap;
 
 public class Num437 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     static class Solution {
         HashMap<Integer, Integer> map = new HashMap<>();
         int target;

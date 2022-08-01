@@ -1,9 +1,6 @@
 package LeetCode;
 
-import sun.reflect.generics.tree.Tree;
-
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
  * @author: HuangSiBo
@@ -11,19 +8,6 @@ import java.util.Stack;
  * @Data: Created in 20:19 2022/4/13
  */
 public class Num114 {
-
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     static class Solution {
         LinkedList<TreeNode> list = new LinkedList<>();

@@ -1,3 +1,5 @@
+import LeetCode.TreeNode;
+
 import java.util.Stack;
 
 /**
@@ -6,20 +8,6 @@ import java.util.Stack;
  * @Data: Created in 9:30 2021/9/26
  */
 public class 树的递归遍历及非递归遍历 {
-
-    static class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        public TreeNode() {}
-        public TreeNode(int val) {this.val = val;}
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     /**
      * 递归遍历树。先理解树的递归序，每个节点都有3次回到它自己的机会

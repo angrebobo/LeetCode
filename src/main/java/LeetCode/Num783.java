@@ -7,12 +7,6 @@ package LeetCode;
  * @Data: Created in 10:00 2022/5/23
  */
 public class Num783 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-    }
 
     static class Solution {
         static int preValue;

@@ -9,18 +9,6 @@ import java.util.List;
  * @Data: Created in 14:28 2022/4/14
  */
 public class Offer_Num34 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     static class Solution {
         List<List<Integer>> res;

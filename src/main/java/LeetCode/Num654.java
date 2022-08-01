@@ -6,18 +6,6 @@ package LeetCode;
  * @Data: Created in 13:10 2022/6/17
  */
 public class Num654 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     static class Solution {
         //方法1，思路来源于中序和后序建立二叉树

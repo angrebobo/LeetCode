@@ -6,12 +6,6 @@ package LeetCode;
  * @Data: Created in 15:20 2022/5/23
  */
 public class Offer_Num27 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-    }
 
     static class Solution {
         public TreeNode mirrorTree(TreeNode root) {

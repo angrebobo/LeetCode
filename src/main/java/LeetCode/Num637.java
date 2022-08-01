@@ -13,19 +13,6 @@ import java.util.Queue;
 
 public class Num637 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
-
     static class Solution {
         public List<Double> averageOfLevels(TreeNode root) {
             List<Double> res = new ArrayList<>();

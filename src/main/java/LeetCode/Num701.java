@@ -6,18 +6,6 @@ package LeetCode;
  * @Data: Created in 11:00 2022/6/20
  */
 public class Num701 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     class Solution {
         public TreeNode insertIntoBST(TreeNode root, int val) {

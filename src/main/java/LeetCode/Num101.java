@@ -10,18 +10,6 @@ import java.util.Queue;
  */
 
 public class Num101 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     public static boolean isSymmetric(TreeNode root) {
         if(root==null) return true;

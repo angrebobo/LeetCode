@@ -10,13 +10,6 @@ import java.util.Queue;
  */
 public class Num958 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-    }
-
     static class Solution {
         public boolean isCompleteTree(TreeNode root) {
             Queue<TreeNode> queue = new LinkedList<>();

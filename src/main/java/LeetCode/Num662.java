@@ -1,8 +1,6 @@
 package LeetCode;
 
-import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 /**
@@ -11,19 +9,6 @@ import java.util.Queue;
  * @Data: Created in 21:33 2022/4/11
  */
 public class Num662 {
-
-    static public class TreeNode {
-      int val;
-      TreeNode left;
-      TreeNode right;
-      TreeNode() {}
-      TreeNode(int val) { this.val = val; }
-      TreeNode(int val, TreeNode left, TreeNode right) {
-          this.val = val;
-          this.left = left;
-          this.right = right;
-      }
-  }
 
     static class Solution {
         public int widthOfBinaryTree(TreeNode root) {

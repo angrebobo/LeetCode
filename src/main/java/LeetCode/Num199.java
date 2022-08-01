@@ -11,19 +11,6 @@ import java.util.Queue;
  */
 public class Num199 {
 
-     static class TreeNode {
-          int val;
-          TreeNode left;
-          TreeNode right;
-          TreeNode() {}
-          TreeNode(int val) { this.val = val; }
-          TreeNode(int val, TreeNode left, TreeNode right) {
-              this.val = val;
-              this.left = left;
-              this.right = right;
-          }
-     }
-
     /* //解法1，把每层的元素都放到一个List中，最后把每个List的最后面的元素取出集合
     public static List<Integer> rightSideView(TreeNode root) {
         List<List<Integer>> path = new LinkedList<>();

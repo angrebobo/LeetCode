@@ -1,3 +1,5 @@
+import LeetCode.TreeNode;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
@@ -8,15 +10,6 @@ import java.util.Queue;
  * @Data: Created in 14:19 2022/4/23
  */
 public class ACM模式建树 {
-
-    static class TreeNode{
-        int val;
-        TreeNode left;
-        TreeNode right;
-        public TreeNode(int val) {
-            this.val = val;
-        }
-    }
 
     //树的存储有两种方式，1是链式存储，2是顺序存储
     //该方法是将数组构建成二叉树

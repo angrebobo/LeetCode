@@ -6,17 +6,6 @@ package LeetCode;
  * @Data: Created in 22:30 2022/4/26
  */
 public class Offer_Num26 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     static class Solution {
         public boolean isSubStructure(TreeNode A, TreeNode B) {

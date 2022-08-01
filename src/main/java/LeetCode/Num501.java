@@ -10,18 +10,6 @@ import java.util.List;
  * @Data: Created in 20:22 2022/6/19
  */
 public class Num501 {
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode() {}
-        TreeNode(int val) { this.val = val; }
-        public TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
-    }
 
     static class Solution {
         static int max;

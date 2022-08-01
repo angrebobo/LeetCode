@@ -11,13 +11,6 @@ import java.util.Queue;
  */
 public class Num297 {
 
-    static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-        TreeNode(int x) { val = x; }
-    }
-
     public static class Codec {
 
         // 将一棵树序列化成字符串
