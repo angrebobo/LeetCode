@@ -11,34 +11,31 @@ import java.util.List;
 public class Num784 {
 
     static class Solution {
-        List<String> res;
         public List<String> letterCasePermutation(String s) {
-            res = new ArrayList<>();
-            StringBuilder builder = new StringBuilder();
-            dfs(s, 0, builder);
+            List<String> res = new ArrayList<>();
+            char[] chars = s.toCharArray();
+            dfs(chars, 0, res);
             return res;
         }
 
-        public void dfs(String s, int index, StringBuilder builder){
-            if(index == s.length()){
-                res.add(String.valueOf(builder));
+        public void dfs(char[] chars, int index, List<String> res){
+            if(index == chars.length){
+                res.add(new String(chars));
                 return;
             }
 
-            char c = s.charAt(index);
-            if('a' <= c && c <= 'z'){
-                builder.append(Character.toChars(c-32));
-                dfs(s, index+1, builder);
-                builder.deleteCharAt(builder.length()-1);
-            }
+            dfs(chars, index + 1, res);
 
-            builder.append(c);
-            dfs(s, index+1, builder);
+            if (Character.isLetter(chars[index])) {
+                chars[index] ^= 32;
+                dfs(chars, index + 1, res);
+                chars[index] ^= 32;
+            }
         }
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.letterCasePermutation("a1b2"));
+        System.out.println(solution.letterCasePermutation("C"));
     }
 }
