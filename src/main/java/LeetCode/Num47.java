@@ -43,6 +43,7 @@ public class Num47 {
             }
         }*/
 
+        // 方法2，剪枝
         public List<List<Integer>> permuteUnique(int[] nums) {
             int[] visited = new int[nums.length];
             List<Integer> path = new LinkedList<>();
