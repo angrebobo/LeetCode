@@ -123,7 +123,6 @@ public class Num236 {
                 isFin = dfs(list1, root.right, p);
 
             if( !isFin ) list1.remove(list1.size()-1);
-
             return isFin;
         }
     }

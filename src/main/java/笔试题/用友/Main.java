@@ -1,7 +1,19 @@
-package LeetCode;
+package 笔试题.用友;
 
 import java.util.Arrays;
 
+/**
+ *
+ * 手机英文9键说明如下
+ * 1:@!./    2:abc    3:def
+ * 4:ghi     5:jkl    6:mno
+ * 7:pqrs    8:tuv    9:wxyz
+ * 数字键输入第一个字母点击一次，第二个字母连续点击两次，以此类推
+ * 统计输入字符串(英文小写，包含英文26个字母和@!./标点符号)，如果通过
+ * 手机9键输入，各个数字键的点击次数
+ * 输入：abcdtyz@!.
+ * 输出：[[1,6],[2,6],[3,1],[8,1],[9,7]]
+ */
 public class Main {
 
     static class Solution {
@@ -135,7 +147,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        String s = "a";
+        String s = "abcdtyz@!.";
         Solution solution = new Solution();
         System.out.println(Arrays.deepToString(solution.count(s)));
     }

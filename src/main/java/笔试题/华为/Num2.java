@@ -1,4 +1,4 @@
-package 笔试题.华为.四月二十日;
+package 笔试题.华为;
 
 import java.util.LinkedList;
 import java.util.List;
