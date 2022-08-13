@@ -16,7 +16,6 @@ public class Num704 {
             middle = left + (right-left)/2;
             if(nums[middle] == target)
                 return middle;
-
             if(target < nums[middle])
                 right = middle - 1;
             else

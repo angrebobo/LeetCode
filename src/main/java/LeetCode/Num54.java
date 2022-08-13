@@ -1,7 +1,7 @@
 package LeetCode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+
 /**
  * @author: HuangSiBo
  * @Description:
@@ -76,7 +76,7 @@ public class Num54 {
         }
     }*/
 
-    public static List<Integer> spiralOrder(int[][] matrix){
+    /*public static List<Integer> spiralOrder(int[][] matrix){
         int m = matrix.length;
         int n = matrix[0].length;
         if(m == 0) return new ArrayList<>();
@@ -106,14 +106,40 @@ public class Num54 {
             if(++left > right) break;
         }
         return path;
+    }*/
+
+    // 2022.08.12写
+    public static int[] spiralOrder(int[][] matrix) {
+        int row = matrix.length;
+        int col = matrix[0].length;
+        int[] res = new int[row*col];
+        int top = 0, left = 0, right = col-1, bottom = row-1;
+        int index = 0;
+        while(top<=bottom && left<=right){
+            for(int j=left; j<=right; j++){
+                res[index++] = matrix[top][j];
+            }
+            if(++top>bottom) break;
+            for(int i=top; i<=bottom; i++){
+                res[index++] = matrix[i][right];
+            }
+            if(--right<left) break;
+            for(int j=right; j>=left; j--){
+                res[index++] = matrix[bottom][j];
+            }
+            if(--bottom<left) break;
+            for(int i=bottom; i>=top; i--){
+                res[index++] = matrix[i][left];
+            }
+            if(++left>right) break;
+        }
+        return res;
     }
 
     public static void main(String[] args) {
-        int[][] matrix = {{1,2,3,7,9},
-                          {4,5,6,7,9},
-                          {7,8,9,7,9},
-                          {4,5,3,7,9},
-                          {4,5,3,7,9}};
-        System.out.println(spiralOrder(matrix));
+        int[][] matrix = {{1, 2, 3, 4},
+                          {5, 6, 7, 8},
+                          {9,10,11,12}};
+        System.out.println(Arrays.toString(spiralOrder(matrix)));
     }
 }
