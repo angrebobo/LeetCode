@@ -9,7 +9,7 @@ package LeetCode;
 public class Num104 {
 
     public static int maxDepth(TreeNode root) {
-        if(root.left==null && root.right==null)
+        if(root == null)
             return 0;
 
         return Math.max(maxDepth(root.left)+1, maxDepth(root.right)+1);
