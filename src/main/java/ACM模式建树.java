@@ -1,4 +1,5 @@
 import LeetCode.TreeNode;
+import LeetCode.Utils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -58,7 +59,8 @@ public class ACM模式建树 {
     public static void main(String[] args) {
         String[] tree = new String[]{"4","1","6","0","2","5","7","null","null","null","3","null","null","null","8"};
         TreeNode root = buildTree(tree);
-        for(String s : levelOrder(root))
-            System.out.printf(s + " ");
+        Utils.show(root);
+//        for(String s : levelOrder(root))
+//            System.out.printf(s + " ");
     }
 }
