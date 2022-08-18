@@ -5,44 +5,41 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+/**
+ * @author: HuangSiBo
+ * @Description:
+ * @Data: Created in 14:49 2022/8/13
+ */
 public class Num77 {
-
-    // 剪枝
     static class Solution {
         public List<List<Integer>> combine(int n, int k) {
-            List<List<Integer>> res = new ArrayList<>();
-            if (k <= 0 || n < k) {
-                return res;
-            }
+            List<List<Integer>> ans = new ArrayList<>();
+            if(k<=0 || n<k)
+                return ans;
 
-            // 为了防止底层动态数组扩容，初始化的时候传入最大长度
-            Deque<Integer> path = new ArrayDeque<>(k);
-            dfs(1, n, k, path, res);
-            return res;
+            dfs(n, 1, new ArrayDeque<>(), ans, k);
+            return ans;
         }
 
-        private void dfs(int begin, int n, int k, Deque<Integer> path, List<List<Integer>> res) {
-            if (k == 0) {
-                res.add(new ArrayList<>(path));
+        public void dfs(int n, int index, Deque<Integer> path, List<List<Integer>> ans, int k){
+            if(path.size() == k){
+                ans.add(new ArrayList<>(path));
                 return;
             }
 
-            // 基础版本的递归终止条件：if (begin == n + 1) {
-            if (begin > n - k + 1) {
-                return;
+            for (int i = index; i <= n; i++) {
+                //取当前数
+                path.addLast(i);
+                dfs(n, i+1, path, ans, k);
+                path.removeLast();
             }
-            // 不选当前考虑的数 begin，直接递归到下一层
-            dfs(begin + 1, n, k, path, res);
-
-            // 不选当前考虑的数 begin，递归到下一层的时候 k - 1，这里 k 表示还需要选多少个数
-            path.addLast(begin);
-            dfs(begin + 1, n, k - 1, path, res);
-            // 深度优先遍历有回头的过程，因此需要撤销选择
-            path.removeLast();
         }
     }
 
     public static void main(String[] args) {
-
+        int n = 4;
+        int k = 2;
+        Solution solution = new Solution();
+        System.out.println(solution.combine(n, k).toString());
     }
 }
