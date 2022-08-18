@@ -10,48 +10,43 @@ public class Num39 {
 
     static class Solution {
         public List<List<Integer>> combinationSum(int[] candidates, int target) {
-            //使用Set集合可以去重
-            List<Set<List<Integer>>> dp = new ArrayList<>();
-            int len = candidates.length;
-            dp.add(null);
+            Deque<Integer> path = new LinkedList<>();
+            List<List<Integer>> ans = new ArrayList<>();
+            if(target < candidates.length)
+                return ans;
+            Arrays.sort(candidates);
+            backTrace(candidates, target, 0,path, ans);
+            return ans;
+        }
 
-            //主要思想是dp，把每个数的组合都记录下来
-            for (int i = 1; i <= target; i++) {
-                Set<List<Integer>> temp = new HashSet<>();
-                for (int j = 0; j < len; j++) {
-                    //相等时，就直接加入集合。比如目标数5，可以由5组成
-                    if (candidates[j] == i) {
-                        List<Integer> list = new ArrayList<>();
-                        list.add(i);
-                        temp.add(list);
-                    }
-                    //目标数大于数组整数时，比如6>2,就去检查2和4是否有组合
-                    else if (candidates[j] < i && dp.get(candidates[j]) != null && dp.get(i - candidates[j]) != null) {
-                        List<Integer> temp1;
-                        List<Integer> temp2;
-                        for (List<Integer> list : dp.get(candidates[j])) {
-                            for (List<Integer> list1 : dp.get(i - candidates[j])) {
-                                temp1 = new ArrayList<>(list);
-                                temp2 = new ArrayList<>(list1);
-                                temp1.addAll(temp2);
-                                temp1.sort((o1, o2) -> o1 - o2);
-                                temp.add(temp1);
-                            }
-                        }
-                    }
-                }
-                if (temp.size() == 0) dp.add(null);
-                else dp.add(temp);
+        // 怎么保证结果不重复的呢？
+        // 看这篇题解https://leetcode.cn/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/
+        // target减去a后，就不要再去减比a小的数了
+        public void backTrace(int[] candidates, int target, int index, Deque<Integer> path,
+                              List<List<Integer>> ans){
+
+            if(target == 0){
+                ans.add(new ArrayList<>(path));
+                return;
             }
-            if (dp.get(target) == null) return new ArrayList<>();
-            List<List<Integer>> res = new ArrayList<>(dp.get(target));
-            return res;
+
+            for (int i = index; i < candidates.length; i++) {
+                int num = candidates[i];
+                // 剪枝，前提是数组是有序的
+                if(target - num < 0)
+                    break;
+
+                path.addLast(num);
+                // 这里的i是关键
+                backTrace(candidates, target-num, i, path, ans);
+                path.removeLast();
+            }
         }
     }
 
     public static void main(String[] args) {
-    int[] candidates = new int[]{1,2,5};
-    int target = 11;
+    int[] candidates = new int[]{2,3,6,7};
+    int target = 7;
     Solution solution = new Solution();
     System.out.println(solution.combinationSum(candidates, target));
     }
