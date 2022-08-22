@@ -1,45 +1,43 @@
 package 笔试题.网易.八月二十;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Main1 {
 
-    static int ans;
-    public static int count(StringBuilder a, StringBuilder b){
-        ans = Integer.MAX_VALUE;
-        dfs(a, b, 0, 0, 0);
-        return ans;
-    }
-
-    public static void dfs(StringBuilder a, StringBuilder b, int index1, int index2, int num){
-        int A = Integer.parseInt(a.toString());
-        int B = Integer.parseInt(b.toString());
-        if(A%B==0 || B%A==0){
-            ans = Math.min(ans, num);
-        }
-        if(index1>a.length() && index2>b.length())
-            return;
-
-        dfs(a ,b ,index1, index2, num);
-
-        char temp = a.charAt(index1);
-        a.deleteCharAt(index1);
-        dfs(a, b, index1+1, index2, num+1);
-        a.insert(index1, temp);
-
-        char temp1 = b.charAt(index2);
-        b.deleteCharAt(index2);
-        dfs(a, b, index1, index2+1, num+1);
-        b.insert(index2, temp1);
-
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        StringBuilder A = new StringBuilder(a+"");
-        StringBuilder B = new StringBuilder(b+"");
-        System.out.println(count(A, B));
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        String s1 = new StringBuilder(Long.toString(num1)).reverse().toString();
+        String s2 = new StringBuilder(Long.toString(num2)).reverse().toString();
+        Map<Integer,Integer> cnt1 = new HashMap<>();
+        Map<Integer,Integer> cnt2 = new HashMap<>();
+        getDDD(s1,0,0,cnt1,0);
+        getDDD(s2,0,0,cnt2,0);
+        int ans = s1.length()+s2.length()+1;
+        for (Integer key1 : cnt1.keySet()) {
+            for (Integer key2 : cnt2.keySet()) {
+                if(key1%key2 == 0 || key2%key1==0){
+                    ans = Math.min(ans,cnt1.get(key1)+cnt2.get(key2));
+                }
+            }
+        }
+        System.out.println(ans==(s1.length()+s2.length()+1)?-1:ans);
+    }
+
+    public static void getDDD(String str,int p,int val,Map<Integer,Integer> map,int cnt){
+        if(str.length()==p){
+            if(val!=0){
+                map.put(val,str.length()-cnt);
+            }
+            return;
+        }
+        //不要当前元素
+        getDDD(str,p+1,val,map,cnt);
+        //要当前元素
+        val += (str.charAt(p)-'0')*(int)Math.pow(10,cnt);
+        getDDD(str,p+1,val,map,cnt+1);
     }
 }

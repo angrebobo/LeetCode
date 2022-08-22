@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main2 {
 
-    static int ans;
+    /*static int ans;
     public static int count(long[] nums){
         int len = nums.length;
         ans = 0;
@@ -43,8 +43,31 @@ public class Main2 {
 
 //        int[] nums = new int[]{1,1,4,3,1,4};
         System.out.println(count(nums));
+    }*/
+
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        long arr[] = new long[n];
+        long firstMax=0,secondMax=0;
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+            if(i%2==0) firstMax=Math.max(firstMax,arr[i]);
+            else secondMax=Math.max(secondMax,arr[i]);
+        }
+        if(firstMax == secondMax){
+            System.out.println(Math.min(minOps2(arr,firstMax+1,secondMax),minOps2(arr,firstMax,firstMax+1)));
+        }
+        else
+            System.out.println(minOps2(arr,firstMax,secondMax));
+    }
+
+    public static long minOps2(long arr[],long num1,long num2){
+        long ans = 0;
+        for (int i = 0; i < arr.length; i++) {
+            ans+=(i%2==0?num1-arr[i]:num2-arr[i]);
+        }
+        return ans;
     }
 }
-
-//6
-//1 1 4 6 1 4

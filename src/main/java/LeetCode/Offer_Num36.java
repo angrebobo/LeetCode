@@ -30,6 +30,7 @@ public class Offer_Num36 {
             return list.get(0);
         }
 
+        // 二叉搜索树的中序遍历时递增的
         public void recursion(Node root, List<Node> list){
             if(root == null)
                 return;

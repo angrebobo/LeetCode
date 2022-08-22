@@ -6,15 +6,6 @@ package LeetCode;
  * @Data: Created in 9:33 2021/4/28
  */
 public class Num141 {
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 //    public static boolean hasCycle(ListNode head) {
 //        if(head == null )
 //            return false;
@@ -30,14 +21,6 @@ public class Num141 {
 //        }
 //        return false;
 //    }
-
-
-
-
-
-
-
-
 
      static class Solution {
         public boolean hasCycle(ListNode head) {
