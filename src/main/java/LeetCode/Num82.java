@@ -8,15 +8,6 @@ package LeetCode;
 
 public class Num82 {
 
-    static class ListNode {
-        int val;
-        ListNode next;
-        public ListNode() {}
-        ListNode(int x) { val = x; }
-        ListNode(int x, ListNode next){ val=x;this.next=next;}
-    }
-
-
     /*public static ListNode deleteDuplicates(ListNode head) {
         if(head == null || head.next == null) return head;
 

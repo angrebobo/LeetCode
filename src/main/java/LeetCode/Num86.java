@@ -7,14 +7,6 @@ package LeetCode;
  */
 public class Num86 {
 
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
-
     static class Solution {
         /*public ListNode partition(ListNode head, int x) {
             //将小于x的元素抽出来单独组成一个链表

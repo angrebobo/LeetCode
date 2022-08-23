@@ -11,13 +11,7 @@ import java.util.List;
  */
 
 public class Num92 {
-    static class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
+
     //我自己写的解法，繁冗复杂
     /*public static ListNode reverseBetween(ListNode head, int left, int right) {
         if(left == right)

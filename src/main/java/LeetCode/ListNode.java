@@ -6,9 +6,10 @@ package LeetCode;
  * @Data: Created in 23:28 2022/8/22
  */
 public class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
+    public int val;
+    public ListNode next;
+    public ListNode(){}
+    public ListNode(int x) {
         val = x;
         next = null;
     }

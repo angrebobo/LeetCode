@@ -6,14 +6,6 @@ package LeetCode;
  * @Data: Created in 20:54 2021/8/11
  */
 public class Num19 {
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
-
     public static ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode p = head;
         ListNode q = head;

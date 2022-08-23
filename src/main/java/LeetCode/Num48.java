@@ -27,16 +27,24 @@ public class Num48 {
         }*/
 
         //方法2，原地修改
+        // 题解：https://leetcode.cn/problems/rotate-image/solution/li-kou-48xiao-bai-du-neng-kan-dong-de-fang-fa-zhu-/
         public void rotate(int[][] matrix){
-            int len = matrix.length;
-            for (int i = 0; i < len/2; i++) {
-                for (int j = 0; j < (len+1)/2; j++) {
-                    int temp = matrix[i][j];
-                    matrix[i][j] = matrix[len-j-1][i];
-                    matrix[len-j-1][i] = matrix[len-i-1][len-j-1];
-                    matrix[len-i-1][len-j-1] = matrix[j][len-i-1];
-                    matrix[j][len-i-1] = temp;
+            int x = 0;
+            int y = matrix.length-1;
+            int add = 0;
+            // 坐标系为向下x轴，向右y轴
+            // 四个点的初试位置分别为(x, x),(x, y),(y, y),(y,x)
+            // 变换后的位置为(x, x+add),(x+add, y),(y, y-add),(y-add,x)
+            while (x <= y) {
+                for (add = 0; add < y - x; add++) {
+                    int temp = matrix[y - add][x];
+                    matrix[y - add][x] = matrix[y][y - add];
+                    matrix[y][y - add] = matrix[x + add][y];
+                    matrix[x + add][y] = matrix[x][x + add];
+                    matrix[x][x + add] = temp;
                 }
+                x++;
+                y--;
             }
         }
     }

@@ -1,7 +1,5 @@
 package LeetCode;
 
-import java.util.ArrayList;
-
 /**
  * @desiption:
  * @author: HuangSiBo
@@ -10,15 +8,7 @@ import java.util.ArrayList;
 
 public class Num143 {
 
-     static class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-     }
-
-    public static void reorderList(ListNode head) {
+    /*public static void reorderList(ListNode head) {
         ListNode p = head;
         ArrayList<ListNode> list = new ArrayList<>();
         while (p != null){
@@ -41,6 +31,10 @@ public class Num143 {
             j--;
         }
         head = dummy.next;
+    }*/
+
+    public static void reorderList(ListNode head) {
+
     }
 
     public static void main(String[] args) {

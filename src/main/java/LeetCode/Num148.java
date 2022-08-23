@@ -6,15 +6,6 @@ package LeetCode;
  * @Data: Created in 22:01 2021/7/7
  */
 public class Num148 {
-
-    static class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
-
     /*public static ListNode sortList(ListNode head) {
         HashMap<ListNode, Integer> map = new HashMap<>();
         ListNode p = head;

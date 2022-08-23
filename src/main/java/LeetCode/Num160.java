@@ -6,15 +6,6 @@ package LeetCode;
  * @Data: Created in 11:02 2021/4/23
  */
 public class Num160 {
-
-     static class ListNode {
-          int val;
-          ListNode next;
-          ListNode(int x) {
-              val = x;
-              next = null;
-          }
-    }
     // A+B = B+A
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode p = headA;

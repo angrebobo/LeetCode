@@ -6,13 +6,7 @@ package LeetCode;
  * @Data: Created in 23:16 2021/4/13
  */
 public class Num206 {
-    static class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val; }
-      ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-  }
+
       /* 解法1，双指针 */
 //    public static ListNode reverseList(ListNode head) {
 //        ListNode p = null;

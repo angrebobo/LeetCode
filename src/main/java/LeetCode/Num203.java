@@ -6,13 +6,6 @@ package LeetCode;
  * @Data: Created in 20:42 2022/6/14
  */
 public class Num203 {
-     static public class ListNode {
-         int val;
-         ListNode next;
-         ListNode() {}
-         ListNode(int val) { this.val = val; }
-         ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-     }
 
     static class Solution {
         public ListNode removeElements(ListNode head, int val) {

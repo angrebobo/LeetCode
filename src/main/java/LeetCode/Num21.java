@@ -8,12 +8,6 @@ package LeetCode;
 
 public class Num21 {
 
-     static class ListNode {
-         int val;
-         ListNode next;
-         ListNode(int x) { val = x; }
-    }
-
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode p = l1;
         ListNode q = l2;

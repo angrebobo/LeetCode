@@ -8,13 +8,6 @@ package LeetCode;
 
 public class Num25 {
 
-    static class ListNode {
-      int val;
-      ListNode next;
-      ListNode() {}
-      ListNode(int val) { this.val = val;}
-    }
-
     public static ListNode reverseKGroup(ListNode head, int k) {
         if(k == 1)
             return head;

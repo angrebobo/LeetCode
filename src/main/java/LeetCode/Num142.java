@@ -8,15 +8,6 @@ package LeetCode;
 
 public class Num142 {
 
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
-
     /*public ListNode detectCycle(ListNode head) {
         //slow每次走一步
         ListNode slow = head;

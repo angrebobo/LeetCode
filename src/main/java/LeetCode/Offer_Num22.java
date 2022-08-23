@@ -8,12 +8,6 @@ package LeetCode;
 
 public class Offer_Num22 {
 
-    class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
-
     public ListNode getKthFromEnd(ListNode head, int k) {
         ListNode p = head;
         ListNode q = head;

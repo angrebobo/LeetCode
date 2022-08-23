@@ -1,5 +1,7 @@
 package 左神算法;
 
+import LeetCode.ListNode;
+
 /**
  * @author: HuangSiBo
  * @Description: 给定两个可能有环也可能无环的单链表，头结点head1和head2。请实现一个函数，如果
@@ -8,18 +10,6 @@ package 左神算法;
  * @Data: Created in 0:10 2022/4/10
  */
 public class IntersectionList {
-
-    /**
-     * 定义链表节点
-     */
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     /**
      * @Description 返回链表环的第一个入口节点，若链表无环则返回null

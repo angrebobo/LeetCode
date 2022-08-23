@@ -6,13 +6,6 @@ package LeetCode;
  * @Data: Created in 15:51 2022/6/28
  */
 public class Num24 {
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode() {}
-        ListNode(int val) { this.val = val; }
-        ListNode(int val, ListNode next) { this.val = val; this.next = next; }
-    }
 
     static class Solution {
         //迭代
