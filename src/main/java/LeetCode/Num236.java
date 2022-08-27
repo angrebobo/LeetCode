@@ -127,6 +127,7 @@ public class Num236 {
         }
     }
 
+
     public static void main(String[] args) {
         TreeNode node1 = new TreeNode(1);
         TreeNode node2 = new TreeNode(2);
@@ -138,6 +139,5 @@ public class Num236 {
 
         Solution solution = new Solution();
         System.out.println(solution.lowestCommonAncestor(node1, node2, node5).val);
-
     }
 }
