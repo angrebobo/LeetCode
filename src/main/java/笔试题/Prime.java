@@ -1,10 +1,12 @@
+package 笔试题;
+
 import java.util.Arrays;
 import java.util.Scanner;
 
 /**
  * 最小生成树，Prime算法
  */
-public class Main {
+public class Prime {
 
     static boolean[] visited;
     static int[] clo;
