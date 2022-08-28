@@ -6,7 +6,7 @@ package LeetCode;
  * @Data: Created in 15:21 2021/3/31
  */
 public class Num8 {
-    public static int myAtoi(String s) {
+    /*public static int myAtoi(String s) {
         int len = s.length();
         if(len == 0)
             return 0;
@@ -52,11 +52,51 @@ public class Num8 {
         }
 
         return res;
+    }*/
+
+
+    public static int myAtoi(String s) {
+        char[] chars = s.toCharArray();
+        int len = chars.length;
+
+        int index = 0;
+        // 去除前导0
+        while (index < len && chars[index] == ' '){
+            index++;
+        }
+        if(index == len)
+            return 0;
+
+        int sign = 1;
+        if(chars[index] == '+' || chars[index] == '-'){
+            if(chars[index] == '-')
+                sign  = -1;
+            index++;
+        }
+
+        int res = 0;
+        while (index < len){
+            char c = chars[index];
+            if(c<'0' || c>'9')
+                return res;
+
+            if(res>Integer.MAX_VALUE/10 || (res==Integer.MAX_VALUE/10 && c-'0'>Integer.MAX_VALUE%10))
+                return Integer.MAX_VALUE;
+            if(res<Integer.MIN_VALUE/10 || (res==Integer.MIN_VALUE/10 && c-'0'>-(Integer.MIN_VALUE%10)))
+                return Integer.MIN_VALUE;
+
+            res *= 10;
+            res += sign==1 ? c-'0' : -(c-'0');
+            index++;
+        }
+
+        return res;
     }
 
 
+
     public static void main(String[] args) {
-        String a = "-2147483647";
+        String a = "-214748364753453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453453455465465656756767675675756756756756";
         System.out.println(myAtoi(a));
     }
 }
