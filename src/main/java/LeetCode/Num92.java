@@ -55,9 +55,8 @@ public class Num92 {
             return head;
     }*/
 
-    //改进后的解法，题解链接是https://leetcode-cn.com/problems/reverse-linked-list-ii/
-    // solution/java-shuang-zhi-zhen-tou-cha-fa-by-mu-yi-cheng-zho/
-    public static ListNode reverseBetween(ListNode head, int left, int right){
+    //改进后的解法，题解链接是https://leetcode-cn.com/problems/reverse-linked-list-ii/solution/java-shuang-zhi-zhen-tou-cha-fa-by-mu-yi-cheng-zho/
+    /*public static ListNode reverseBetween(ListNode head, int left, int right){
         ListNode dummy = new ListNode(0);
         dummy.next = head;
 
@@ -79,24 +78,47 @@ public class Num92 {
             pre.next = temp;
         }
         return dummy.next;
-    }
+    }*/
 
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode dummy = new ListNode(0);
+        dummy.next = head;
+        
+        ListNode pre = dummy;
+        ListNode cur = head;
+        for (int i = 1; i < left; i++) {
+            pre = pre.next;
+            cur = cur.next;
+        }
+
+        for (int i = left; i < right; i++) {
+            ListNode temp = cur.next;
+            cur.next = temp.next;
+            temp.next = pre.next;
+            pre.next = temp;
+        }
+
+        return dummy.next;
+    }
 
 
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
         ListNode node2 = new ListNode(2);
-//        ListNode node3 = new ListNode(3);
-//        ListNode node4 = new ListNode(4);
-//        ListNode node5 = new ListNode(5);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
 
         node1.next = node2;
-//        node2.next = node3;
-//        node3.next = node4;
-//        node4.next = node5;
+        node2.next = node3;
+        node3.next = node4;
+        node4.next = node5;
 
-        System.out.println(reverseBetween(node1, 1, 2));
-
+        ListNode p = (reverseBetween(node1, 2, 4));
+        while (p != null){
+            System.out.println(p.val);
+            p = p.next;
+        }
     }
 }
 
