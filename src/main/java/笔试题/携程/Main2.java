@@ -1,3 +1,5 @@
+package 笔试题.携程;
+
 import java.util.Scanner;
 
 public class Main2 {
