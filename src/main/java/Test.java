@@ -1,5 +1,3 @@
-import java.util.*;
-
 /**
  * @author: HuangSiBo
  * @Description:
@@ -7,27 +5,39 @@ import java.util.*;
  */
 public class Test {
 
-    public static void main(String[] args) {
-//        String str1 = "hello";
-//        String str2 = new String("hello");
-//        String str3 = str2;
-//        String str4 = "hello";
-//
-//        System.out.println(str1 == str2);      // false
-//        System.out.println(str1 == str3);      // false
-//        System.out.println(str1 == str4);      // true
-//        System.out.println(str2 == str3);      // true
-//        System.out.println(str1.equals(str2)); // true
-//        System.out.println(str1.equals(str3)); // true
-//        System.out.println(str1.equals(str4)); // true
-//        System.out.println(str2.equals(str3)); // t
-        List<int[]> list = new ArrayList<>();
-        list.add(new int[]{6,0});
-        list.add(new int[]{6,0});
-        list.add(new int[]{8,0});
-        Collections.sort(list, (o1,o2)->o1[0]-o2[0]);
-        for(int[] i : list){
-            System.out.println(i[0] + " " + i[1]);
+    public static void quickSort(int[] nums){
+        qucik(nums, 0, nums.length-1);
+    }
+
+    public static void qucik(int[] nums, int left, int right){
+        if(left < right){
+            int i = left;
+            int j = right;
+            int pivot = nums[i];
+
+            while (i<j){
+                while (i<j && nums[j]>=pivot)
+                    j--;
+                if(i<j)
+                    nums[i++] = nums[j];
+                while (i<j && nums[i]<=pivot)
+                    i++;
+                if(i<j)
+                    nums[j--] = nums[i];
+            }
+
+            nums[i] = pivot;
+            qucik(nums, left, i-1);
+            qucik(nums, i+1, right);
         }
+    }
+
+    public static void main(String[] args) {
+        int[] example = new int[]{53,17,78,9,45,65,87,32,32,87};
+        quickSort(example);
+        for (int i : example) {
+            System.out.println(i);
+        }
+
     }
 }
