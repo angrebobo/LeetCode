@@ -1,3 +1,5 @@
+package 魔法屋;
+
 /**
  * @author: HuangSiBo
  * @Description: 前缀树

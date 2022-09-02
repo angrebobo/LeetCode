@@ -1,3 +1,5 @@
+package 魔法屋;
+
 /**
  * @author: HuangSiBo
  * @Description: 几种排序算法

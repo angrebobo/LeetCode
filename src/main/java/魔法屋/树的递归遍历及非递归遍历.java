@@ -1,3 +1,5 @@
+package 魔法屋;
+
 import LeetCode.TreeNode;
 
 import java.util.Stack;
