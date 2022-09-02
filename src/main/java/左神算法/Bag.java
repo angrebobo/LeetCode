@@ -26,10 +26,10 @@ public class Bag {
         findMaxValue(weights, values, capacity-weights[index], index+1, value+values[index]);
     }*/
 
-    //用动态规划做
+    // 用动态规划做
     public static int findMaxValue(int[] weights, int[] values, int capacity){
         int len = weights.length;
-        //dp[i][j]的含义是从0-i的物品里任意取，装进容量为j的背包里，产生的最大的价格总和
+        // dp[i][j]的含义是从0-i的物品里任意取，装进容量为j的背包里，产生的最大的价格总和
         int[][] dp = new int[len][capacity+1];
         for (int j = weights[0]; j <= capacity; j++) {
             dp[0][j] = values[0];

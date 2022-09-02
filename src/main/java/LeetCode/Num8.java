@@ -44,7 +44,6 @@ public class Num8 {
                 return Integer.MAX_VALUE;
             else if( (res < Integer.MIN_VALUE/10) || (res == Integer.MIN_VALUE/10 && ans[i]-'0' > -(Integer.MIN_VALUE%10) ) )
                 return Integer.MIN_VALUE;
-
             res *= 10;
             res += (ans[i] - '0') * sign;
 
