@@ -16,6 +16,7 @@ public class MergeSort {
         sort(arr,0,arr.length-1,temp);
     }
     private static void sort(int[] arr,int left,int right,int []temp){
+        // 递归结束条件
         if(left<right){
             int mid = (left+right)/2;
             sort(arr,left,mid,temp);//左边归并排序，使得左子序列有序

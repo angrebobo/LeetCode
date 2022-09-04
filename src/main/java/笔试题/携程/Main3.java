@@ -4,10 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 输入示范
+ */
+//6
+//rbgbrg
+//1 3
+//1 2
+//3 4
+//2 5
+//5 6
 public class Main3 {
 
-    static boolean flag;
-    public static void dfs(int[][] grid, int point, StringBuilder builder,int red, int green, int blue, boolean[] visited){
+    public static boolean dfs(int[][] grid, int point, StringBuilder builder,int red, int green, int blue, boolean[] visited){
 
         switch (builder.charAt(point)){
             case 'r':
@@ -22,17 +31,20 @@ public class Main3 {
         }
 
         if(red>=1 & green>=1 && blue>=1){
-            flag = true;
-            return;
+            return true;
         }
 
         for (int i = 1; i < grid[point].length; i++) {
             if(grid[point][i] == 1 && !visited[i]){
                 visited[i] = true;
-                dfs(grid, i, builder, red, green, blue, visited);
+                boolean temp = dfs(grid, i, builder, red, green, blue, visited);
                 visited[i] = false;
+                if(temp)
+                    return true;
             }
         }
+
+        return false;
     }
 
     public static void main(String[] args) {
@@ -54,15 +66,14 @@ public class Main3 {
         boolean[] visited = new boolean[n+1];
         for (int i = 0; i < n-1; i++) {
             int[] temp = list.get(i);
+            // 把这条边断开
             grid[temp[0]][temp[1]] = grid[temp[1]][temp[0]] = 0;
-            flag = false;
             visited[temp[0]] = true;
-            dfs(grid, temp[0], builder,0,0,0, visited);
+            boolean flag = dfs(grid, temp[0], builder,0,0,0, visited);
             visited[temp[0]] = false;
             if(flag){
-                flag = false;
                 visited[temp[1]] = true;
-                dfs(grid, temp[1], builder,0,0,0, visited);
+                flag = dfs(grid, temp[1], builder,0,0,0, visited);
                 visited[temp[1]] = false;
 
                 if(flag)
@@ -74,3 +85,4 @@ public class Main3 {
         System.out.println(ans);
     }
 }
+
