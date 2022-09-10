@@ -7,41 +7,7 @@ package LeetCode;
  */
 public class Num32 {
     static class Solution {
-        /*// 这傻逼题目题意也不讲清楚
-        public int longestValidParentheses(String s) {
-            int len = s.length();
-            int start = 0, end = 0;
-            int res = 0;
-            while (end < len){
-                if(!isVal(s, end)){
-                    start = end;
-                    while (start<len && s.charAt(start) == ')'){
-                        start++;
-                        end++;
-                    }
-                }
-                else if(s.charAt(end) == ')'){
-                    res = Math.max(res, end-start+1);
-                }
-
-                end++;
-            }
-
-            return res;
-        }
-
-        public boolean isVal(String s, int end){
-            if(end < 1)
-                return false;
-            if(s.charAt(end-1)=='(' && s.charAt(end)==')')
-                return true;
-            else if(s.charAt(end-1)==')' && s.charAt(end)=='(')
-                return true;
-            else
-                return false;
-        }*/
-
-        public int longestValidParentheses(String s) {
+        /*public int longestValidParentheses(String s) {
             int len = s.length();
             int[] dp = new int[len];
             int res = 0;
@@ -66,6 +32,31 @@ public class Num32 {
             }
 
             return res;
+        }*/
+
+        // 2022.09.07写
+        public static int longestValidParentheses(String s) {
+            int len = s.length();
+            if(len == 0) return 0;
+            char[] chars = s.toCharArray();
+            // dp[i]表示已chars[i]为结尾的最长有效字符串。要牢记dp的含义
+            int[] dp = new int[len];
+            dp[0] = 0;
+            int max = 0;
+            for (int i = 1; i < s.length(); i++) {
+                if(chars[i] == ')'){
+                    if(chars[i-1] == '(')
+                        dp[i] = i-2>=0 ? dp[i-2]+2 : 2;
+                    else if(chars[i-1] == ')'){
+                        if(i-dp[i-1]-1 >=0 && chars[i-dp[i-1]-1] == '(')
+                            dp[i] = i-dp[i-1]-2>=0 ? (dp[i-dp[i-1]-2] + dp[i-1] + 2) : (dp[i-1] + 2) ;
+                    }
+                }
+
+                max = Math.max(max, dp[i]);
+            }
+
+            return max;
         }
     }
 
