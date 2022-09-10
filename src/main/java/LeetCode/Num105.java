@@ -1,6 +1,7 @@
 package LeetCode;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author: HuangSiBo
@@ -82,7 +83,7 @@ public class Num105 {
     }*/
 
         // 2020.08.01写
-    static class Solution {
+    /*static class Solution {
         public TreeNode buildTree(int[] preorder, int[] inorder) {
             // map保存节点在中序遍历里的索引位置
             HashMap<Integer, Integer> map = new HashMap<>();
@@ -111,15 +112,95 @@ public class Num105 {
 
             return root;
         }
+    }*/
+
+        // 2022.09.10写
+    static class Solution {
+        public TreeNode buildTree(int[] preorder, int[] inorder) {
+            return build(preorder, 0, preorder.length-1, inorder, 0, inorder.length-1);
+        }
+
+        public TreeNode build(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd){
+            // 注意递归结束的条件
+            // 当前节点如果是叶子节点，那preStart==preEnd
+            // 叶子节点在创建左右子节点时，preStart > preEnd， return null
+            if(preStart > preEnd)
+                return null;
+
+            int rootVal = preorder[preStart];
+            TreeNode root = new TreeNode(rootVal);
+            int rootIndex = 0;
+            for (int i = 0; i < inorder.length; i++) {
+                if(inorder[i] == rootVal){
+                    rootIndex = i;
+                    break;
+                }
+            }
+
+            int leftTreeSize = rootIndex - inStart;
+
+            root.left = build(preorder, preStart+1, preStart+leftTreeSize, inorder, inStart, rootIndex-1);
+
+            root.right = build(preorder, preStart+leftTreeSize+1, preEnd, inorder, rootIndex+1, inEnd);
+
+            return root;
+        }
+    }
+
+    // 这道题还有变种
+    // 题目：已知一个二叉树的先序遍历序列和中序遍历序列，但其中一些节点的值可能相同，请你返回所有满足条件的二叉树。二叉树在数组中的顺序是任意的。
+    // 用例：输入描述：[1,1,2],[1,2,1]
+    // 输出描述：[{1,1,#,#,2｝,{1,#,1,2｝]
+    // 链接：https://mp.weixin.qq.com/s/PgHcLid5Ed4-WasgnhxEpg
+    static class Solution1{
+        public ArrayList<TreeNode> buildTree(int[] preorder, int[] inorder) {
+            return build(preorder, 0, preorder.length-1, inorder, 0, inorder.length-1);
+
+        }
+
+        public ArrayList<TreeNode> build(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd){
+            if(preStart > preEnd || inStart > inEnd)
+                return new ArrayList<>();
+
+            int rooVal = preorder[preStart];
+            List<Integer> canditate = new ArrayList<>();
+            for (int i = inStart; i <= inEnd; i++) {
+                if(inorder[i] == rooVal)
+                    canditate.add(i);
+            }
+
+            ArrayList<TreeNode> res = new ArrayList<>();
+
+            if(canditate.size() > 0){
+                for (Integer index : canditate) {
+                    int leftTreeSize = index - preStart;
+
+                    ArrayList<TreeNode> left = build(preorder, preStart+1, preStart+1+leftTreeSize, inorder, inStart, index-1);
+                    ArrayList<TreeNode> right = build(preorder, preStart+1+leftTreeSize+1, preEnd, inorder, index+1, inEnd);
+                    for (TreeNode l : left) {
+                        for (TreeNode r : right) {
+                            TreeNode root = new TreeNode(rooVal);
+                            root.left = l;
+                            root.right = r;
+                            res.add(root);
+                        }
+                    }
+                }
+            }
+
+            return res;
+        }
     }
 
 
     public static void main(String[] args) {
-        int[] preorder = new int[]{3,9,20,15,7};
-        int[] inorder = new int[]{9,3,15,20,7};
+        int[] preorder = new int[]{1,1,2};
+        int[] inorder = new int[]{1,2,1};
 
-        Solution solution = new Solution();
-        TreeNode node = solution.buildTree(preorder, inorder);
-        Utils.show(node);
+//        Solution solution = new Solution();
+//        TreeNode node = solution.buildTree(preorder, inorder);
+
+        Solution1 solution1 = new Solution1();
+        ArrayList<TreeNode> nodes = solution1.buildTree(preorder, inorder);
     }
 }
