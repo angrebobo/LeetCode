@@ -155,35 +155,34 @@ public class Num105 {
     static class Solution1{
         public ArrayList<TreeNode> buildTree(int[] preorder, int[] inorder) {
             return build(preorder, 0, preorder.length-1, inorder, 0, inorder.length-1);
-
         }
 
         public ArrayList<TreeNode> build(int[] preorder, int preStart, int preEnd, int[] inorder, int inStart, int inEnd){
-            if(preStart > preEnd || inStart > inEnd)
-                return new ArrayList<>();
-
-            int rooVal = preorder[preStart];
-            List<Integer> canditate = new ArrayList<>();
-            for (int i = inStart; i <= inEnd; i++) {
-                if(inorder[i] == rooVal)
-                    canditate.add(i);
+            ArrayList<TreeNode> res = new ArrayList<>();
+            if(preStart > preEnd || inStart > inEnd){
+                res.add(null);
+                return res;
             }
 
-            ArrayList<TreeNode> res = new ArrayList<>();
 
-            if(canditate.size() > 0){
-                for (Integer index : canditate) {
-                    int leftTreeSize = index - preStart;
+            int rooVal = preorder[preStart];
+            List<Integer> indexs = new ArrayList<>();
+            for (int i = inStart; i <= inEnd; i++) {
+                if(inorder[i] == rooVal)
+                    indexs.add(i);
+            }
 
-                    ArrayList<TreeNode> left = build(preorder, preStart+1, preStart+1+leftTreeSize, inorder, inStart, index-1);
-                    ArrayList<TreeNode> right = build(preorder, preStart+1+leftTreeSize+1, preEnd, inorder, index+1, inEnd);
-                    for (TreeNode l : left) {
-                        for (TreeNode r : right) {
-                            TreeNode root = new TreeNode(rooVal);
-                            root.left = l;
-                            root.right = r;
-                            res.add(root);
-                        }
+            for (Integer index : indexs) {
+                int leftTreeSize = index - inStart;
+
+                ArrayList<TreeNode> left = build(preorder, preStart+1, preStart+leftTreeSize, inorder, inStart, index-1);
+                ArrayList<TreeNode> right = build(preorder, preStart+leftTreeSize+1, preEnd, inorder, index+1, inEnd);
+                for (TreeNode l : left) {
+                    for (TreeNode r : right) {
+                        TreeNode root = new TreeNode(rooVal);
+                        root.left = l;
+                        root.right = r;
+                        res.add(root);
                     }
                 }
             }
