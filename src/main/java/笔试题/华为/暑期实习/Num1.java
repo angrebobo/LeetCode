@@ -1,4 +1,4 @@
-package 笔试题.华为;
+package 笔试题.华为.暑期实习;
 
 
 import java.util.Scanner;
