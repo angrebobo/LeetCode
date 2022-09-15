@@ -9,8 +9,8 @@ package LeetCode;
 public class Num124 {
 
     static class Solution {
-        //定义全局最大值
-        static int max = Integer.MIN_VALUE;
+        // 定义全局最大值
+        static int max;
 
         public int maxPathSum(TreeNode root) {
             DFS(root);
@@ -18,18 +18,18 @@ public class Num124 {
         }
 
         public int DFS(TreeNode root){
-            //若当前节点为空，当前节点能提供的最大值即0
+            // 若当前节点为空，当前节点能提供的最大值即0
             if(root == null)
                 return 0 ;
 
-            //计算当前节点左子树能提供的最大值
+            // 计算当前节点左子树能提供的最大值
             int left = DFS(root.left);
-            //计算当前节点右子树能提供的最大值
+            // 计算当前节点右子树能提供的最大值
             int right = DFS(root.right);
-            //当前子树内部的最大路径和=当前节点值+当前节点左子树能提供的最大值+当前节点右子树能提供的最大值
+            // 当前子树内部的最大路径和=当前节点值+当前节点左子树能提供的最大值+当前节点右子树能提供的最大值
             max = Math.max(max, root.val + left + right);
 
-            //计算当前子树对外提供的最大路径和（返回出来给父节点）
+            // 计算当前子树对外提供的最大路径和（返回出来给父节点）
             int sum = root.val + Math.max(left, right);
             return Math.max(sum, 0);
         }

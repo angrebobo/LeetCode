@@ -6,6 +6,9 @@ import java.util.List;
 /**
  * @author: HuangSiBo
  * @Description:
+ * 一个合法的括号组合：
+ * 1、左右括号数相等
+ * 2、所有前缀中，左括号数>=有括号数
  * @Data: Created in 23:53 2021/5/17
  */
 public class Num22 {
