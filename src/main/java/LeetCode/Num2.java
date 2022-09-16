@@ -8,12 +8,12 @@ package LeetCode;
 
 public class Num2 {
 
-    public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode p = l1;
-        ListNode q = l2;
+    public ListNode1 addTwoNumbers(ListNode1 l1, ListNode1 l2) {
+        ListNode1 p = l1;
+        ListNode1 q = l2;
         int carry = 0;
         int sum;
-        ListNode tail = new ListNode();
+        ListNode1 tail = new ListNode1();
 
         while (p!=null && q!=null){
             sum = p.val + q.val + carry;
@@ -46,13 +46,13 @@ public class Num2 {
         while (q != null){
             sum = q.val + carry;
             if(sum > 9){
-                ListNode n = new ListNode(sum % 10);
+                ListNode1 n = new ListNode1(sum % 10);
                 tail.next = n;
                 tail = tail.next;
                 carry  = 1;
             }
             else{
-                ListNode n = new ListNode(sum);
+                ListNode1 n = new ListNode1(sum);
                 tail.next = n;
                 tail = tail.next;
                 carry = 0;
@@ -62,7 +62,7 @@ public class Num2 {
         }
 
         if(p == null && q == null && carry == 1){
-            ListNode node = new ListNode(1);
+            ListNode1 node = new ListNode1(1);
             tail.next = node;
         }
 

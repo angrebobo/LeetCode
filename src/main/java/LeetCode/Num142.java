@@ -34,11 +34,11 @@ public class Num142 {
 
     //2021.09.17日写
     public static class Solution {
-        public ListNode detectCycle(ListNode head) {
+        public ListNode1 detectCycle(ListNode1 head) {
             // fast每次走两步
-            ListNode fast = head;
+            ListNode1 fast = head;
             // slow每次走一步
-            ListNode slow = head;
+            ListNode1 slow = head;
 
             while (fast!=null && fast.next!=null){
                 fast = fast.next.next;
@@ -59,10 +59,10 @@ public class Num142 {
     }
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(3);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(0);
-        ListNode n4 = new ListNode(4);
+        ListNode1 n1 = new ListNode1(3);
+        ListNode1 n2 = new ListNode1(2);
+        ListNode1 n3 = new ListNode1(0);
+        ListNode1 n4 = new ListNode1(4);
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;

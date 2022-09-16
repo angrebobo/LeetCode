@@ -35,9 +35,9 @@ public class Num143 {
         head = dummy.next;
     }*/
 
-    public static void reorderList(ListNode head) {
-        ArrayList<ListNode> list = new ArrayList<>();
-        ListNode p = head;
+    public static void reorderList(ListNode1 head) {
+        ArrayList<ListNode1> list = new ArrayList<>();
+        ListNode1 p = head;
         while (p != null){
             list.add(p);
             p = p.next;
@@ -54,14 +54,14 @@ public class Num143 {
     }
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(3);
-        ListNode n4 = new ListNode(4);
+        ListNode1 n1 = new ListNode1(1);
+        ListNode1 n2 = new ListNode1(2);
+        ListNode1 n3 = new ListNode1(3);
+        ListNode1 n4 = new ListNode1(4);
 //        ListNode n5 = new ListNode(5);
         n1.next = n2; n2.next = n3; n3.next = n4;/*n4.next = n5;*/
         reorderList(n1);
-        ListNode p = n1;
+        ListNode1 p = n1;
         while (p != null){
             System.out.println(p.val);
             p = p.next;

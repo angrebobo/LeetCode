@@ -8,11 +8,11 @@ package LeetCode;
 
 public class Num21 {
 
-    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode p = l1;
-        ListNode q = l2;
-        ListNode dummy_head = new ListNode(0);
-        ListNode tail = dummy_head;
+    public static ListNode1 mergeTwoLists(ListNode1 l1, ListNode1 l2) {
+        ListNode1 p = l1;
+        ListNode1 q = l2;
+        ListNode1 dummy_head = new ListNode1(0);
+        ListNode1 tail = dummy_head;
         while (p!=null && q!=null){
             if(p.val < q.val){
                 tail.next = p;
@@ -36,13 +36,13 @@ public class Num21 {
     }
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(4);
+        ListNode1 n1 = new ListNode1(1);
+        ListNode1 n2 = new ListNode1(2);
+        ListNode1 n3 = new ListNode1(4);
 
-        ListNode n5 = new ListNode(1);
-        ListNode n6 = new ListNode(3);
-        ListNode n7 = new ListNode(4);
+        ListNode1 n5 = new ListNode1(1);
+        ListNode1 n6 = new ListNode1(3);
+        ListNode1 n7 = new ListNode1(4);
 
         n1.next = n2;
         n2.next = n3;

@@ -10,10 +10,10 @@ import java.util.Stack;
 public class Num234 {
 
     static class Solution {
-        public boolean isPalindrome(ListNode head) {
-            Stack<ListNode> stack = new Stack<>();
-            ListNode slow = head;
-            ListNode qucik = head;
+        public boolean isPalindrome(ListNode1 head) {
+            Stack<ListNode1> stack = new Stack<>();
+            ListNode1 slow = head;
+            ListNode1 qucik = head;
             while (qucik.next != null){
                 slow = slow.next;
                 qucik = qucik.next.next;
@@ -30,10 +30,10 @@ public class Num234 {
     }
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(2);
-        ListNode n4 = new ListNode(1);
+        ListNode1 n1 = new ListNode1(1);
+        ListNode1 n2 = new ListNode1(2);
+        ListNode1 n3 = new ListNode1(2);
+        ListNode1 n4 = new ListNode1(1);
         n1.next = n2;n2.next = n3;n3.next = n4;
 
         Solution solution = new Solution();

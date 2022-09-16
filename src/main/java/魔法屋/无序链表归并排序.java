@@ -1,6 +1,6 @@
 package 魔法屋;
 
-import LeetCode.ListNode;
+import LeetCode.ListNode1;
 
 /**
  * @author: HuangSiBo
@@ -9,19 +9,19 @@ import LeetCode.ListNode;
  */
 public class 无序链表归并排序 {
 
-    public static ListNode sort(ListNode head){
+    public static ListNode1 sort(ListNode1 head){
         if(head==null || head.next==null)
             return head;
 
         // 快慢指针找到链表中间节点
-        ListNode fast = head;
-        ListNode slow = head;
+        ListNode1 fast = head;
+        ListNode1 slow = head;
         while (fast.next!=null && fast.next.next!=null){
             fast = fast.next.next;
             slow = slow.next;
         }
 
-        ListNode temp = slow.next;
+        ListNode1 temp = slow.next;
         // !!!这一步很关键，将第一个链表的尾节点断开
         slow.next = null;
         sort(head);
@@ -29,10 +29,10 @@ public class 无序链表归并排序 {
         return merge(head, temp);
     }
 
-    public static ListNode merge(ListNode head1, ListNode head2){
+    public static ListNode1 merge(ListNode1 head1, ListNode1 head2){
         if(head1 == null)return head2;
         if(head2 == null)return head1;
-        ListNode res , p;
+        ListNode1 res , p;
         if(head1.val < head2.val) {
             res = head1;
             head1 = head1.next;
@@ -64,18 +64,18 @@ public class 无序链表归并排序 {
     }
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(5);
-        ListNode n3 = new ListNode(3);
-        ListNode n4 = new ListNode(432);
-        ListNode n5 = new ListNode(65);
-        ListNode n6 = new ListNode(8);
-        ListNode n7 = new ListNode(43290);
+        ListNode1 n1 = new ListNode1(1);
+        ListNode1 n2 = new ListNode1(5);
+        ListNode1 n3 = new ListNode1(3);
+        ListNode1 n4 = new ListNode1(432);
+        ListNode1 n5 = new ListNode1(65);
+        ListNode1 n6 = new ListNode1(8);
+        ListNode1 n7 = new ListNode1(43290);
 
         n1.next=n2;n2.next=n3;n3.next=n4;
         n4.next=n5;n5.next=n6;n6.next=n7;
 
-        ListNode ans = sort(n1);
+        ListNode1 ans = sort(n1);
         while (ans != null){
             System.out.println(ans.val);
             ans = ans.next;

@@ -1,9 +1,11 @@
+package 笔试题.蚂蚁;
+
 import java.util.Scanner;
 
 /**
  * @author: HuangSiBo
  * @Description:
- * 思路：从根节点开始向下遍历，如果当前根节点
+ * 思路：从上到下遍历，在越高的节点选子树加1，整体加的次数就越小
  * @Data: Created in 19:51 2022/9/15
  */
 public class Test1 {
@@ -31,8 +33,12 @@ public class Test1 {
         }
 
 
-        while (check(root.left) && check(root.right)){
+        while( check(root.left) ){
             dfs(root.left);
+            ans++;
+        }
+
+        while( check(root.right) ){
             dfs(root.right);
             ans++;
         }
@@ -41,7 +47,7 @@ public class Test1 {
         count(root.right);
     }
 
-
+    // 判断以root为根的树能否整体加1
     public static boolean check(TreeNode root){
         if(root == null)
             return true;
@@ -59,6 +65,7 @@ public class Test1 {
         return check(root.right);
     }
 
+    // 以root为根的树整体加1
     public static void dfs(TreeNode root){
         if(root == null)
             return;
@@ -72,6 +79,10 @@ public class Test1 {
         int n = sc.nextInt();
         sc.nextLine();
         TreeNode[] nodes = new TreeNode[n+1];
+        // 输入中，没有给出左右子树的关系
+        // 所以count用来记录一个几点的次数
+        // 第一次出现时，是父亲和左子
+        // 第二次出现时，是父亲和右子树
         int[] count = new int[n+1];
         for (int i = 0; i < n-1; i++) {
             int a = sc.nextInt();

@@ -1,4 +1,4 @@
-package 笔试题;
+package 魔法屋;
 
 import java.util.Arrays;
 import java.util.Scanner;

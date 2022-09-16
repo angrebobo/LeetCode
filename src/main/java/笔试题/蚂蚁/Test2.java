@@ -1,3 +1,5 @@
+package 笔试题.蚂蚁;
+
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Scanner;

@@ -1,6 +1,6 @@
 package 左神算法;
 
-import LeetCode.ListNode;
+import LeetCode.ListNode1;
 
 /**
  * @author: HuangSiBo
@@ -15,9 +15,9 @@ public class IntersectionList {
      * @Description 返回链表环的第一个入口节点，若链表无环则返回null
      *
      */
-    public ListNode detectCycle(ListNode head){
-        ListNode slow = head;
-        ListNode quick = head;
+    public ListNode1 detectCycle(ListNode1 head){
+        ListNode1 slow = head;
+        ListNode1 quick = head;
         while (quick!=null && quick.next!=null){
             slow = slow.next;
             quick = quick.next.next;
@@ -45,9 +45,9 @@ public class IntersectionList {
      * @param head2
      * @return
      */
-    public ListNode noLoop(ListNode head1, ListNode head2){
-        ListNode p = head1;
-        ListNode q = head2;
+    public ListNode1 noLoop(ListNode1 head1, ListNode1 head2){
+        ListNode1 p = head1;
+        ListNode1 q = head2;
 
         while (p != q){
             if(p != null)
@@ -71,15 +71,15 @@ public class IntersectionList {
      * @param loop2
      * @return
      */
-    public ListNode bothLoop(ListNode head1, ListNode loop1, ListNode head2, ListNode loop2){
+    public ListNode1 bothLoop(ListNode1 head1, ListNode1 loop1, ListNode1 head2, ListNode1 loop2){
         //链表相交，交点在环外
         if(loop1 == loop2){
-            ListNode loop1Next = loop1.next;
-            ListNode loop2Next = loop2.next;
+            ListNode1 loop1Next = loop1.next;
+            ListNode1 loop2Next = loop2.next;
             loop1.next = null;
             loop2.next = null;
 
-            ListNode intersection = noLoop(head1, head2);
+            ListNode1 intersection = noLoop(head1, head2);
 
             //还原链表结构
             loop1.next = loop1Next;
@@ -91,7 +91,7 @@ public class IntersectionList {
         else {
             int count = 0;
             boolean flag = false;
-            ListNode p = head1;
+            ListNode1 p = head1;
 
             while (count <= 2){
                 if(p == loop1)
@@ -113,10 +113,10 @@ public class IntersectionList {
      * @param head2
      * @return
      */
-    public ListNode getIntersectionNode(ListNode head1, ListNode head2){
+    public ListNode1 getIntersectionNode(ListNode1 head1, ListNode1 head2){
         //获取两个链表的入环节点
-        ListNode loop1 = detectCycle(head1);
-        ListNode loop2 = detectCycle(head2);
+        ListNode1 loop1 = detectCycle(head1);
+        ListNode1 loop2 = detectCycle(head2);
 
         //两个链表都无环
         if(loop1==null && loop2==null){
@@ -135,7 +135,7 @@ public class IntersectionList {
 
     public static void main(String[] args) {
         IntersectionList intersectionList = new IntersectionList();
-        ListNode res;
+        ListNode1 res;
 
         //两个无环单链表，相交
         /*ListNode n1 = new ListNode(1);
@@ -210,12 +210,12 @@ public class IntersectionList {
             System.out.println("null");*/
 
         //两个有环单链表，相交，交点在环内
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(2);
-        ListNode n3 = new ListNode(3);
-        ListNode n4 = new ListNode(4);
+        ListNode1 n1 = new ListNode1(1);
+        ListNode1 n2 = new ListNode1(2);
+        ListNode1 n3 = new ListNode1(3);
+        ListNode1 n4 = new ListNode1(4);
         n1.next = n2;n2.next = n3;n3.next = n4;n4.next = n3;
-        ListNode n5 = new ListNode(5);
+        ListNode1 n5 = new ListNode1(5);
         n5.next = n4;
         //n1有环，n5有环，交点在环内为n4
         if( (res=intersectionList.getIntersectionNode(n1, n5)) != null )

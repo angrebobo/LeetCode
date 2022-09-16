@@ -8,9 +8,9 @@ package LeetCode;
 
 public class Offer_Num22 {
 
-    public ListNode getKthFromEnd(ListNode head, int k) {
-        ListNode p = head;
-        ListNode q = head;
+    public ListNode1 getKthFromEnd(ListNode1 head, int k) {
+        ListNode1 p = head;
+        ListNode1 q = head;
         for (int i = 0; i < k-1; i++) {
             p = p.next;
         }

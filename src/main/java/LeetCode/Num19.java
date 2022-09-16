@@ -6,10 +6,10 @@ package LeetCode;
  * @Data: Created in 20:54 2021/8/11
  */
 public class Num19 {
-    public static ListNode removeNthFromEnd(ListNode head, int n) {
-        ListNode p = head;
-        ListNode q = head;
-        ListNode pre_q = head;
+    public static ListNode1 removeNthFromEnd(ListNode1 head, int n) {
+        ListNode1 p = head;
+        ListNode1 q = head;
+        ListNode1 pre_q = head;
 
         int n1 = n;
         while (n1-- > 0){
@@ -38,15 +38,15 @@ public class Num19 {
     }
 
     public static void main(String[] args) {
-        ListNode n1 = new ListNode(1);
-        ListNode n2 = new ListNode(2);
+        ListNode1 n1 = new ListNode1(1);
+        ListNode1 n2 = new ListNode1(2);
         n1.next=n2;
         /*ListNode n3 = new ListNode(3);
         ListNode n4 = new ListNode(4);
         ListNode n5 = new ListNode(5);
         n2.next=n3;n3.next=n4;n4.next=n5;*/
 
-        ListNode ans = removeNthFromEnd(n1, 2);
+        ListNode1 ans = removeNthFromEnd(n1, 2);
         while (ans != null){
             System.out.println(ans.val);
             ans = ans.next;
