@@ -1,3 +1,5 @@
+package 笔试题.小马智行;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -9,6 +11,7 @@ public class Main3 {
         int len = sc.nextInt();
         sc.nextLine();
         String s = sc.nextLine();
+        // 记录每个字符的下标
         List<Integer> p = new ArrayList<>();
         List<Integer> o = new ArrayList<>();
         List<Integer> n = new ArrayList<>();
@@ -25,6 +28,8 @@ public class Main3 {
         }
 
         int ans = 0;
+        // p,o,n,y四个List中，各自都是有序的
+        // 贪心的思想
         int index1=0, index2=0, index3=0, index4 = 0;
         while (index1<p.size() && index2<o.size() && index3<n.size() && index4<y.size()){
             if(p.get(index1)<o.get(index2) && o.get(index2)<n.get(index3) && n.get(index3)<y.get(index4)){

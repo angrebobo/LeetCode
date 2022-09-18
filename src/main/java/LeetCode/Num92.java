@@ -80,19 +80,19 @@ public class Num92 {
         return dummy.next;
     }*/
 
-    public static ListNode1 reverseBetween(ListNode1 head, int left, int right) {
-        ListNode1 dummy = new ListNode1(0);
+    public static ListNode reverseBetween(ListNode head, int left, int right) {
+        ListNode dummy = new ListNode(0);
         dummy.next = head;
         
-        ListNode1 pre = dummy;
-        ListNode1 cur = head;
+        ListNode pre = dummy;
+        ListNode cur = head;
         for (int i = 1; i < left; i++) {
             pre = pre.next;
             cur = cur.next;
         }
 
         for (int i = left; i < right; i++) {
-            ListNode1 temp = cur.next;
+            ListNode temp = cur.next;
             cur.next = temp.next;
             temp.next = pre.next;
             pre.next = temp;
@@ -103,18 +103,18 @@ public class Num92 {
 
 
     public static void main(String[] args) {
-        ListNode1 node1 = new ListNode1(1);
-        ListNode1 node2 = new ListNode1(2);
-        ListNode1 node3 = new ListNode1(3);
-        ListNode1 node4 = new ListNode1(4);
-        ListNode1 node5 = new ListNode1(5);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
 
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;
         node4.next = node5;
 
-        ListNode1 p = (reverseBetween(node1, 2, 4));
+        ListNode p = (reverseBetween(node1, 2, 4));
         while (p != null){
             System.out.println(p.val);
             p = p.next;

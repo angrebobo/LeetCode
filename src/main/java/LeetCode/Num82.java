@@ -32,11 +32,11 @@ public class Num82 {
      * @return
      */
     static class Solution {
-        public ListNode1 deleteDuplicates(ListNode1 head) {
-            ListNode1 dummy = new ListNode1();
+        public ListNode deleteDuplicates(ListNode head) {
+            ListNode dummy = new ListNode();
             dummy.next = head;
-            ListNode1 p = head;
-            ListNode1 pre = dummy;
+            ListNode p = head;
+            ListNode pre = dummy;
             while (p != null){
                 while (p.next != null && p.val == p.next.val){
                     p = p.next;
@@ -54,13 +54,13 @@ public class Num82 {
     }
 
     public static void main(String[] args) {
-        ListNode1 n1 = new ListNode1(1);
-        ListNode1 n2 = new ListNode1(2);
-        ListNode1 n3 = new ListNode1(3);
-        ListNode1 n4 = new ListNode1(3);
-        ListNode1 n5 = new ListNode1(4);
-        ListNode1 n6 = new ListNode1(4);
-        ListNode1 n7 = new ListNode1(5);
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(3);
+        ListNode n5 = new ListNode(4);
+        ListNode n6 = new ListNode(4);
+        ListNode n7 = new ListNode(5);
         n1.next=n2;n2.next=n3;n3.next=n4;n4.next=n5;n5.next=n6;n6.next=n7;
         // ListNode dummy = deleteDuplicates(n1);
 

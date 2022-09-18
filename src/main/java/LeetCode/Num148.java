@@ -43,24 +43,24 @@ public class Num148 {
     }*/
 
 
-    public static ListNode1 sortList(ListNode1 head) {
+    public static ListNode sortList(ListNode head) {
         if(head==null || head.next==null){
             return head;
         }
-        ListNode1 fast = head.next;
-        ListNode1 slow = head;
+        ListNode fast = head.next;
+        ListNode slow = head;
         while (fast!=null && fast.next!=null){
             slow = slow.next;
             fast = fast.next.next;
         }
-        ListNode1 tmp = slow.next;
+        ListNode tmp = slow.next;
         slow.next = null;
-        ListNode1 left =  sortList(head);
-        ListNode1 right = sortList(tmp);
+        ListNode left =  sortList(head);
+        ListNode right = sortList(tmp);
         return mergeTwoLists(left, right);
     }
 
-    private static ListNode1 mergeTwoLists(ListNode1 l1, ListNode1 l2){
+    private static ListNode mergeTwoLists(ListNode l1, ListNode l2){
         if(l1 == null) return l2;
         if(l2 == null) return l1;
         if(l1.val < l2.val){
@@ -74,14 +74,14 @@ public class Num148 {
     }
 
     public static void main(String[] args) {
-        ListNode1 n1 = new ListNode1(4);
-        ListNode1 n2 = new ListNode1(2);
-        ListNode1 n3 = new ListNode1(1);
-        ListNode1 n4 = new ListNode1(3);
-        ListNode1 n5 = new ListNode1(5);
-        ListNode1 n6 = new ListNode1(0);
-        ListNode1 n7 = new ListNode1(7);
-        ListNode1 n8 = new ListNode1(8);
+        ListNode n1 = new ListNode(4);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(1);
+        ListNode n4 = new ListNode(3);
+        ListNode n5 = new ListNode(5);
+        ListNode n6 = new ListNode(0);
+        ListNode n7 = new ListNode(7);
+        ListNode n8 = new ListNode(8);
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;
@@ -89,7 +89,7 @@ public class Num148 {
         n5.next = n6;
         n6.next = n7;
         n7.next = n8;
-        ListNode1 ans = sortList(n1);
+        ListNode ans = sortList(n1);
         while (ans != null){
             System.out.println(ans.val);
             ans = ans.next;

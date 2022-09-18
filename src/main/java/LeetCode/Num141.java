@@ -23,9 +23,9 @@ public class Num141 {
 //    }
 
      static class Solution {
-        public boolean hasCycle(ListNode1 head) {
-            ListNode1 p = head;
-            ListNode1 q = head;
+        public boolean hasCycle(ListNode head) {
+            ListNode p = head;
+            ListNode q = head;
 
             while (q!=null && q.next!=null){
                 q = q.next.next;
@@ -38,10 +38,10 @@ public class Num141 {
     }
 
     public static void main(String[] args) {
-        ListNode1 n1 = new ListNode1(1);
-        ListNode1 n2 = new ListNode1(2);
-        ListNode1 n3 = new ListNode1(3);
-        ListNode1 n4 = new ListNode1(4);
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
         n1.next = n2;
         n2.next = n3;
         n3.next = n4;

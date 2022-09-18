@@ -37,13 +37,13 @@ public class Num206 {
 //    }
 
     /* 解法3，用递归 */
-    public static ListNode1 reverseList(ListNode1 head){
+    public static ListNode reverseList(ListNode head){
         //head == null是为了特别判定原链表的head就是空的情况
         if(head == null || head.next == null){
             return head;
         }
         //r是链表翻转后的头结点
-        ListNode1 r = reverseList(head.next);
+        ListNode r = reverseList(head.next);
         head.next.next = head;
         head.next =null;
         return r;
@@ -72,11 +72,11 @@ public class Num206 {
 
 
     public static void main(String[] args) {
-        ListNode1 node1 = new ListNode1(1);
-        ListNode1 node2 = new ListNode1(2);
-        ListNode1 node3 = new ListNode1(3);
-        ListNode1 node4 = new ListNode1(4);
-        ListNode1 node5 = new ListNode1(5);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(4);
+        ListNode node5 = new ListNode(5);
         node1.next = node2;
         node2.next = node3;
         node3.next = node4;

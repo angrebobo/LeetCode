@@ -7,9 +7,9 @@ package LeetCode;
  */
 public class Num160 {
     // A+B = B+A
-    public ListNode1 getIntersectionNode(ListNode1 headA, ListNode1 headB) {
-        ListNode1 p = headA;
-        ListNode1 q = headB;
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        ListNode p = headA;
+        ListNode q = headB;
         while (p != q) {
             if(p != null)
                 p = p.next;
@@ -26,11 +26,11 @@ public class Num160 {
 
 
     public static void main(String[] args) {
-         ListNode1 n1 = new ListNode1(1);
-         ListNode1 n2 = new ListNode1(2);
-         ListNode1 n3 = new ListNode1(3);
-         ListNode1 n4 = new ListNode1(4);
-         ListNode1 n5 = new ListNode1(5);
+         ListNode n1 = new ListNode(1);
+         ListNode n2 = new ListNode(2);
+         ListNode n3 = new ListNode(3);
+         ListNode n4 = new ListNode(4);
+         ListNode n5 = new ListNode(5);
          n1.next = n2;
          n3.next = n4;n4.next = n5;
          Num160 num160 = new Num160();

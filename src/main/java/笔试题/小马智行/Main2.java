@@ -1,3 +1,5 @@
+package 笔试题.小马智行;
+
 import java.util.Scanner;
 
 public class Main2 {

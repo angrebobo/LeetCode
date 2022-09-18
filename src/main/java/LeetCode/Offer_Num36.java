@@ -1,8 +1,5 @@
 package LeetCode;
 
-import java.util.LinkedList;
-import java.util.List;
-
 /**
  * @author: HuangSiBo
  * @Description:
@@ -16,7 +13,7 @@ public class Offer_Num36 {
         Node(int val) { this.val = val; }
     }
 
-    static class Solution {
+    /*static class Solution {
         public Node treeToDoublyList(Node root) {
             if(root == null) return null;
             List<Node> list = new LinkedList<>();
@@ -40,6 +37,37 @@ public class Offer_Num36 {
             list.add(root);
 
             recursion(root.right, list);
+        }
+    }*/
+
+    static class Solution {
+
+        static Node pre;
+        static Node mostLeft;
+        public Node treeToDoublyList(Node root) {
+            if(root == null)
+                return null;
+            pre = null;
+            InOrderTraverse(root);
+            mostLeft.left = pre;
+            pre.right = mostLeft;
+            return mostLeft;
+        }
+
+        public void InOrderTraverse(Node root){
+            if(root == null)
+                return;
+
+            InOrderTraverse(root.left);
+            if(pre == null){
+                mostLeft = root;
+            }
+            else {
+                root.left = pre;
+                pre.right = root;
+            }
+            pre = root;
+            InOrderTraverse(root.right);
         }
     }
 

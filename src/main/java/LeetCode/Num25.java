@@ -8,18 +8,18 @@ package LeetCode;
 
 public class Num25 {
 
-    public static ListNode1 reverseKGroup(ListNode1 head, int k) {
+    public static ListNode reverseKGroup(ListNode head, int k) {
         if(k == 1)
             return head;
 
         //整个链表分为已翻转部分+待翻转部分+未翻转部分
 
         //dummy是虚拟的头节点
-        ListNode1 dummy = new ListNode1();
+        ListNode dummy = new ListNode();
         dummy.next = head;
         //end是待翻转部分的结尾节点，pre是待翻转部分的第一个节点的前驱节点
-        ListNode1 end = head;
-        ListNode1 pre = dummy;
+        ListNode end = head;
+        ListNode pre = dummy;
 
         while (true){
             //定位到end节点
@@ -31,11 +31,11 @@ public class Num25 {
                 break;
 
             //start是待翻转部分的第一个节点
-            ListNode1 start = pre.next;
+            ListNode start = pre.next;
             //newPre是下一次待翻转的前驱节点
-            ListNode1 newPre = start;
+            ListNode newPre = start;
             //next是待翻转部分的后继节点
-            ListNode1 next = end.next;
+            ListNode next = end.next;
             end.next = null;
             reverse(start);
 
@@ -66,13 +66,13 @@ public class Num25 {
         }
     }*/
 
-    private static void reverse(ListNode1 start){
-        ListNode1 current = start;
-        ListNode1 pre = null;
+    private static void reverse(ListNode start){
+        ListNode current = start;
+        ListNode pre = null;
         pre.next = start;
 
         while (current != null){
-            ListNode1 next = current.next;
+            ListNode next = current.next;
             current.next = pre;
             pre = current;
             current = next;
@@ -96,14 +96,14 @@ public class Num25 {
 
 
     static class Solution {
-        public ListNode1 reverseKGroup(ListNode1 head, int k) {
+        public ListNode reverseKGroup(ListNode head, int k) {
             if(k == 1)
                 return head;
-            ListNode1 dummy = new ListNode1();
+            ListNode dummy = new ListNode();
             dummy.next = head;
 
-            ListNode1 pre = dummy;
-            ListNode1 end = head;
+            ListNode pre = dummy;
+            ListNode end = head;
 
             while(true){
                 for(int i = 1; i <= k-1 && end != null; i++){
@@ -112,8 +112,8 @@ public class Num25 {
                 if(end == null)
                     break;
 
-                ListNode1 end_next = end.next;
-                ListNode1 start = pre.next;
+                ListNode end_next = end.next;
+                ListNode start = pre.next;
 
                 reverse(pre, end);
 
@@ -126,11 +126,11 @@ public class Num25 {
         }
 
         // 翻转链表
-        public void reverse(ListNode1 pre, ListNode1 end){
-            ListNode1 start = pre.next;
-            ListNode1 p = start.next;
-            ListNode1 end_next = end.next;
-            ListNode1 temp;
+        public void reverse(ListNode pre, ListNode end){
+            ListNode start = pre.next;
+            ListNode p = start.next;
+            ListNode end_next = end.next;
+            ListNode temp;
 
             while (p != end_next){
                 temp = p.next;
@@ -144,10 +144,10 @@ public class Num25 {
 
 
     public static void main(String[] args) {
-        ListNode1 l1 = new ListNode1(1);
-        ListNode1 l2 = new ListNode1(2);
-        ListNode1 l3 = new ListNode1(3);
-        ListNode1 l4 = new ListNode1(4);
+        ListNode l1 = new ListNode(1);
+        ListNode l2 = new ListNode(2);
+        ListNode l3 = new ListNode(3);
+        ListNode l4 = new ListNode(4);
         l1.next = l2;
         l2.next = l3;
         l3.next = l4;
@@ -155,7 +155,7 @@ public class Num25 {
 //        ListNode ans = reverseKGroup(l1, 2);
 //        System.out.println(ans);
         Solution solution = new Solution();
-        ListNode1 res = solution.reverseKGroup(l1, 2);
+        ListNode res = solution.reverseKGroup(l1, 2);
         while (res != null){
             System.out.println(res.val);
             res = res.next;

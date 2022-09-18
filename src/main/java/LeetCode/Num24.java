@@ -9,13 +9,13 @@ public class Num24 {
 
     static class Solution {
         //迭代
-        public ListNode1 swapPairs(ListNode1 head){
-            ListNode1 pre = new ListNode1();
+        public ListNode swapPairs(ListNode head){
+            ListNode pre = new ListNode();
             pre.next = head;
-            ListNode1 temp = pre;
+            ListNode temp = pre;
             while (temp.next!=null && temp.next.next!=null){
-                ListNode1 start = temp.next;
-                ListNode1 end = temp.next.next;
+                ListNode start = temp.next;
+                ListNode end = temp.next.next;
                 start.next = end.next;
                 end.next = start;
                 temp.next = end;
@@ -27,10 +27,10 @@ public class Num24 {
     }
 
     public static void main(String[] args) {
-        ListNode1 n1 = new ListNode1(1);
-        ListNode1 n2 = new ListNode1(2);
-        ListNode1 n3 = new ListNode1(3);
-        ListNode1 n4 = new ListNode1(4);
+        ListNode n1 = new ListNode(1);
+        ListNode n2 = new ListNode(2);
+        ListNode n3 = new ListNode(3);
+        ListNode n4 = new ListNode(4);
         n1.next = n2;n2.next = n3;n3.next = n4;
         Solution solution = new Solution();
         System.out.println(solution.swapPairs(n1).val);
