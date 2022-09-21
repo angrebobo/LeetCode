@@ -1,3 +1,5 @@
+package 笔试题.华为.九月二十一;
+
 import java.util.HashMap;
 import java.util.Scanner;
 
