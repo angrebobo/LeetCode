@@ -33,6 +33,8 @@ public class Main1 {
             min = Math.min(min, cur);
             return;
         }
+        if(cur > min)
+            return;
 
         String nameI = "I"+version;
         String nameJ = "J"+version;
@@ -84,3 +86,5 @@ public class Main1 {
 //.........
 //.........
 //.........
+//
+//输出:15
