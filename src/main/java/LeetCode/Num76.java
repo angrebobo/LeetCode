@@ -1,7 +1,5 @@
 package LeetCode;
 
-import java.util.HashMap;
-
 /**
  * @author: HuangSiBo
  * @Description:
@@ -11,7 +9,7 @@ import java.util.HashMap;
 public class Num76 {
     static class Solution {
         //方法1，滑动窗口
-        public String minWindow(String s, String t) {
+        /*public String minWindow(String s, String t) {
             HashMap<Character, Integer> map = new HashMap<>();
             HashMap<Character, Integer> need = new HashMap<>();
             for (int i = 0; i < t.length(); i++) {
@@ -60,10 +58,10 @@ public class Num76 {
                     return false;
             }
             return true;
-        }
+        }*/
 
         // 方法2，滑动窗口。用int数组替代hashmap，运行时间大大缩短
-        /*public String minWindow(String s, String t){
+        public String minWindow(String s, String t){
             // map: 子串还需要的字符
             int[] map = new int[128];
             // need: 统计t的字符，need数组不做改动
@@ -116,7 +114,7 @@ public class Num76 {
                     return false;
             }
             return true;
-        }*/
+        }
     }
 
     public static void main(String[] args) {
