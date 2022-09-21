@@ -41,7 +41,5 @@ public class Num46 {
         int[] nums = new int[]{1,2,3};
         List<List<Integer>> ans = permute(nums);
         System.out.println(ans);
-
-        StringBuilder builder = new StringBuilder();
     }
 }
