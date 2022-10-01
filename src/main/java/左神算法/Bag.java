@@ -3,13 +3,13 @@ package 左神算法;
 /**
  * @author: HuangSiBo
  * @Description: 01背包
- * 有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。
- * 每件物品只能用一次，求解将哪些物品装入背包里物品价值总和最大
+ * 有 n 件物品和一个最多能背重量为 w 的背包。第 i 件物品的重量是 weight[i]，得到的价
+ * 值是 value[i] 。每件物品只能用一次，求解将哪些物品装入背包里物品价值总和最大
  * @Data: Created in 21:08 2022/5/5
  */
 public class Bag {
 
-    //用暴力递归的方法做。每个物品都有两种状态，装或者不装。该方法的时间复杂度是O(2*n)
+    // 用暴力递归的方法做。每个物品都有两种状态，装或者不装。该方法的时间复杂度是O(2*n)
     /*static int maxValue = 0;
     static int capacity;
     public static void findMaxValue(int[] weights, int[] values, int capacity, int index, int value){
