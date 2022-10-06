@@ -1,6 +1,8 @@
 package LeetCode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * 题目链接：https://leetcode-cn.com/problems/combination-sum/
@@ -8,7 +10,7 @@ import java.util.*;
  */
 public class Num39 {
 
-    static class Solution {
+    /*static class Solution {
         public List<List<Integer>> combinationSum(int[] candidates, int target) {
             Deque<Integer> path = new LinkedList<>();
             List<List<Integer>> ans = new ArrayList<>();
@@ -40,6 +42,34 @@ public class Num39 {
                 // 这里的i是关键
                 backTrace(candidates, target-num, i, path, ans);
                 path.removeLast();
+            }
+        }
+    }*/
+
+    static class Solution {
+        public List<List<Integer>> combinationSum(int[] candidates, int target) {
+            List<List<Integer>> ans = new ArrayList<>();
+            List<Integer> path = new ArrayList<>();
+            Arrays.sort(candidates);
+            dfs(candidates, 0, target, path, ans);
+            return ans;
+        }
+
+        public void dfs(int[] candidates, int index, int target, List<Integer> path,
+                        List<List<Integer>> ans){
+
+            if(target == 0){
+                ans.add(new ArrayList<>(path));
+                return;
+            }
+
+            for (int i = index; i < candidates.length; i++) {
+                if(target-candidates[i] < 0)
+                    break;
+
+                path.add(candidates[i]);
+                dfs(candidates, i, target-candidates[i], path, ans);
+                path.remove(path.size()-1);
             }
         }
     }
