@@ -9,7 +9,7 @@ import java.util.HashMap;
  * @Data: Created in 17:44 2022/5/30
  */
 public class Num395 {
-    static class Solution {
+    /*static class Solution {
 
         // 分治思想
         public int longestSubstring(String s, int k) {
@@ -30,11 +30,32 @@ public class Num395 {
             // 若当前字符串符合要求，直接返回长度
             return s.length();
         }
+    }*/
+
+    static class Solution {
+        public int longestSubstring(String s, int k) {
+            HashMap<Character, Integer> map = new HashMap<>();
+            for (char c : s.toCharArray()) {
+                map.put(c, map.getOrDefault(c,0)+1);
+            }
+            int res = 0;
+
+            for (char c : map.keySet()) {
+                if(map.get(c) < k){
+                    for (String s1 : s.split(c + "")) {
+                        res = Math.max(res, longestSubstring(s1, k));
+                    }
+                    return res;
+                }
+            }
+
+            return s.length();
+        }
     }
 
     public static void main(String[] args) {
-        String s = "aaabb";
-        int k = 4;
+        String s = "ababbc";
+        int k = 2;
         Solution solution = new Solution();
         System.out.println(solution.longestSubstring(s, k));
     }

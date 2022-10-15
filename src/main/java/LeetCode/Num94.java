@@ -1,6 +1,8 @@
 package LeetCode;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
 
 /**
  * @desiption:
@@ -10,7 +12,7 @@ import java.util.*;
 
 public class Num94 {
 
-    static class ColorNode {
+    /*static class ColorNode {
         TreeNode node;
         boolean visited;
 
@@ -40,6 +42,46 @@ public class Num94 {
         }
 
         return res;
+    }*/
+
+    static class Solution {
+        // 中序遍历的递归实现
+        public List<Integer> inorderTraversal(TreeNode root) {
+            List<Integer> list = new ArrayList<>();
+            dfs(root, list);
+            return list;
+        }
+
+        public void dfs(TreeNode root, List<Integer> list){
+            if(root==null)
+                return;
+
+            dfs(root.left, list);
+            list.add(root.val);
+            dfs(root.right, list);
+        }
+
+        // 中序遍历的非递归实现
+        public List<Integer> inorderTraversal1(TreeNode root) {
+            List<Integer> list = new ArrayList<>();
+            Stack<TreeNode> stack = new Stack<>();
+            TreeNode p = root;
+            while(p!=null){
+                stack.push(p);
+                p = p.left;
+            }
+
+            while (!stack.isEmpty()){
+                TreeNode temp = stack.pop();
+                list.add(temp.val);
+                temp = temp.right;
+                while(temp!=null){
+                    stack.push(temp);
+                    temp = temp.left;
+                }
+            }
+            return list;
+        }
     }
 
     public static void main(String[] args) {
@@ -56,6 +98,8 @@ public class Num94 {
         n2.right = n5;
         n3.left = n6;
         n3.right = n7;
-        System.out.println(inorderTraversal(n1));
+        Solution solution = new Solution();
+        System.out.println(solution.inorderTraversal1(n1));
+//        System.out.println(inorderTraversal(n1));
     }
 }

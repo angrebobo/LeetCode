@@ -56,7 +56,7 @@ public class Num518 {
             return res;
         }*/
 
-        public int change(int amount, int[] coins) {
+        /*public int change(int amount, int[] coins) {
             int[][] dp = new int[coins.length+1][amount+1];
             dp[0][0] = 1;
             for (int j = 1; j < amount+1; j++) {
@@ -75,6 +75,25 @@ public class Num518 {
             }
 
             return dp[coins.length][amount];
+        }*/
+
+        public int change(int amount, int[] coins) {
+            int len = coins.length;
+            int[][] dp = new int[len][amount+1];
+            dp[0][0] = 1;
+            for (int j = coins[0]; j <= amount; j+=coins[0]) {
+                dp[0][j] = 1;
+            }
+
+            for (int i = 1; i < len; i++) {
+                for (int j = 0; j <= amount; j++) {
+                    for (int k = 0; j-k*coins[i]>=0; k++) {
+                        dp[i][j] += dp[i-1][j-k*coins[i]];
+                    }
+                }
+            }
+
+            return dp[len-1][amount];
         }
     }
 

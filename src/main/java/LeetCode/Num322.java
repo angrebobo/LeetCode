@@ -1,8 +1,7 @@
 package LeetCode;
 
 
-import javax.security.auth.login.Configuration;
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * @Description TODO
@@ -12,7 +11,7 @@ import java.util.Arrays;
  **/
 public class Num322 {
 
-    public static class Solution {
+    /*public static class Solution {
         public int coinChange(int[] coins, int amount) {
             int len = coins.length;
             int[] dp = new int[amount+1];
@@ -29,11 +28,46 @@ public class Num322 {
 
             return dp[amount] != (amount+1) ? dp[amount] : -1;
         }
+    }*/
+
+    static class Solution {
+        public int coinChange(int[] coins, int amount) {
+            Arrays.sort(coins);
+            List<List<Integer>> ans = new ArrayList<>();
+            Deque<Integer> path = new LinkedList<>();
+            dfs(coins, amount, 0, path, ans);
+            if(ans.size() == 0)
+                return -1;
+
+            int min = Integer.MAX_VALUE;
+            for (List<Integer> list : ans) {
+                min = Math.min(min, list.size());
+            }
+            return min;
+        }
+
+        public void dfs(int[] coins, int amount, int index,
+                        Deque<Integer> path, List<List<Integer>> ans){
+
+            if(amount == 0){
+                ans.add(new ArrayList<>(path));
+                return;
+            }
+
+            for (int i = index; i < coins.length; i++) {
+                if(amount-coins[i] < 0)
+                    break;
+
+                path.addLast(coins[i]);
+                dfs(coins, amount-coins[i], i, path, ans);
+                path.removeLast();
+            }
+        }
     }
 
     public static void main(String[] args) {
-        int[] conis = new int[]{2};
-        int amount = 3;
+        int[] conis = new int[]{1, 2, 5};
+        int amount = 11;
         Solution solution = new Solution();
         System.out.println(solution.coinChange(conis, amount));
     }
