@@ -1,5 +1,6 @@
 package 笔试题.京东;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 /**
@@ -25,6 +26,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
+        BigDecimal s = new BigDecimal(1).setScale(2, BigDecimal.ROUND_UP);
         sc.nextLine();
         HashMap<Integer, Integer> map = new HashMap<>();
         int maxVal = 0;

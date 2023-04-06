@@ -58,13 +58,31 @@ public class Num42 {
         }*/
     }
 
+    // 2022/10/13写
     public static int trap(int[] height) {
-        return 1;
+        int len = height.length;
+        int[] leftMax = new int[len];
+        int[] rightMax = new int[len];
+        leftMax[0] = 0;
+        for (int i = 1; i < len; i++) {
+            leftMax[i] = Math.max(leftMax[i-1], height[i-1]);
+        }
+        rightMax[len-1] = 0;
+        for (int i = len-2; i >= 0; i--) {
+            rightMax[i] = Math.max(rightMax[i+1], height[i+1]);
+        }
+
+        int count = 0;
+        for (int i = 0; i < len; i++) {
+            int temp = Math.min(leftMax[i], rightMax[i]);
+            if(temp > height[i])
+                count += temp-height[i];
+        }
+        return count;
     }
 
     public static void main(String[] args) {
-//        int[] height = new int[]{0,1,0,2,1,0,1,3,2,1,2,1};
-//        Solution solution = new Solution();
-//        System.out.println(solution.trap(height));
+        int[] height = new int[]{4,2,0,3,2,5};
+        System.out.println(trap(height));
     }
 }

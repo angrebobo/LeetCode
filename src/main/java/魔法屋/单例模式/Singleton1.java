@@ -1,4 +1,4 @@
-package 设计模式.单例;
+package 魔法屋.单例模式;
 
 /**
  * @author: HuangSiBo
