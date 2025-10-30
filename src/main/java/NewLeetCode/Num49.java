@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * 字母异位词分组
+ * 哈希
+ * https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked
  */
 public class Num49 {
 
@@ -15,14 +17,8 @@ public class Num49 {
         for (String str : strs) {
             char[] charArray = str.toCharArray();
             Arrays.sort(charArray);
-            String sortStr = Arrays.toString(charArray);
-            if (map.containsKey(sortStr)) {
-                map.get(sortStr).add(str);
-            } else {
-                ArrayList<String> temp = new ArrayList<>();
-                temp.add(str);
-                map.put(sortStr, temp);
-            }
+            String sortStr = String.valueOf(charArray);
+            map.computeIfAbsent(sortStr, k -> new ArrayList<>()).add(str);
         }
         return new ArrayList<>(map.values());
     }
